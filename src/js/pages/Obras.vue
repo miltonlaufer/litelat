@@ -29,11 +29,14 @@ export default {
       ]
     }
   },
+  created() {
+    document.body.classList.add("obras");
+  },
   mounted() {
     console.log(this.obras);
 
-    this.eyes();
     this.$nextTick(function () {
+      this.eyes();
       window.addEventListener('resize', this.eyes);
     });
     this.$parent.$emit('routeChanged', this.$route.name);

@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper">
     <header>
-      <nav class="navbar navbar-expand-xl">
+      <nav class="navbar navbar-expand-xl" v-if="showMenu">
         <router-link
           class="navbar-brand"
           :to="{ name: 'splash'}"></router-link>
@@ -9,7 +9,7 @@
                 data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span></span><span></span><span></span><span></span></button>
-        <div class="collapse navbar-collapse" id="navbarCollapse" v-if="showMenu">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <router-link
@@ -27,6 +27,16 @@
           </ul>
         </div>
       </nav>
+      <nav v-else class="navbar navbar-home">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-start">
+            <div class="col-7 col-lg-6"><a class="navbar-brand" href="index.html"></a></div>
+            <div class="col-5 col-lg-6 text-right">
+              <h1>Literatura Electrónica<br>Latinoamericana y Caribeña</h1>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <main class="home" role="main">
       <div class="container-fluid">
@@ -41,7 +51,7 @@
         </div>
       </div>
     </main>
-    <footer>
+    <footer v-if="showMenu">
       <div class="container-fluid">
         <div class="row">
           <div class="col text-center">Footer</div>
@@ -61,12 +71,7 @@
     },
     created() {
       this.$on('routeChanged', routeName => {
-
-        if (routeName !== 'splash') {
-          this.showMenu = true;
-        } else {
-          this.showMenu = false;
-        }
+        this.showMenu = routeName !== 'splash';
       });
     },
     methods: {},

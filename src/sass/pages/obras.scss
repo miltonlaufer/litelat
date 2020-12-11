@@ -1,0 +1,10 @@
+// Obras styles
+
+.obras {
+    main {
+        padding-top: 70px;
+        @include media-breakpoint-down(lg) {
+            padding-top: 170px;
+        }
+    }
+}

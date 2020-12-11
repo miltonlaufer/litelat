@@ -1,0 +1,80 @@
+// FIcha styles
+
+.ficha {
+    main {
+        @include media-breakpoint-down(lg) {
+            padding-top: 70px;
+        }
+    }
+
+    &-wrapper {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        color: #fff;
+        font-size: 1.4rem;
+    }
+
+    .image {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .main-title {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+
+    .subtitle {
+        font-weight: 400;
+        background-color: #fff;
+        color: #4d4d4d;
+        padding: 5px 10px 4px;
+        margin: 40px 0 15px;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        line-height: 1;
+        letter-spacing: 0.1em;
+    }
+
+    .link {
+        color: #dd6300;
+        text-align: right;
+        display: block;
+        text-decoration: underline;
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+
+    .eye {
+        margin: 0 auto;
+        opacity: 1;
+        width: 120px;
+        display: block;
+        @include media-breakpoint-down(sm) {
+            width: 130px;
+        }
+        &:hover {
+            transform: scale(1);
+        }
+        &-shape {
+            background-color: $orange;
+            border: 0;
+            box-shadow: 0;
+            width: 110px;
+            height: 110px;
+            @include media-breakpoint-down(sm) {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        .title {
+            text-shadow: none;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    }
+}

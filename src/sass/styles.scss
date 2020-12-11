@@ -1,0 +1,46 @@
+// *************************************
+//
+//   Modular Sass
+//   -> Manifest
+//
+// *************************************
+//
+
+// -------------------------------------
+//   Vendor
+// -------------------------------------
+@import 'vendor/bootstrap4/bootstrap';
+
+// -------------------------------------
+//   Foundation
+// -------------------------------------
+@import 'foundation/variables';
+@import 'foundation/mixins';
+@import 'foundation/base';
+@import 'foundation/utilities';
+@import 'foundation/typography';
+
+// -------------------------------------
+//   Structure
+// -------------------------------------
+@import 'structures/header';
+@import 'structures/navbar';
+@import 'structures/footer';
+
+// -------------------------------------
+//   Pages
+// -------------------------------------
+@import 'pages/home';
+@import 'pages/obras';
+@import 'pages/autor';
+@import 'pages/ficha';
+
+// -------------------------------------
+//   Components
+// -------------------------------------
+// @import 'components/eye-shape';
+
+// -------------------------------------
+//   Others
+// -------------------------------------
+@import 'shame.scss';

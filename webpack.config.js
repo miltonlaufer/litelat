@@ -1,13 +1,28 @@
 var path = require('path')
 var webpack = require('webpack')
+var CopyPlugin = require('copy-webpack-plugin')
+
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['./src/main.js', './src/sass/styles.scss'],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  optimization: {
+    minimize: false //Update this to true or false
+  },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, './src/images/*.png'),
+          to: "images/[name].[ext]",
+        },
+      ],
+    }),
+  ],
   module: {
     rules: [
       {
@@ -77,8 +92,11 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true,
-    overlay: true
+    noInfo: false,
+    overlay: true,
+    port: 9000,
+    open: true,
+    hot: true
   },
   performance: {
     hints: false
@@ -94,15 +112,6 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"production"'
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
     })
   ])
 }

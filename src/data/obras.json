@@ -1,0 +1,296 @@
+{
+  "obras":{
+    "1":{
+      "titulo":"Concretoons",
+      "autor":"Benjamin Moreno"
+    },
+    "2":{
+      "titulo":"MEMQRIA",
+      "autor":"Anuar Cichero, autor."
+    },
+    "3":{
+      "titulo":"A VECES CUBIERTO POR LAS AGUAS",
+      "autor":"Carlos Cociña. Diseño web: Ediciones del Temple"
+    },
+    "4":{
+      "titulo":"71 (setenta y uno)",
+      "autor":"Carlos Cociña. Diseño web: Ediciones del Temple"
+    },
+    "5":{
+      "titulo":"PLAGIO DEL AFECTO (libro en proceso)",
+      "autor":"Carlos Cociña. Diseño web: Ediciones del Temple"
+    },
+    "6":{
+      "titulo":"Rotaciones",
+      "autor":"Doctorovich, Fabio"
+    },
+    "7":{
+      "titulo":"ASWTZ",
+      "autor":"Doctorovich, Fabio"
+    },
+    "8":{
+      "titulo":"Abyssmo",
+      "autor":"Doctorovich, Fabio"
+    },
+    "9":{
+      "titulo":"Lux Perpetua",
+      "autor":""
+    },
+    "10":{
+      "titulo":"Dossier: Pioneros",
+      "autor":"Eduardo Darino (1965), Omar Gancedo (1966), Erthos Albino de Souza (1972), Jesús Arellano (1972), Eduardo Kac (1982), Ladislao Pablo Györi (1986), Augusto de Campos (1992)"
+    },
+    "11":{
+      "titulo":"MIDIPoet; Poesía digital. Experimentos de texto y no-texto (2002-2005) y La tiranía del código (2015).",
+      "autor":"Eugenio Tisselli Vélez"
+    },
+    "12":{
+      "titulo":"La Mareadora",
+      "autor":"Eugenio Tisselli Vélez"
+    },
+    "13":{
+      "titulo":"Degenerativa y Regenerativa",
+      "autor":""
+    },
+    "14":{
+      "titulo":"Dos sierras",
+      "autor":""
+    },
+    "15":{
+      "titulo":"himno algorítmico transnacional hiperacelerado de américa del norte",
+      "autor":"Eugenio Tisselli Vélez"
+    },
+    "16":{
+      "titulo":"Rescate",
+      "autor":"Gabriela Golder"
+    },
+    "17":{
+      "titulo":"El canto del gallo. Poelectrones",
+      "autor":"Jesús Arellano"
+    },
+    "18":{
+      "titulo":"Emociones artificiales",
+      "autor":"Milton Laufer"
+    },
+    "19":{
+      "titulo":"Códigos",
+      "autor":"Milton Laufer"
+    },
+    "20":{
+      "titulo":"El Aleph a dieta",
+      "autor":"Milton Laufer"
+    },
+    "21":{
+      "titulo":"El ojo y la mano",
+      "autor":"Milton Laufer"
+    },
+    "22":{
+      "titulo":"Correcaminos aka Caminante",
+      "autor":"Eduardo Darino"
+    },
+    "23":{
+      "titulo":"Le tombeau de Mallarmé",
+      "autor":"Erthos Albino de Souza"
+    },
+    "24":{
+      "titulo":"Poesía virtual",
+      "autor":"Ladislao Pablo Györi"
+    },
+    "25":{
+      "titulo":"IP Poetry",
+      "autor":"Gustavo Romano"
+    },
+    "26":{
+      "titulo":"Diálogo iterante",
+      "autor":"Marianne Teixido: Texto-Imagen-Audio y Emilio Ocelotl: código-Imagen-Audio"
+    },
+    "27":{
+      "titulo":"Flicts",
+      "autor":"Ziraldo"
+    },
+    "28":{
+      "titulo":"Ars Poetica",
+      "autor":"Alejandro Corredor Parra"
+    },
+    "29":{
+      "titulo":"Bot Carrión y Bot Poesías Carrión",
+      "autor":"Élika Ortega (usando cbdq y tracery)"
+    },
+    "30":{
+      "titulo":"Lucrecia Daphne Anarkista Visual (LDAV)",
+      "autor":"Enrique Rodríguez Araújo"
+    },
+    "31":{
+      "titulo":"Bring Back",
+      "autor":"I (Rosamond S. King) created the work by myself."
+    },
+    "32":{
+      "titulo":"Cuchutexto",
+      "autor":"Loss Pequeño Glazier"
+    },
+    "33":{
+      "titulo":"Common Medications in Psychiatry",
+      "autor":"Marcos Wasem"
+    },
+    "34":{
+      "titulo":"Bucle: Archivo de ficciones",
+      "autor":"Nos llamamos Track Siete  (VM)"
+    },
+    "35":{
+      "titulo":"Los discretos ",
+      "autor":"Nosotros ó Nadie "
+    },
+    "36":{
+      "titulo":"Grandes Esferas Celestes",
+      "autor":"Poesía, código y Diseño - José Aburto"
+    },
+    "37":{
+      "titulo":"Mal envuelto",
+      "autor":"Poesía, código y Diseño - José Aburto"
+    },
+    "38":{
+      "titulo":"Partidas",
+      "autor":"Poesía, código y Diseño - José Aburto"
+    },
+    "39":{
+      "titulo":"Poemas panorámicos (Volver es un lugar, Consensaciones, Disolvencias)",
+      "autor":"Poesía, código y Diseño - José Aburto"
+    },
+    "40":{
+      "titulo":"Paranoico arcoíris",
+      "autor":"Poesía, código y Diseño - José Aburto"
+    },
+    "41":{
+      "titulo":"MEXICA 20 yeras - 20 stories [20 años - 20 historias]",
+      "autor":"Rafael Pérez y Pérez"
+    },
+    "42":{
+      "titulo":"Entre lenguas ",
+      "autor":"Vinicius Marquet "
+    },
+    "43":{
+      "titulo":"Colecciones de la ELO",
+      "autor":""
+    },
+    "44":{
+      "titulo":"Tipoemas y Anipoemas",
+      "autor":"Ana María Uribe"
+    },
+    "45":{
+      "titulo":"WordToys y Góngora Wordtoys y Sabotaje Retroexistencial",
+      "autor":"Belén Gache"
+    },
+    "46":{
+      "titulo":"Ñao /Reabracadabra/Tesao",
+      "autor":"Eduardo Kac"
+    },
+    "47":{
+      "titulo":"Memorias y caminos",
+      "autor":"Jaime Alejandro Rodríguez"
+    },
+    "48":{
+      "titulo":"El alebrije",
+      "autor":"Carmen Gil, Camilo Giraldo Angel, Santiago Lince"
+    },
+    "49":{
+      "titulo":"O Outono da República",
+      "autor":"Paulo Fehlauer"
+    },
+    "50":{
+      "titulo":"Poesia QR",
+      "autor":"Doctorovich, Fabio"
+    },
+    "51":{
+      "titulo":"Oratorio",
+      "autor":"André Vallias"
+    },
+    "52":{
+      "titulo":"Poema Bomba",
+      "autor":"Augusto de Campos e Cid Campos"
+    },
+    "53":{
+      "titulo":"Homenaje a Wlademir Dias-Pino, 2003",
+      "autor":"Clemente Padín"
+    },
+    "54":{
+      "titulo":"Campaña de Sensibilización estética, 1980 (gráfico) – 2001 (digital)",
+      "autor":"Clemente Padín"
+    },
+    "55":{
+      "titulo":"Homenaje al Cuadrado, 1999",
+      "autor":"Clemente Padín"
+    },
+    "56":{
+      "titulo":"Poesía Necrológica Colombiana",
+      "autor":"David Medina"
+    },
+    "57":{
+      "titulo":"Diagramas de una ciencia rara (Séptima)",
+      "autor":"David Medina "
+    },
+    "58":{
+      "titulo":"Organismo",
+      "autor":"Decio Pignatari, Animación Elson Froes"
+    },
+    "59":{
+      "titulo":"Autorretrato (1998)",
+      "autor":"Diego Bonilla"
+    },
+    "60":{
+      "titulo":"Universales (1998)",
+      "autor":"Diego Bonilla"
+    },
+    "61":{
+      "titulo":"Liber Rotavi (2013)",
+      "autor":"Diego Bonilla"
+    },
+    "62":{
+      "titulo":"Vía Láctea",
+      "autor":"Direção Editorial: Samira Almeida\n  ireção de Interatividade: Fernando Tangi\n  lustrações e animações: Fernando Tangi\n  oema: Olavo Bilac\n  ocução: Giuliete Aymard\n  Inglês\n  radução literatura: Frederick G. Williams\n  radução dos paratextos: Renê Diniz\n  Espanhol\n  radução literatura: Daniel Carmona Leite e Marcia Ameriot\n  radução dos paratextos: Daniel Carmona Leite e Marcia Ameriot"
+    },
+    "63":{
+      "titulo":"Hotel Minotauro (2013-2015) ",
+      "autor":"Doménico Chiappe  Producción digital y programación: Maloka Media Arreglos musicales: Fidel Cordero (“Susurro en el bar” y “Títeres”) Natalia Hernández y Jorge Ramírez (“La fuerza del rencor”) Diseño e ilustración: Jesús Jiménez Valero"
+    },
+    "64":{
+      "titulo":"Terminal",
+      "autor":"Flavio Komatsu fvkomatsu@gmail.com"
+    },
+    "65":{
+      "titulo":"My Great-Aunt / Mi tía abuela",
+      "autor":"Frida Robles Ponce (escritora y creadora de concepto) Theo Ellin Ballew (programadora y colaboradora)"
+    },
+    "66":{
+      "titulo":"VAI VEN",
+      "autor":"Juan Angel Italiano"
+    },
+    "67":{
+      "titulo":"Ruedapalabra",
+      "autor":"Juan Angel Italiano"
+    },
+    "68":{
+      "titulo":"Homenaje a María Freire",
+      "autor":"Juan Angel Italiano"
+    },
+    "69":{
+      "titulo":"Tren en marcha",
+      "autor":"Juan Angel Italiano"
+    },
+    "70":{
+      "titulo":"El sueño de Padín",
+      "autor":"Juan Angel Italiano"
+    },
+    "71":{
+      "titulo":"Textos Guerreros",
+      "autor":"Pablo Somonte Ruano, artista y programador. Theo Ellin Ballew publicó en oral.pub. Maya Averbuch hizo la traducción para la versión en inglés. "
+    },
+    "72":{
+      "titulo":"Interpoesía",
+      "autor":"Wilton Azevedo /Philadepho Menezes"
+    },
+    "73":{
+      "titulo":"Abrazar el aire, apretar los dientes",
+      "autor":"Doménico Chiappe  "
+    }
+  }
+}

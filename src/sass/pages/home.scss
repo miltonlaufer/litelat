@@ -50,10 +50,13 @@
           height: 220px;
           width: 220px;
         }
+
+        .content::after {
+          opacity: .3;
+        }
       }
 
       .eye {
-
         &:hover {
           transform: scale(1.25);
         }

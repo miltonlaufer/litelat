@@ -35,7 +35,8 @@ export default {
       component: obras,
       name: 'obras',
       meta: {
-        title: 'Obras'
+        title: 'Obras',
+        content: 'Listado de obras de la antología.'
       }
     },
     {
@@ -43,7 +44,8 @@ export default {
       component: obra,
       name: 'obra',
       meta: {
-        title: 'Obra'
+        title: 'Obra',
+        content: 'Descripción de la obra'
       }
     },
     {
@@ -51,7 +53,8 @@ export default {
       component: splash,
       name: 'splash',
       meta: {
-        title: 'Splash'
+        title: 'Inicio',
+        content: 'Bienvenidos a la primera antología de la red de Literatura Electrónica Latinoamericana.'
       }
     },
     {path: '*', component: splash}

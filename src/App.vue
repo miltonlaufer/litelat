@@ -81,21 +81,23 @@ export default {
   },
   created() {
     this.$on('routeChanged', routeName => {
+
+    });
+  },
+  mounted() {
+    this.routeChanged(this.$route.name);
+  },
+  methods: {
+    calculateId() {
+      this.obraId = Math.ceil(Math.random() * Object.keys(obrasData['obras']).length);
+    },
+    routeChanged(routeName) {
       this.showMenu = routeName !== 'splash';
       document.body.classList.remove(...document.body.classList);
       document.getElementById('generalWrapper').classList
         .remove(...document.getElementById('generalWrapper').classList);
       document.getElementById('generalWrapper').classList.add('col');
       this.calculateId();
-    });
-  },
-  mounted() {
-    this.calculateId();
-  },
-  methods: {
-    calculateId() {
-      console.log('calcula id');
-      this.obraId = Math.ceil(Math.random() * Object.keys(obrasData['obras']).length);
     }
   },
   computed: {}

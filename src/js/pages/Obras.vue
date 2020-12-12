@@ -27,11 +27,8 @@ export default {
     }
   },
   mounted() {
-    this.$parent.$emit('routeChanged', this.$route.name);
-
-    document.body.classList.add("obras");
-
-    this.$nextTick(function () {
+    this.$nextTick(() => {
+      document.body.classList.add("obras");
       this.eyes();
       window.addEventListener('resize', this.eyes);
     });

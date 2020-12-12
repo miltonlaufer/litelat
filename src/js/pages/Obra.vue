@@ -59,14 +59,13 @@ export default {
     }
   },
   mounted() {
-    this.$parent.$emit('routeChanged', this.$route.name);
-
-    document.body.classList.add("ficha");
-    document.getElementById('generalWrapper').classList.add('ficha-wrapper', 'mt-5', 'pt-5');
+    this.$nextTick( () => {
+      document.body.classList.add("ficha");
+      document.getElementById('generalWrapper').classList.add('ficha-wrapper', 'mt-5', 'pt-5');
+    });
   },
   methods: {
     addLinks(html) {
-
       let div = document.createElement('div');
       div.innerHTML = html;
 

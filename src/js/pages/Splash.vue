@@ -79,9 +79,9 @@
 <script>
 export default {
   mounted() {
-    this.$parent.$emit('routeChanged', this.$route.name);
-
-    document.body.classList.add("home");
+    this.$nextTick(() => {
+      document.body.classList.add("home");
+    });
   }
 }
 </script>

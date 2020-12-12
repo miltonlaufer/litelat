@@ -14,7 +14,7 @@
               <router-link
                 active-class="active"
                 class="nav-link"
-                :to="{ name: 'obras'}">Obras
+                :to="{ name: 'obras'}"><span @click="mobileMenuCollapsed=true;">Obras</span>
               </router-link>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Autor</a></li>
@@ -25,7 +25,7 @@
               <router-link
                 active-class="active"
                 class="nav-link"
-                :to="{ name: 'obra' , params: {id: obraId}}"><span @click="calculateId">Descubrir</span>
+                :to="{ name: 'obra' , params: {id: obraId}}"><span @click="calculateId();mobileMenuCollapsed=true;">Descubrir</span>
               </router-link>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Acerca De</a></li>

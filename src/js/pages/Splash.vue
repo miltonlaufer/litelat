@@ -19,7 +19,7 @@
       <div class="eye"><a href="autor.html"></a>
         <div class="eye-shape">
           <div class="content"
-               style="background-image: url(dist/images/obras/ladislaopablogyori-poesiavirtual-2.png);">
+               style="background-image: url(dist/images/obras/marianneteixido-dialogoiterante-2.png);">
             <h2 class="title">Autor</h2>
           </div>
         </div>

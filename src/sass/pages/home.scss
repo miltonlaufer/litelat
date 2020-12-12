@@ -1,129 +1,134 @@
 // Home styles
 
 .home {
-    main {
-        padding-top: 20px;
-    }
+  main {
+    padding-top: 20px;
+  }
 
-    .eyes-grid {
-        &.home {
-            margin-left: 10px;
-            max-width: calc(100% - 10px);
-            @include media-breakpoint-up(sm) {
-                margin-top: 50px;
-                margin-left: auto;
-                margin-right: auto;
-                position: relative;
-                height: 440px;
-                max-width: 700px;
-            }
-            @include media-breakpoint-down(lg) {
-                margin-top: 160px;
-            }
-            @include media-breakpoint-down(sm) {
-                max-width: 420px;
-            }
-            @include media-breakpoint-down(xs) {
-                padding-top: 160px;
-                margin-top: 10px;
-                max-width: 290px;
-                text-align: center;
-                margin-left: auto;
-                margin-right: auto;
-                .eye {
-                    margin: -70px 0 -70px 35px;
-                }
-            }
-
-            .title {
-                font-size: 2rem;
-            }
-
-            .eye-shape {
-                height: 200px;
-                width: 200px;
-                @include media-breakpoint-down(sm) {
-                    height: 170px;
-                    width: 170px;
-                }
-                @include media-breakpoint-down(xs) {
-                    height: 220px;
-                    width: 220px;
-                }
-            }
-
-            .eye {
-                @include media-breakpoint-up(sm) {
-                    position: absolute;
-                    &:nth-child(1) {
-                        top: 90px;
-                        left: -90px;
-                    }
-                    &:nth-child(2) {
-                        top: 20px;
-                        left: 75px;
-                    }
-                    &:nth-child(3) {
-                        top: 90px;
-                        right: -90px;
-                    }
-                    &:nth-child(4) {
-                        left: -90px;
-                        top: 230px;
-                    }
-                    &:nth-child(5) {
-                        left: 75px;
-                        top: 160px;
-                    }
-                    &:nth-child(6) {
-                        right: -90px;
-                        top: 230px;
-                    }
-                    &:nth-child(7) {
-                        top: 300px;
-                        left: 75px;
-                    }
-                }
-                @include media-breakpoint-up(md) {
-                    &:nth-child(1) {
-                        top: 80px;
-                        left: -90px;
-                    }
-                    &:nth-child(2) {
-                        top: 20px;
-                        left: 173px;
-                    }
-                    &:nth-child(3) {
-                        top: 80px;
-                        right: -90px;
-                    }
-                    &:nth-child(4) {
-                        left: -90px;
-                        top: 225px;
-                    }
-                    &:nth-child(5) {
-                        left: 173px;
-                        top: 160px;
-                    }
-                    &:nth-child(6) {
-                        right: -90px;
-                        top: 225px;
-                    }
-                    &:nth-child(7) {
-                        top: 300px;
-                        left: 173px;
-                    }
-                }
-            }
+  .eyes-grid {
+    &.home {
+      margin-left: 10px;
+      max-width: calc(100% - 10px);
+      @include media-breakpoint-up(sm) {
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        height: 440px;
+        max-width: 700px;
+      }
+      @include media-breakpoint-down(lg) {
+        margin-top: 160px;
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 420px;
+      }
+      @include media-breakpoint-down(xs) {
+        padding-top: 160px;
+        margin-top: 10px;
+        max-width: 290px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        .eye {
+          margin: -70px 0 -70px 35px;
         }
-    }
+      }
 
-    .home-intro {
-        color: #fff;
-        max-width: 270px;
-        margin: 0 auto 60px;
-        font-size: 1.7rem;
-        line-height: 1.4;
-        text-align: justify;
+      .title {
+        font-size: 2rem;
+      }
+
+      .eye-shape {
+        height: 200px;
+        width: 200px;
+        @include media-breakpoint-down(sm) {
+          height: 170px;
+          width: 170px;
+        }
+        @include media-breakpoint-down(xs) {
+          height: 220px;
+          width: 220px;
+        }
+      }
+
+      .eye {
+
+        &:hover {
+          transform: scale(1.25);
+        }
+
+        @include media-breakpoint-up(sm) {
+          position: absolute;
+          &:nth-child(1) {
+            top: 90px;
+            left: -90px;
+          }
+          &:nth-child(2) {
+            top: 20px;
+            left: 75px;
+          }
+          &:nth-child(3) {
+            top: 90px;
+            right: -90px;
+          }
+          &:nth-child(4) {
+            left: -90px;
+            top: 230px;
+          }
+          &:nth-child(5) {
+            left: 75px;
+            top: 160px;
+          }
+          &:nth-child(6) {
+            right: -90px;
+            top: 230px;
+          }
+          &:nth-child(7) {
+            top: 300px;
+            left: 75px;
+          }
+        }
+        @include media-breakpoint-up(md) {
+          &:nth-child(1) {
+            top: 80px;
+            left: -90px;
+          }
+          &:nth-child(2) {
+            top: 20px;
+            left: 173px;
+          }
+          &:nth-child(3) {
+            top: 80px;
+            right: -90px;
+          }
+          &:nth-child(4) {
+            left: -90px;
+            top: 225px;
+          }
+          &:nth-child(5) {
+            left: 173px;
+            top: 160px;
+          }
+          &:nth-child(6) {
+            right: -90px;
+            top: 225px;
+          }
+          &:nth-child(7) {
+            top: 300px;
+            left: 173px;
+          }
+        }
+      }
     }
+  }
+
+  .home-intro {
+    color: #fff;
+    max-width: 270px;
+    margin: 0 auto 60px;
+    font-size: 1.7rem;
+    line-height: 1.4;
+    text-align: justify;
+  }
 }

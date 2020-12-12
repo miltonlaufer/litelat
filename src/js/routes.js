@@ -2,6 +2,7 @@ import splash from './pages/Splash.vue';
 import obras from './pages/Obras.vue';
 import obra from './pages/Obra.vue';
 
+import obrasData from '../data/obras.json';
 
 const myRoutes = {
   splash: {

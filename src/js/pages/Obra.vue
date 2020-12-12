@@ -62,6 +62,7 @@ export default {
     this.$nextTick( () => {
       document.body.classList.add("ficha");
       document.getElementById('generalWrapper').classList.add('ficha-wrapper', 'mt-5', 'pt-5');
+      document.title = this.obra.titulo + ' | ' + document.title;
     });
   },
   methods: {

@@ -29,7 +29,7 @@ window.litelat = new Vue({
   router
 })
 
-router.beforeResolve((to, from, next) => {
+router.beforeEach((to, from, next) => {
   if (to.name) {
     // Start the route progress bar.
     NProgress.start()

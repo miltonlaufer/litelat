@@ -35,7 +35,7 @@
       <nav v-else class="navbar navbar-home">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-start">
-            <div class="col-7 col-lg-6"><a class="navbar-brand" href="index.html"></a></div>
+            <div class="col-7 col-lg-6"><a class="navbar-brand"></a></div>
             <div class="col-5 col-lg-6 text-right">
               <h1>Literatura Electrónica<br>Latinoamericana y Caribeña</h1>
             </div>

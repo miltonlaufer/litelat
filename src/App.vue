@@ -70,6 +70,7 @@
 <script>
 
 import obrasData from './data/obras.json';
+import NProgress from "nprogress";
 
 export default {
   name: 'app',
@@ -79,6 +80,9 @@ export default {
       obraId: null
     }
   },
+  beforeCreate() {
+    NProgress.start();
+  },
   created() {
     this.$on('routeChanged', routeName => {
 
@@ -86,6 +90,7 @@ export default {
   },
   mounted() {
     this.routeChanged(this.$route.name);
+    NProgress.done();
   },
   methods: {
     calculateId() {

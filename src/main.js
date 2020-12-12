@@ -2,6 +2,8 @@ import Vue from 'vue';
 import App from './App.vue';
 import Router from 'vue-router';
 import routes from './js/routes';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 Vue.use(Router);
 const router = new Router(routes);
@@ -14,12 +16,17 @@ window.litelat = new Vue({
 
 router.beforeResolve((to, from, next) => {
   // Emite el evento que lee App.vue. Tiene que coordinar el transition delay (en App.vue, css)
-  if (to.name !== from.name) {
-    setTimeout(() => {
-      window.litelat.$children[0].routeChanged(to.name);
-    }, 750);
+
+  if (to.name) {
+    // Start the route progress bar.
+    NProgress.start()
+
+    if (to.name !== from.name) {
+      setTimeout(() => {
+        window.litelat.$children[0].routeChanged(to.name);
+      }, 750);
+    }
   }
-  console.log('route changed');
 
   // This goes through the matched routes from last to first, finding the closest route with a title.
   // eg. if we have /some/deep/nested/route and /some, /deep, and /nested have titles, nested's will be chosen.
@@ -30,7 +37,7 @@ router.beforeResolve((to, from, next) => {
 
   // Remove any stale meta tags from the document using the key attribute we set below.
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
-  
+
   let metaTags = ['og:description', 'description'];
 
   // Turn the meta tag definitions into actual elements in the head.
@@ -49,3 +56,8 @@ router.beforeResolve((to, from, next) => {
 
   next();
 });
+
+router.afterEach((to, from) => {
+  // Complete the animation of the route progress bar.
+  NProgress.done()
+})

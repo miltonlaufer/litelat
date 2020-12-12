@@ -6,8 +6,6 @@
 
 $input = file_get_contents("obrasraw.txt");
 
-//echo $input;
-
 $columnas = [
   'titulo',
   'autor',

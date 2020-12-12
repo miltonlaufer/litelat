@@ -85,6 +85,7 @@ export default {
   },
   created() {
     window.previousPage = null;
+    window.creaMetaTags(this.$route);
   },
   mounted() {
     this.routeChanged(this.$route.name);

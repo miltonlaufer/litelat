@@ -19,6 +19,34 @@ obras.install = function(){
 Vue.use(obras);
 // Fin info de obras
 
+/**
+ * Helper para crear los metatags
+ * @param to
+ */
+window.creaMetaTags = function (to){
+  const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+
+  // If a route with a title was found, set the document (page) title to that value.
+  if (nearestWithTitle) document.title = nearestWithTitle.meta.title + ' | Antología Litelat #1';
+
+  // Remove any stale meta tags from the document using the key attribute we set below.
+  Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
+
+  let metaTags = ['og:description', 'description'];
+
+  // Turn the meta tag definitions into actual elements in the head.
+  metaTags.map(tagName => {
+    const tag = document.createElement('meta');
+    tag.setAttribute(tagName, nearestWithTitle.meta.content);
+    // We use this to track which meta tags we create, so we don't interfere with other ones.
+    tag.setAttribute('data-vue-router-controlled', '');
+
+    return tag;
+  })
+    // Add the meta tags to the document head.
+    .forEach(tag => document.head.appendChild(tag));
+}
+// Fin helper para crear metatags
 
 Vue.use(Router);
 const router = new Router(routes);
@@ -46,31 +74,7 @@ router.beforeEach((to, from, next) => {
     window.previousPage = from.name;
   }
 
-  // This goes through the matched routes from last to first, finding the closest route with a title.
-  // eg. if we have /some/deep/nested/route and /some, /deep, and /nested have titles, nested's will be chosen.
-  const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
-
-  // If a route with a title was found, set the document (page) title to that value.
-  if (nearestWithTitle) document.title = nearestWithTitle.meta.title + ' | Antología Litelat #1';
-
-  // Remove any stale meta tags from the document using the key attribute we set below.
-  Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
-
-  let metaTags = ['og:description', 'description'];
-
-  // Turn the meta tag definitions into actual elements in the head.
-  metaTags.map(tagName => {
-    const tag = document.createElement('meta');
-    tag.setAttribute(tagName, nearestWithTitle.meta.content);
-
-    console.log('crea ', tagName, nearestWithTitle.meta.content);
-    // We use this to track which meta tags we create, so we don't interfere with other ones.
-    tag.setAttribute('data-vue-router-controlled', '');
-
-    return tag;
-  })
-    // Add the meta tags to the document head.
-    .forEach(tag => document.head.appendChild(tag));
+  creaMetaTags(to);
 
   next();
 });
@@ -79,3 +83,4 @@ router.afterEach((to, from) => {
   // Complete the animation of the route progress bar.
   NProgress.done()
 })
+

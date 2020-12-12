@@ -11,7 +11,7 @@ module.exports = {
     filename: 'build.js'
   },
   optimization: {
-    minimize: false //Update this to true or false
+    minimize: true //Update this to true or false
   },
   plugins: [
     new CopyPlugin({

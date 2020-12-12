@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 obra-imagen">
         <component :is="getFirstLink()?'a':'span'" :href="getFirstLink() || ''" target="_blank"
                    :title="getFirstLink()?'Ver obra':''">
           <img class="image w-100"

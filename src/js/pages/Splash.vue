@@ -3,7 +3,7 @@
     <div class="eyes-grid home">
       <div class="eye"><a href="#"></a>
         <div class="eye-shape">
-          <div class="content" style="background-image: url(https://hacks.mozilla.org/files/2017/06/omega.jpg);">
+          <div class="content" style="background-image: url(dist/images/obras/joseaburto-paranoicoarcoiris-2.png);">
             <h2 class="title">Categorías</h2>
           </div>
         </div>
@@ -11,7 +11,7 @@
       <div class="eye"><a href="#"></a>
         <div class="eye-shape">
           <div class="content"
-               style="background-image: url(https://images.unsplash.com/photo-1593145134471-e91fe115022e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;w=1000&amp;q=80);">
+               style="background-image: url(dist/images/obras/miltonlaufer-codigos-2.png);">
             <h2 class="title">Acerca De</h2>
           </div>
         </div>
@@ -19,7 +19,7 @@
       <div class="eye"><a href="autor.html"></a>
         <div class="eye-shape">
           <div class="content"
-               style="background-image: url(https://images.unsplash.com/photo-1593094588728-5090e1f1b115?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;w=1000&amp;q=80);">
+               style="background-image: url(dist/images/obras/ladislaopablogyori-poesiavirtual-2.png);">
             <h2 class="title">Autor</h2>
           </div>
         </div>
@@ -27,7 +27,7 @@
       <div class="eye"><a href="#"></a>
         <div class="eye-shape">
           <div class="content"
-               style="background-image: url(https://images.unsplash.com/photo-1593105293524-123b7e48249d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;w=1000&amp;q=80);">
+               style="background-image: url(dist/images/obras/eduardokac-nao-2.png);">
             <h2 class="title">Año</h2>
           </div>
         </div>
@@ -38,7 +38,7 @@
           <router-link
             :to="{ name: 'obras'}"></router-link>
           <div class="content"
-               :style="'background-image: url(https://ip-poetry.findelmundo.com.ar/grafica/01.jpg);'">
+               :style="'background-image: url(dist/images/obras/ip-poetry-gustavo-romano.jpg);'">
             <h2 class="title">Obras</h2>
           </div>
 
@@ -48,7 +48,7 @@
       <div class="eye"><a href="obras.html"></a>
         <div class="eye-shape">
           <div class="content"
-               style="background-image: url(https://images.unsplash.com/photo-1586573561341-91205527a9dd?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;w=1000&amp;q=80);">
+               style="background-image: url(dist/images/obras/doctorovich-aswtz-2.png);">
             <h2 class="title">Descubrir</h2>
           </div>
         </div>
@@ -56,7 +56,7 @@
       <div class="eye"><a href="#"></a>
         <div class="eye-shape">
           <div class="content"
-               style="background-image: url(https://images.unsplash.com/photo-1592915890225-401b284bd21d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;w=1000&amp;q=80);">
+               style="background-image: url(dist/images/obras/eugeniotisselli-latiraniadecodigo-2.png);">
             <h2 class="title">País</h2>
           </div>
         </div>

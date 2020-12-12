@@ -5,11 +5,10 @@
         <router-link
           class="navbar-brand"
           :to="{ name: 'splash'}"></router-link>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button v-on:click="mobileMenuCollapsed=!mobileMenuCollapsed" :class="mobileMenuCollapsed?'':'open'"
+                class="navbar-toggler navbar-toggler-right" type="button" aria-label="Toggle navigation">
           <span></span><span></span><span></span><span></span></button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse" :class="mobileMenuCollapsed?'':'show'" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <router-link
@@ -77,7 +76,8 @@ export default {
   data() {
     return {
       showMenu: false,
-      obraId: null
+      obraId: null,
+      mobileMenuCollapsed: true
     }
   },
   beforeCreate() {

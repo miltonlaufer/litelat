@@ -17,13 +17,12 @@
 </template>
 
 <script>
-import obrasData from '../../data/obras.json'
 
 export default {
   name: "Obras.vue",
   data() {
     return {
-      obras: obrasData["obras"],
+      obras: this.$obras.lista,
     }
   },
   mounted() {
@@ -32,6 +31,13 @@ export default {
       this.eyes();
       window.addEventListener('resize', this.eyes);
     });
+
+    // Workaround for when the page is accessed directly
+    if (!window.previousPage) {
+      setTimeout(() => {
+        this.eyes();
+      }, 1000);
+    }
   },
   methods: {
     eyes() {

@@ -53,15 +53,9 @@
 </template>
 
 <script>
-import obrasData from '../../data/obras.json'
 
 export default {
   name: "Obras.vue",
-  data() {
-    return {
-      obras: obrasData["obras"],
-    }
-  },
   created() {
     document.title = this.obra.titulo + ' | ' + document.title;
   },
@@ -94,7 +88,7 @@ export default {
   },
   computed: {
     obra() {
-      return this.obras[this.$route.params.id];
+      return this.$obras.lista[this.$route.params.id];
     }
   }
 }

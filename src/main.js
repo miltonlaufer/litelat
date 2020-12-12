@@ -4,6 +4,21 @@ import Router from 'vue-router';
 import routes from './js/routes';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import obrasData from './data/obras.json'
+
+// Agrega la info de obras a la instancia de VUE
+const obras = {
+  lista: obrasData['obras']
+}
+
+obras.install = function(){
+  Object.defineProperty(Vue.prototype, '$obras', {
+    get () { return obras }
+  })
+}
+Vue.use(obras);
+// Fin info de obras
+
 
 Vue.use(Router);
 const router = new Router(routes);
@@ -15,17 +30,20 @@ window.litelat = new Vue({
 })
 
 router.beforeResolve((to, from, next) => {
-  // Emite el evento que lee App.vue. Tiene que coordinar el transition delay (en App.vue, css)
-
   if (to.name) {
     // Start the route progress bar.
     NProgress.start()
 
+    // Emite el evento que lee App.vue. Tiene que coordinar el transition delay (en App.vue, css)
     if (to.name !== from.name) {
       setTimeout(() => {
         window.litelat.$children[0].routeChanged(to.name);
       }, 750);
     }
+  }
+
+  if (from.name){
+    window.previousPage = from.name;
   }
 
   // This goes through the matched routes from last to first, finding the closest route with a title.

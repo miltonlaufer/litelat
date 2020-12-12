@@ -1,21 +1,6 @@
 <template>
   <div>
     <div class="eyes-grid home">
-      <router-link
-        :to="{ name: 'obras'}">
-        <div class="eye">
-
-          <div class="eye-shape">
-
-            <div class="content"
-                 :style="'background-image: url(https://ip-poetry.findelmundo.com.ar/grafica/01.jpg);'">
-              <h2 class="title">Obras</h2>
-            </div>
-
-          </div>
-
-        </div>
-      </router-link>
       <div class="eye"><a href="#"></a>
         <div class="eye-shape">
           <div class="content" style="background-image: url(https://hacks.mozilla.org/files/2017/06/omega.jpg);">
@@ -46,6 +31,19 @@
             <h2 class="title">Año</h2>
           </div>
         </div>
+      </div>
+
+      <div class="eye">
+        <div class="eye-shape">
+          <router-link
+            :to="{ name: 'obras'}"></router-link>
+          <div class="content"
+               :style="'background-image: url(https://ip-poetry.findelmundo.com.ar/grafica/01.jpg);'">
+            <h2 class="title">Obras</h2>
+          </div>
+
+        </div>
+
       </div>
       <div class="eye"><a href="obras.html"></a>
         <div class="eye-shape">

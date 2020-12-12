@@ -84,9 +84,7 @@ export default {
     NProgress.start();
   },
   created() {
-    this.$on('routeChanged', routeName => {
-
-    });
+    window.previousPage = null;
   },
   mounted() {
     this.routeChanged(this.$route.name);

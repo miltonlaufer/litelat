@@ -9,7 +9,7 @@
 
             <div class="content"
                  :style="'background-image: url(https://ip-poetry.findelmundo.com.ar/grafica/01.jpg);'">
-              <h2 class="title">Obras1</h2>
+              <h2 class="title">Obras</h2>
             </div>
 
           </div>
@@ -19,7 +19,7 @@
       <div class="eye"><a href="#"></a>
         <div class="eye-shape">
           <div class="content" style="background-image: url(https://hacks.mozilla.org/files/2017/06/omega.jpg);">
-            <h2 class="title">Categorías1</h2>
+            <h2 class="title">Categorías</h2>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(https://images.unsplash.com/photo-1593145134471-e91fe115022e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;w=1000&amp;q=80);">
-            <h2 class="title">Acerca De1</h2>
+            <h2 class="title">Acerca De</h2>
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(https://images.unsplash.com/photo-1593094588728-5090e1f1b115?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;w=1000&amp;q=80);">
-            <h2 class="title">Autor2</h2>
+            <h2 class="title">Autor</h2>
           </div>
         </div>
       </div>
@@ -78,11 +78,10 @@
 
 <script>
 export default {
-  created() {
-    document.body.classList.add("home");
-  },
   mounted() {
     this.$parent.$emit('routeChanged', this.$route.name);
+
+    document.body.classList.add("home");
   }
 }
 </script>

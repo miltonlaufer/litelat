@@ -22,7 +22,13 @@
             <li class="nav-item"><a class="nav-link" href="#">País</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Categorías</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Año</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Descubrir</a></li>
+            <li class="nav-item">
+              <router-link
+                active-class="active"
+                class="nav-link"
+                :to="{ name: 'obra' , params: {id: obraId}}"><span @click="calculateId">Descubrir</span>
+              </router-link>
+            </li>
             <li class="nav-item"><a class="nav-link" href="#">Acerca De</a></li>
           </ul>
         </div>
@@ -41,7 +47,7 @@
     <main class="home" role="main">
       <div class="container-fluid">
         <div class="row no-gutters">
-          <div class="col">
+          <div class="col" id="generalWrapper">
             <transition
               name="fade"
               mode="out-in">
@@ -54,7 +60,7 @@
     <footer v-if="showMenu">
       <div class="container-fluid">
         <div class="row">
-          <div class="col text-center">Footer</div>
+          <div class="col text-center">Antología Litelat #1</div>
         </div>
       </div>
     </footer>
@@ -62,24 +68,50 @@
 </template>
 
 <script>
-  export default {
-    name: 'app',
-    data() {
-      return {
-        showMenu: false
-      }
-    },
-    created() {
-      this.$on('routeChanged', routeName => {
-        this.showMenu = routeName !== 'splash';
-      });
-    },
-    methods: {},
-    computed: {
+
+import obrasData from './data/obras.json';
+
+export default {
+  name: 'app',
+  data() {
+    return {
+      showMenu: false,
+      obraId: null
     }
-  }
+  },
+  created() {
+    this.$on('routeChanged', routeName => {
+      this.showMenu = routeName !== 'splash';
+      document.body.classList.remove(...document.body.classList);
+      document.getElementById('generalWrapper').classList
+        .remove(...document.getElementById('generalWrapper').classList);
+      document.getElementById('generalWrapper').classList.add('col');
+      this.calculateId();
+    });
+  },
+  mounted() {
+    this.calculateId();
+  },
+  methods: {
+    calculateId() {
+      console.log('calcula id');
+      this.obraId = Math.ceil(Math.random() * Object.keys(obrasData['obras']).length);
+    }
+  },
+  computed: {}
+}
 </script>
 
 <style lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: .75s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
 
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
 </style>

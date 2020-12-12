@@ -1,7 +1,7 @@
-//import pages from './pages.js';
-
 import splash from './pages/Splash.vue';
 import obras from './pages/Obras.vue';
+import obra from './pages/Obra.vue';
+
 
 const myRoutes = {
   splash: {
@@ -11,6 +11,10 @@ const myRoutes = {
   obras: {
     server: '/obras',
     local: 'index.html?l=obras'
+  },
+  obra: {
+    server: '/obra-:id',
+    local: 'index.html?l=obra&id=:id'
   },
 };
 
@@ -35,6 +39,14 @@ export default {
       }
     },
     {
+      path: filePath + myRoutes['obra'][myProtocol],
+      component: obra,
+      name: 'obra',
+      meta: {
+        title: 'Obra'
+      }
+    },
+    {
       path: filePath + myRoutes['splash'][myProtocol],
       component: splash,
       name: 'splash',
@@ -42,6 +54,6 @@ export default {
         title: 'Splash'
       }
     },
-    { path: '*', component: splash}
+    {path: '*', component: splash}
   ]
 }

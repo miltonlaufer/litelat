@@ -20,6 +20,18 @@ module.exports = {
           from: path.resolve(__dirname, './src/images/*.png'),
           to: "images/[name].[ext]",
         },
+        {
+          from: path.resolve(__dirname, './src/images/obras/*.png'),
+          to: "images/obras/[name].[ext]",
+        },
+        {
+          from: path.resolve(__dirname, './src/images/obras/*.jpg'),
+          to: "images/obras/[name].[ext]",
+        },
+        {
+          from: path.resolve(__dirname, './src/descargables/*.zip'),
+          to: "descargables/[name].[ext]",
+        },
       ],
     }),
   ],
@@ -88,7 +100,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    extensions: ['*', '.js', '.vue', '.json', '.zip']
   },
   devServer: {
     historyApiFallback: true,

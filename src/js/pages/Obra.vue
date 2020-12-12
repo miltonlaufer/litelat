@@ -2,7 +2,8 @@
   <div>
     <div class="row">
       <div class="col-md-6">
-        <component :is="getFirstLink()?'a':'span'" :href="getFirstLink() || ''" target="_blank">
+        <component :is="getFirstLink()?'a':'span'" :href="getFirstLink() || ''" target="_blank"
+                   :title="getFirstLink()?'Ver obra':''">
           <img class="image w-100"
                :src="'dist/images/obras/' + obra.captura_grande"></component>
       </div>

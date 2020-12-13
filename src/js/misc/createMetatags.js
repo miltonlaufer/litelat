@@ -2,7 +2,7 @@
  * Helper para crear los metatags
  * @param to
  */
-export default function(to) {
+export default function (to) {
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
 
   // If a route with a title was found, set the document (page) title to that value.
@@ -16,7 +16,9 @@ export default function(to) {
   // Turn the meta tag definitions into actual elements in the head.
   metaTags.map(tagName => {
     const tag = document.createElement('meta');
-    tag.setAttribute(tagName, nearestWithTitle.meta.content);
+    tag.setAttribute('property', tagName);
+    tag.setAttribute('content', nearestWithTitle.meta.content);
+
     // We use this to track which meta tags we create, so we don't interfere with other ones.
     tag.setAttribute('data-vue-router-controlled', '');
 

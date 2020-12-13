@@ -45,11 +45,14 @@
         </div>
 
       </div>
-      <div class="eye"><a href="obras.html"></a>
+      <div class="eye"> <router-link
+        active-class="active"
+        class="nav-link"
+        :to="{ name: 'obra' , params: {id: obraId}}"> </router-link>
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(dist/images/obras/doctorovich-aswtz-2.png);">
-            <h2 class="title">Descubrir</h2>
+              <h2 class="title">Descubrir</h2>
           </div>
         </div>
       </div>
@@ -80,6 +83,11 @@ export default {
     this.$nextTick(() => {
       document.body.classList.add("home");
     });
+  },
+  computed: {
+    obraId: function () {
+      return Math.ceil(Math.random() * Object.keys(this.$obras.lista).length);
+    }
   }
 }
 </script>

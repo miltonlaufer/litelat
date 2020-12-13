@@ -36,7 +36,7 @@ export default {
     if (!window.previousPage) {
       setTimeout(() => {
         this.eyes();
-      }, 1000);
+      }, 3000);
     }
   },
   beforeDestroy() {

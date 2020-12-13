@@ -1,16 +1,21 @@
+/**
+ * Plugin para almacenar la información de las obras
+ * Disponible en todos los componentes a través de this.$obras.lista
+ */
+
 import obrasData from '../../data/obras.json'
 import Vue from 'vue';
 
-const data = {
+const obras = {
   lista: obrasData['obras']
 }
 
-data.install = function () {
+obras.install = function () {
   Object.defineProperty(Vue.prototype, '$obras', {
     get() {
-      return data
+      return obras
     }
   })
 }
 
-export default data;
+export default obras;

@@ -58,8 +58,6 @@ export default {
         elem.classList.remove('odd');
         elem.classList.remove('even');
         elem.classList.add(odd ? 'odd' : 'even');
-        //elem.getElementsByClassName('content')[0].innerText =
-        //  (odd ? 'odd' : 'even') + ' ' + height;
       }
     }
   }

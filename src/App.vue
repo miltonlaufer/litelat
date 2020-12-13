@@ -68,7 +68,6 @@
 
 <script>
 
-import obrasData from './data/obras.json';
 import NProgress from "nprogress";
 
 export default {

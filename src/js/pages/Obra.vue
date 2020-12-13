@@ -1,11 +1,15 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-md-6 obra-imagen">
+
+      <div class="col-md-6">
         <component :is="getFirstLink()?'a':'span'" :href="getFirstLink() || ''" target="_blank"
                    :title="getFirstLink()?'Ver obra':''">
-          <img class="image w-100"
-               :src="'dist/images/obras/' + obra.captura_grande"></component>
+          <div class="obra-imagen">
+            <img class="image w-100"
+                 :src="'dist/images/obras/' + obra.captura_grande">
+          </div>
+        </component>
       </div>
       <div class="col-md-6">
         <h1 class="main-title">{{ obra.titulo }}</h1>
@@ -77,6 +81,7 @@ export default {
       return div.innerHTML;
     },
     getFirstLink() {
+      console.log(this.obra);
       if (this.obra.enlace.length) {
         return this.obra.enlace[0].link;
       } else if (this.obra.descargable) {

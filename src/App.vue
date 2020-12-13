@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     calculateId() {
-      this.obraId = Math.ceil(Math.random() * Object.keys(obrasData['obras']).length);
+      this.obraId = Math.ceil(Math.random() * Object.keys(this.$obras.lista).length);
     },
     routeChanged(routeName) {
       this.showMenu = routeName !== 'splash';

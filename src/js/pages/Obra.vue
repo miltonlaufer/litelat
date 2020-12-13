@@ -61,7 +61,7 @@
 export default {
   name: "Obras.vue",
   created() {
-    document.title = this.obra.titulo + ' | ' + document.title;
+    this.setTitulo();
   },
   mounted() {
     this.$nextTick(() => {
@@ -69,7 +69,15 @@ export default {
       document.getElementById('generalWrapper').classList.add('ficha-wrapper', 'mt-5', 'pt-5');
     });
   },
+  watch: {
+    '$route.params.id': function () {
+      this.setTitulo();
+    }
+  },
   methods: {
+    setTitulo() {
+      document.title = this.obra.titulo + ' | ' + document.title;
+    },
     addLinks(html) {
       let div = document.createElement('div');
       div.innerHTML = html;
@@ -81,7 +89,6 @@ export default {
       return div.innerHTML;
     },
     getFirstLink() {
-      console.log(this.obra);
       if (this.obra.enlace.length) {
         return this.obra.enlace[0].link;
       } else if (this.obra.descargable) {

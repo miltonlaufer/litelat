@@ -14,6 +14,11 @@ Vue.use(Router);
 
 const router = new Router(routes);
 
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'development') {
+  Vue.config.devtools = true;
+}
+
 window.litelat = new Vue({
   el: '#app',
   render: h => h(App),

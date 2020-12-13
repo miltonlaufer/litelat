@@ -104,6 +104,10 @@ body {
 
   h2 {
     transition: .4s;
+
+    @include media-breakpoint-down(xs) {
+      padding: 0 180px;
+    }
   }
 
   &:hover {

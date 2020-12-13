@@ -8,7 +8,11 @@
           </div>
         </div>
       </div>
-      <div class="eye"><a href="#"></a>
+      <div class="eye">
+        <router-link
+          active-class="active"
+          class="nav-link"
+          :to="{ name: 'acerca' }"></router-link>
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(dist/images/obras/miltonlaufer-codigos-2.png);">
@@ -45,14 +49,15 @@
         </div>
 
       </div>
-      <div class="eye"> <router-link
-        active-class="active"
-        class="nav-link"
-        :to="{ name: 'obra' , params: {id: obraId}}"> </router-link>
+      <div class="eye">
+        <router-link
+          active-class="active"
+          class="nav-link"
+          :to="{ name: 'obra' , params: {id: obraId}}"></router-link>
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(dist/images/obras/doctorovich-aswtz-2.png);">
-              <h2 class="title">Descubrir</h2>
+            <h2 class="title">Descubrir</h2>
           </div>
         </div>
       </div>

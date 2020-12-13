@@ -14,7 +14,7 @@
               <router-link
                 active-class="active"
                 class="nav-link"
-                :to="{ name: 'obras'}"><span @click="mobileMenuCollapsed=true;">Obras</span>
+                :to="{ name: 'obras'}">Obras
               </router-link>
             </li>
             <li class="nav-item"><a class="nav-link" href="#">Autor</a></li>
@@ -25,10 +25,16 @@
               <router-link
                 active-class="active"
                 class="nav-link"
-                :to="{ name: 'obra' , params: {id: obraId}}"><span @click="calculateId();mobileMenuCollapsed=true;">Descubrir</span>
+                :to="{ name: 'obra' , params: {id: obraId}}">Descubrir
               </router-link>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Acerca De</a></li>
+            <li class="nav-item">
+              <router-link
+                active-class="active"
+                class="nav-link"
+                :to="{ name: 'acerca' }">Acerca De
+              </router-link>
+            </li>
           </ul>
         </div>
       </nav>
@@ -89,8 +95,15 @@ export default {
   mounted() {
     this.routeChanged(this.$route.name);
     NProgress.done();
+    this.$nextTick(() => {
+      document.querySelectorAll('.nav-item a').forEach(obj => obj.addEventListener('click', this.onMenuClick));
+    });
   },
   methods: {
+    onMenuClick() {
+      this.calculateId();
+      this.mobileMenuCollapsed = true;
+    },
     calculateId() {
       this.obraId = Math.ceil(Math.random() * Object.keys(this.$obras.lista).length);
     },

@@ -4,26 +4,15 @@ import Router from 'vue-router';
 import routes from './js/routes';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import obrasData from './data/obras.json'
+import obras from './js/misc/data.js';
 
-// Agrega la info de obras a la instancia de VUE
-const obras = {
-  lista: obrasData['obras']
-}
-
-obras.install = function(){
-  Object.defineProperty(Vue.prototype, '$obras', {
-    get () { return obras }
-  })
-}
 Vue.use(obras);
-// Fin info de obras
 
 /**
  * Helper para crear los metatags
  * @param to
  */
-window.creaMetaTags = function (to){
+window.creaMetaTags = function (to) {
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
 
   // If a route with a title was found, set the document (page) title to that value.
@@ -70,7 +59,7 @@ router.beforeEach((to, from, next) => {
     }
   }
 
-  if (from.name){
+  if (from.name) {
     window.previousPage = from.name;
   }
 

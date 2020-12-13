@@ -44,6 +44,10 @@ router.beforeEach((to, from, next) => {
 
   creaMetaTags(to);
 
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 500);
+
   next();
 });
 

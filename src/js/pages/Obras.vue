@@ -39,6 +39,9 @@ export default {
       }, 1000);
     }
   },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.eyes);
+  },
   methods: {
     eyes() {
       let elems = document.getElementsByClassName('eye');

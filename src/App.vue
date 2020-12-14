@@ -95,11 +95,17 @@ export default {
   mounted() {
     this.routeChanged(this.$route.name);
     NProgress.done();
-    this.$nextTick(() => {
-      document.querySelectorAll('.nav-item a').forEach(obj => obj.addEventListener('click', this.onMenuClick));
-    });
+
+    if (!window.previousPage) {
+      this.setMenuEvents()
+    }
   },
   methods: {
+    setMenuEvents() {
+      this.$nextTick(() => {
+        document.querySelectorAll('.nav-item a').forEach(obj => obj.addEventListener('click', this.onMenuClick));
+      });
+    },
     onMenuClick() {
       this.calculateId();
       this.mobileMenuCollapsed = true;

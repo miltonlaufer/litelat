@@ -33,6 +33,11 @@ router.beforeEach((to, from, next) => {
     if (to.name !== from.name) {
       setTimeout(() => {
         window.litelat.$children[0].routeChanged(to.name);
+
+        // Como la portada (splash) no tiene menú, los eventos asociados se borran y hay que volver a asignarlos
+        if (from.name === 'splash') {
+          window.litelat.$children[0].setMenuEvents();
+        }
       }, 750);
     }
   }

@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "splash": {
+      "title": "Inicio",
+      "content": "Bienvenidos a la primera antología de la red de Literatura Electrónica Latinoamericana."
+    },
+    "obras": {
+      "title": "Obras",
+      "content": "Listado de obras de la antología."
+    },
+    "obra": {
+      "title": "Obra",
+      "content": "Descripción de la obra"
+    },
+    "acerca": {
+      "title": "Acerca de",
+      "content": "Mensaje del comité editorial"
+    }
+  }
+}

@@ -1,7 +1,16 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
 RewriteRule ^index\.html$ - [L]
+
+# Fake metadata#|Slackbot
+RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|Pinterest|Google.*snippet)|Slackbot
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /fakemetadata.php?path=$1 [NC,L,QSA]
+
+# Normal
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]

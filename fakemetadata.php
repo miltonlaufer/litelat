@@ -71,8 +71,14 @@ function makePage($data)
     $html .= '<p>Categorías: ' . implode(", ", $obra['categorias']) . '</p>' . PHP_EOL;
     $html .= "<p>{$obra['ano']}</p>" . PHP_EOL;
 
-    foreach ($obra['enlace'] as $link) {
-      $html .= "<a href='{$link['link']}'>{$link['text']}</a>" . PHP_EOL;
+    if (is_array($obra['enlace'])) {
+      foreach ($obra['enlace'] as $link) {
+        $html .= "<a href='{$link['link']}'>{$link['text']}</a>" . PHP_EOL;
+      }
+    }
+
+    if ($obra['descargable']) {
+      $html .= "Descargable: <a href='/dist/descargables/{$obra['descargable']}'>{$obra['descargable']}</a>" . PHP_EOL;
     }
   }
 

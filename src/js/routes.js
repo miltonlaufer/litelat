@@ -3,7 +3,7 @@ import obras from './pages/Obras.vue';
 import obra from './pages/Obra.vue';
 import acerca from './pages/Acerca.vue';
 import autores from './pages/Autores.vue';
-
+import autor from './pages/Autor.vue';
 import metadata from '../data/metadata/metadata.json';
 
 const myRoutes = {
@@ -26,6 +26,10 @@ const myRoutes = {
   autores: {
     server: '/autores',
     local: 'index.html?l=autores'
+  },
+  autor: {
+    server: '/autor-:id',
+    local: 'index.html?l=autor&id=:id'
   },
 };
 
@@ -60,6 +64,10 @@ let routes = {
     {
       component: autores,
       name: 'autores',
+    },
+    {
+      component: autor,
+      name: 'autor',
     },
     {path: '*', component: splash}
   ]

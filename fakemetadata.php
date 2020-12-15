@@ -8,22 +8,33 @@ if (!$path) {
 }
 
 $metadata = json_decode(file_get_contents('src/data/metadata/metadata.json'), true);
-$obra = null;
+$dataInterior = null;
 $sanitizedPath = $path;
 
-if (strstr($path, 'obra-')) {
+if (strstr($path, '-')) {
+  $json = file_get_contents('src/data/obras.json');
+  $obras = json_decode($json, true);
   $tmpArray = explode('-', $path);
   $sanitizedPath = $tmpArray[0];
   $id = $tmpArray[1];
-  $json = file_get_contents('src/data/obras.json');
-  $obras = json_decode($json, true);
-  $obra = $obras['obras'][$id];
+
+  if (strstr($path, 'obra')) {
+    $dataInterior = $obras['obras'][$id];
+  } elseif (strstr($path, 'autor')) {
+    foreach ($obras['obras'] as $obra) {
+      if (str_replace(' ', '_', "{$obra['nombre']} {$obra['apellido']}") === $id) {
+        $dataInterior = $obra;
+        break;
+      }
+    }
+  }
 }
 
 $data = [
-  'meta' => $metadata['metadata'][$sanitizedPath],
-  'obra' => $obra,
-  'path' => $path
+  'meta'     => $metadata['metadata'][$sanitizedPath],
+  'internal' => $dataInterior,
+  'path'     => $path,
+  'type'     => $sanitizedPath
 ];
 
 /*
@@ -43,10 +54,11 @@ makePage($data);
 function makePage($data)
 {
   $title = $data['meta']['title'] . ' | Antología Litelat #1';
-  $obra = $data['obra'];
+  $interior = $data['internal'];
 
-  if ($obra) {
-    $title = $obra['titulo'] . ' | ' . $title;
+  if ($interior) {
+    $title = ($data['type'] === 'obra' ? $interior['titulo'] : "{$interior['nombre']} {$interior['apellido']}") .
+      ' | ' . $title;
   }
 
   $html = '<!doctype html>' . PHP_EOL;
@@ -62,23 +74,28 @@ function makePage($data)
   $html .= '</head>' . PHP_EOL;
   $html .= '<body>' . PHP_EOL;
 
-  if ($obra) {
-    $html .= "<h1>{$obra['titulo']}</h1>" . PHP_EOL;
-    $html .= "<h2>Autor: {$obra['autor']} ({$obra['nombre']}  {$obra['apellido']}) </h2>" . PHP_EOL;
-    $html .= "<p>{$obra['comentario']}</p>" . PHP_EOL;
-    $html .= '<p>Idiomas: ' . implode(", ", $obra['idioma']) . '</p>' . PHP_EOL;
-    $html .= '<p>Tecnologías: ' . implode(", ", $obra['tecnologias']) . '</p>' . PHP_EOL;
-    $html .= '<p>Categorías: ' . implode(", ", $obra['categorias']) . '</p>' . PHP_EOL;
-    $html .= "<p>{$obra['ano']}</p>" . PHP_EOL;
+  if ($interior) {
+    if ($data['type'] === 'obra') {
+      $html .= "<h1>{$interior['titulo']}</h1>" . PHP_EOL;
+      $html .= "<h2>Autor: {$interior['autor']} ({$interior['nombre']}  {$interior['apellido']}) </h2>" . PHP_EOL;
+      $html .= "<p>{$interior['comentario']}</p>" . PHP_EOL;
+      $html .= '<p>Idiomas: ' . implode(", ", $interior['idioma']) . '</p>' . PHP_EOL;
+      $html .= '<p>Tecnologías: ' . implode(", ", $interior['tecnologias']) . '</p>' . PHP_EOL;
+      $html .= '<p>Categorías: ' . implode(", ", $interior['categorias']) . '</p>' . PHP_EOL;
+      $html .= "<p>{$interior['ano']}</p>" . PHP_EOL;
 
-    if (is_array($obra['enlace'])) {
-      foreach ($obra['enlace'] as $link) {
-        $html .= "<a href='{$link['link']}'>{$link['text']}</a>" . PHP_EOL;
+      if (is_array($interior['enlace'])) {
+        foreach ($interior['enlace'] as $link) {
+          $html .= "<a href='{$link['link']}'>{$link['text']}</a>" . PHP_EOL;
+        }
       }
-    }
 
-    if ($obra['descargable']) {
-      $html .= "Descargable: <a href='/dist/descargables/{$obra['descargable']}'>{$obra['descargable']}</a>" . PHP_EOL;
+      if ($interior['descargable']) {
+        $html .= "Descargable: <a href='/dist/descargables/{$interior['descargable']}'>{$interior['descargable']}</a>" . PHP_EOL;
+      }
+    } else {
+      $html .= "<h1>Autor: {$interior['autor']} ({$interior['nombre']}  {$interior['apellido']}) </h1>" . PHP_EOL;
+      $html .= "<p>{$interior['biografia']}</p>" . PHP_EOL;
     }
   }
 

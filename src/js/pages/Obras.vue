@@ -5,8 +5,6 @@
         <div class="content"
              :style="'background-image: url(../dist/images/obras/' + obra.captura_chica + ');'">
           <router-link
-            active-class="active"
-            class="nav-link"
             :to="{ name: 'obra' , params: {id: index}}">
             <h2 class="title">{{ obra.titulo }}</h2>
           </router-link>

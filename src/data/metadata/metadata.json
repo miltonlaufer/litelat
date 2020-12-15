@@ -19,6 +19,10 @@
     "autores": {
       "title": "Autores",
       "content": "Listado de autores de la antología"
+    },
+    "autor": {
+      "title": "Autor",
+      "content": "Biografía del autor"
     }
   }
 }

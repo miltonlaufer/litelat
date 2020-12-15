@@ -17,7 +17,7 @@
         <div>
           <h2 class="subtitle" v-if="obra.enlace.length">Link{{ obra.enlace.length > 1 ? 's' : '' }} a la obra</h2>
 
-          <template v-for="enlace in obra.enlace"><a class="link" :href="enlace.link" target="_blank">{{
+          <template v-for="enlace in obra.enlace"><a :href="enlace.link" target="_blank">{{
               enlace.text
             }}</a><br>
           </template>
@@ -36,7 +36,11 @@
       </div>
       <div class="col-md-6 detalle-obra">
         <h2 class="subtitle">Autoría</h2>
-        <p>{{ obra.autor ? obra.autor : obra.nombre + ' ' + obra.apellido }}</p><a class="link" href="#">Ver más</a>
+        <p>{{ obra.autor ? obra.autor : obra.nombre + ' ' + obra.apellido }}</p>
+        <router-link
+          class="link"
+          :to="{ name: 'autor' , params: {id: autorId}}">Ver más sobre {{ obra.nombre }} {{ obra.apellido }}
+        </router-link>
         <h2 class="subtitle">Metadata</h2>
         <p class="mb-0"><strong>Año:</strong> {{ obra.ano }}</p>
         <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
@@ -47,7 +51,8 @@
           }}</span></p>
         <div v-if="obra.descargable">
           <h2 class="subtitle">Descarga</h2>
-          <p class="mb-1"><a class="link text-left" :href="'descargables/' + obra.descargable">Obra Descargable</a></p>
+          <p class="mb-1"><a class="link text-left" :href="'descargables/' + obra.descargable">Obra Descargable</a>
+          </p>
         </div>
         <!-- <p class="mb-0"><strong>Descripción:</strong> Archivos</p>
          <p class="mb-0"><strong>Requerimientos:</strong> Java</p>-->
@@ -84,6 +89,7 @@ export default {
 
       for (let myA of div.getElementsByTagName('a')) {
         myA.classList.add('link');
+        myA.setAttribute('target', '_blank');
       }
 
       return div.innerHTML;
@@ -101,6 +107,9 @@ export default {
   computed: {
     obra() {
       return this.$obras.lista[this.$route.params.id];
+    },
+    autorId() {
+      return `${this.obra.nombre}_${this.obra.apellido}`.replaceAll(' ', '_')
     }
   }
 }

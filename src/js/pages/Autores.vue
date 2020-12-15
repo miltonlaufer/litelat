@@ -38,44 +38,14 @@ export default {
   data() {
     return {
       obras: this.$obras.lista,
-      autores: {},
-      iniciales: []
+      autores: this.$obras.autores,
+      iniciales: this.$obras.iniciales
     }
   },
   mounted() {
     this.$nextTick(() => {
       document.body.classList.add("autor");
     });
-
-    let autoresProcesados = [];
-
-    for (let index in this.obras) {
-      let obra = this.obras[index];
-      let horribleID = `${obra.nombre} ${obra.apellido}`.replace(' ', '_');
-
-      if (!autoresProcesados.includes(horribleID)) {
-        autoresProcesados.push(horribleID);
-        let inicial = obra.apellido[0].toUpperCase();
-        this.iniciales.push(inicial);
-
-        if (!this.autores.hasOwnProperty(inicial)) {
-          this.autores[inicial] = [];
-        }
-
-        this.autores[inicial].push({
-          nombre: obra.nombre,
-          apellido: obra.apellido,
-          imagen: obra.captura_grande,
-          id: horribleID
-        });
-      }
-    }
-
-    this.iniciales = [...new Set(this.iniciales)].sort();
-
-    for (let inicial of this.iniciales) {
-      this.autores[inicial].sort((a, b) => (a.apellido > b.apellido) ? 1 : ((b.apellido > a.apellido) ? -1 : 0));
-    }
 
     this.$nextTick(() => {
         Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {

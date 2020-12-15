@@ -15,6 +15,10 @@
     "acerca": {
       "title": "Acerca de",
       "content": "Mensaje del comité editorial"
+    },
+    "autores": {
+      "title": "Autores",
+      "content": "Listado de autores de la antología"
     }
   }
 }

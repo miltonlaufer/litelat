@@ -2,6 +2,7 @@ import splash from './pages/Splash.vue';
 import obras from './pages/Obras.vue';
 import obra from './pages/Obra.vue';
 import acerca from './pages/Acerca.vue';
+import autores from './pages/Autores.vue';
 
 import metadata from '../data/metadata/metadata.json';
 
@@ -22,6 +23,10 @@ const myRoutes = {
     server: '/acerca',
     local: 'index.html?l=acerca'
   },
+  autores: {
+    server: '/autores',
+    local: 'index.html?l=autores'
+  },
 };
 
 let myProtocol = 'server';
@@ -39,7 +44,6 @@ let routes = {
     {
       component: obras,
       name: 'obras',
-      meta: {}
     },
     {
       component: obra,
@@ -52,6 +56,10 @@ let routes = {
     {
       component: acerca,
       name: 'acerca',
+    },
+    {
+      component: autores,
+      name: 'autores',
     },
     {path: '*', component: splash}
   ]

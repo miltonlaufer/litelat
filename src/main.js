@@ -42,15 +42,17 @@ router.beforeEach((to, from, next) => {
     }
   }
 
+  if (window.previousPage) {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500);
+  }
+
   if (from.name) {
     window.previousPage = from.name;
   }
 
   creaMetaTags(to);
-
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 500);
 
   next();
 });

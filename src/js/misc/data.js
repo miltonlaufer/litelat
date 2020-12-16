@@ -17,7 +17,7 @@ let autoresProcesados = [];
 
 for (let index in obras.lista) {
   let obra = obras.lista[index];
-  let horribleID = `${obra.nombre}_${obra.apellido}`.replaceAll(' ', '_');
+  let horribleID = `${obra.nombre}_${obra.apellido}`.replaceAll(/[\. ]/gi, '_');
 
   if (!autoresProcesados.includes(horribleID)) {
     autoresProcesados.push(horribleID);

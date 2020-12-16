@@ -22,7 +22,7 @@ if (strstr($path, '-')) {
     $dataInterior = $obras['obras'][$id];
   } elseif (strstr($path, 'autor')) {
     foreach ($obras['obras'] as $obra) {
-      if (str_replace(' ', '_', "{$obra['nombre']} {$obra['apellido']}") === $id) {
+      if (str_replace([' ', '.'], '_', "{$obra['nombre']} {$obra['apellido']}") === $id) {
         $dataInterior = $obra;
         break;
       }

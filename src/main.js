@@ -12,6 +12,15 @@ window.creaMetaTags = creaMetaTags;
 Vue.use(obras);
 Vue.use(Router);
 
+Vue.mixin({
+  beforeCreate() {
+    window.loading = true;
+  },
+  mounted() {
+    window.loading = false;
+  }
+});
+
 const router = new Router(routes);
 
 if (process.env.NODE_ENV === 'development') {
@@ -31,8 +40,12 @@ router.beforeEach((to, from, next) => {
 
     // Emite el evento que lee App.vue. Tiene que coordinar el transition delay (en App.vue, css)
     if (to.name !== from.name) {
-      setTimeout(() => {
-        window.litelat.$children[0].routeChanged(to.name);
+      clearTimeout(window.changePageTimeut);
+
+      window.changePageTimeut = setTimeout(() => {
+        if (window.loading) {
+          window.litelat.$children[0].routeChanged(to.name);
+        }
 
         // Como la portada (splash) no tiene menú, los eventos asociados se borran y hay que volver a asignarlos
         if (from.name === 'splash') {

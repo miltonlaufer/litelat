@@ -12,23 +12,6 @@ window.creaMetaTags = creaMetaTags;
 Vue.use(obras);
 Vue.use(Router);
 
-Vue.mixin({
-  beforeCreate() {
-    window.loading = true;
-  },
-  mounted() {
-    window.loading = false;
-    let mainObj =  document.getElementById('main');
-
-    mainObj.classList.remove(...mainObj.classList);
-
-    if (this.$route.name === 'splash') {
-      mainObj.classList.add('home');
-    }
-
-  }
-});
-
 const router = new Router(routes);
 
 if (process.env.NODE_ENV === 'development') {
@@ -51,15 +34,13 @@ router.beforeEach((to, from, next) => {
       clearTimeout(window.changePageTimeut);
 
       window.changePageTimeut = setTimeout(() => {
-        if (window.loading) {
-          window.litelat.$children[0].routeChanged(to.name);
-        }
+        window.litelat.$children[0].routeChanged(to.name);
 
         // Como la portada (splash) no tiene menú, los eventos asociados se borran y hay que volver a asignarlos
         if (from.name === 'splash') {
           window.litelat.$children[0].setMenuEvents();
         }
-      }, 750);
+      }, 760);
     }
   }
 

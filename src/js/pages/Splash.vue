@@ -91,7 +91,10 @@
 </template>
 
 <script>
+import mixins from "../misc/mixins";
+
 export default {
+  mixins: [mixins],
   mounted() {
     this.$nextTick(() => {
       document.body.classList.add("home");

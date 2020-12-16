@@ -38,9 +38,11 @@
 </template>
 
 <script>
+import mixins from "../misc/mixins";
 
 export default {
   name: "Autores.vue",
+  mixins: [mixins],
   data() {
     return {
       autores: this.$obras.autoresPorLetra,

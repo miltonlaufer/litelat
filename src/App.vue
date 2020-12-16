@@ -139,10 +139,6 @@ export default {
     },
     routeChanged(routeName) {
       this.showMenu = routeName !== 'splash';
-      document.body.classList.remove(...document.body.classList);
-      document.getElementById('generalWrapper').classList
-        .remove(...document.getElementById('generalWrapper').classList);
-      document.getElementById('generalWrapper').classList.add('col');
       this.calculateId();
     }
   },

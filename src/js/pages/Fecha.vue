@@ -43,9 +43,11 @@
 </template>
 
 <script>
+import mixins from "../misc/mixins";
 
 export default {
   name: "Fecha.vue",
+  mixins: [mixins],
   data() {
     return {
       obras: this.$obras.lista,

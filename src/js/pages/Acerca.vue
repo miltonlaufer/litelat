@@ -55,9 +55,11 @@
 </template>
 
 <script>
+import mixins from "../misc/mixins";
 
 export default {
   name: "Acerca.vue",
+  mixins: [mixins],
   mounted() {
     this.$nextTick(() => {
       document.body.classList.add("ficha");

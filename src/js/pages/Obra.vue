@@ -62,9 +62,11 @@
 </template>
 
 <script>
+import mixins from "../misc/mixins";
 
 export default {
   name: "Obras.vue",
+  mixins: [mixins],
   created() {
     this.setTitulo();
   },

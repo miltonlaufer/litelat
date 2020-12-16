@@ -13,20 +13,22 @@
 </template>
 
 <script>
+import mixins from "../misc/mixins";
 
 export default {
   name: "Autor.vue",
+  mixins: [mixins],
   mounted() {
     this.$nextTick(() => {
       document.body.classList.add("ficha");
       document.getElementById('generalWrapper').classList.add('ficha-wrapper');
     });
-},
+  },
   computed: {
     autor() {
       return this.$obras.autores[this.$route.params.id]
     },
-    bio(){
+    bio() {
       let div = document.createElement('div');
       div.innerHTML = this.autor.biografia;
 

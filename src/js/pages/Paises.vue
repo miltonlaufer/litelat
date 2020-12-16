@@ -43,9 +43,11 @@
 </template>
 
 <script>
+import mixins from "../misc/mixins";
 
 export default {
   name: "Paises.vue",
+  mixins: [mixins],
   data() {
     return {
       obras: this.$obras.lista,

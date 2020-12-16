@@ -73,7 +73,7 @@
         </div>
       </nav>
     </header>
-    <main class="home" role="main">
+    <main class="home" id="main" role="main">
       <div class="container-fluid">
         <div class="row no-gutters">
           <div class="col" id="generalWrapper">

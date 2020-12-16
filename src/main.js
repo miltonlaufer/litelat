@@ -18,6 +18,14 @@ Vue.mixin({
   },
   mounted() {
     window.loading = false;
+    let mainObj =  document.getElementById('main');
+
+    mainObj.classList.remove(...mainObj.classList);
+
+    if (this.$route.name === 'splash') {
+      mainObj.classList.add('home');
+    }
+
   }
 });
 

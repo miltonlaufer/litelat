@@ -7,6 +7,14 @@
     }
   }
 
+  .volver-wrapper {
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+    z-index: 9999;
+    right: 0;
+  }
+
   .eye {
     &:hover {
       transform: scale(1.2);

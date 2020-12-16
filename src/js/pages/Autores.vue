@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div class="volver-wrapper mb-5"><a class="volver">⇡ subir</a></div>
+        <div class="volver-wrapper"><a class="volver">⇡ subir</a></div>
       </div>
     </div>
   </div>

@@ -104,7 +104,12 @@ for (let inicial of obras.iniciales) {
   obras.autoresPorLetra[inicial].sort((a, b) => (a.apellido > b.apellido) ? 1 : ((b.apellido > a.apellido) ? -1 : 0));
 }
 
-const ordenPorTitulo = (a, b) => (a.titulo > b.titulo) ? 1 : ((b.titulo > a.titulo) ? -1 : 0);
+const ordenPorTitulo = (a, b) => {
+  let A = a.titulo.toUpperCase();
+  let B = b.titulo.toUpperCase();
+
+  return (A < B) ? -1 : (A > B) ? 1 : 0;
+}
 
 for (let ano of obras.anos) {
   obras.obrasPorAno[ano].sort(ordenPorTitulo);

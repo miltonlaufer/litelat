@@ -88,7 +88,6 @@ export default {
       div.innerHTML = html;
 
       for (let myA of div.getElementsByTagName('a')) {
-        myA.classList.add('link');
         myA.setAttribute('target', '_blank');
       }
 

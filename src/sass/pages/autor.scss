@@ -7,7 +7,6 @@
     }
   }
 
-
   .eye {
     &:hover {
       transform: scale(1.2);
@@ -17,8 +16,7 @@
   .alfabeto {
     text-align: center;
     max-width: 95%;
-    margin-right: auto;
-    margin: 0 auto 40px;
+    margin: 0 auto 40px auto;
     line-height: 2;
     font-size: 2rem;
 
@@ -81,8 +79,16 @@
     clear: both;
     margin-bottom: 45px;
 
-    a:hover h3 {
-      text-decoration: underline;
+    a {
+      h3, h4 {
+        max-width: 500px;
+      }
+
+      &:hover {
+        h3, h4 {
+          text-decoration: underline;
+        }
+      }
     }
   }
 

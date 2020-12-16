@@ -26,7 +26,13 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="#">País</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Categorías</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Año</a></li>
+            <li class="nav-item">
+              <router-link
+                active-class="active"
+                class="nav-link"
+                :to="{ name: 'fecha'}">Año
+              </router-link>
+            </li>
             <li class="nav-item">
               <router-link
                 active-class="active"

@@ -30,7 +30,9 @@
           </div>
         </div>
       </div>
-      <div class="eye"><a href="#"></a>
+      <div class="eye">
+        <router-link
+          :to="{ name: 'fecha'}"></router-link>
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(dist/images/obras/eduardokac-nao-2.png);">

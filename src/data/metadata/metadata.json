@@ -23,6 +23,10 @@
     "autor": {
       "title": "Autor",
       "content": "Biografía del autor"
+    },
+    "fecha": {
+      "title": "Años",
+      "content": "Listado de obras por año"
     }
   }
 }

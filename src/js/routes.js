@@ -4,6 +4,7 @@ import obra from './pages/Obra.vue';
 import acerca from './pages/Acerca.vue';
 import autores from './pages/Autores.vue';
 import autor from './pages/Autor.vue';
+import fecha from './pages/Fecha.vue';
 import metadata from '../data/metadata/metadata.json';
 
 const myRoutes = {
@@ -30,6 +31,10 @@ const myRoutes = {
   autor: {
     server: '/autor-:id',
     local: 'index.html?l=autor&id=:id'
+  },
+  fecha: {
+    server: '/fecha',
+    local: 'index.html?l=fecha'
   },
 };
 
@@ -68,6 +73,10 @@ let routes = {
     {
       component: autor,
       name: 'autor',
+    },
+    {
+      component: fecha,
+      name: 'fecha',
     },
     {path: '*', component: splash}
   ]

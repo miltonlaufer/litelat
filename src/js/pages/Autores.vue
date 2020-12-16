@@ -65,7 +65,7 @@ export default {
             let position = document.getElementById(inicial).getBoundingClientRect().top;
 
             setTimeout(() => {
-                window.scrollTo(0, position + window.scrollY - (window.innerHeight / 3))
+                window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))
               }, 1
             );
           });

@@ -31,4 +31,4 @@ npm run build
 ```
 
 
-This is a sample of VUE.js SPA (Single Page Application) Project. Feel free to use it and modify it.
+This is an example of a VUE.js SPA (Single Page Application) Project. Feel free to use it and modify it.

@@ -3,7 +3,7 @@
     <div class="row mt-5 pt-5">
       <div class="col text-center">
         <ul class="alfabeto">
-          <li v-for="inicial in iniciales"><a class="letras-links" :href="'#' + inicial">{{ inicial }}</a></li>
+          <li v-for="inicial in iniciales"><a class="letras-links" :rel="inicial">{{ inicial }}</a></li>
         </ul>
       </div>
     </div>
@@ -53,10 +53,16 @@ export default {
 
     this.$nextTick(() => {
         Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {
-          obj.addEventListener('click', () => {
-            console.log('click');
+          obj.addEventListener('click', e => {
+            e.preventDefault();
+
+            let inicial = e.target.getAttribute('rel');
+
+            let position = document.getElementById(inicial).getBoundingClientRect().top;
+
+            console.log('position', position);
             setTimeout(() => {
-                window.scrollTo(0, window.scrollY - 200)
+                window.scrollTo(0, position + window.scrollY - (window.innerHeight / 3))
               }, 1
             );
           });

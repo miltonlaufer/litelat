@@ -44,6 +44,7 @@ router.beforeEach((to, from, next) => {
     }
   }
 
+  // Dado que es SPA, hay que llegar el scroll arriba luego de los links
   if (window.previousPage) {
     setTimeout(() => {
       window.scrollTo(0, 0);

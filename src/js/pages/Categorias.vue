@@ -3,29 +3,34 @@
     <div class="row mt-5 pt-5">
       <div class="col text-center">
         <ul class="alfabeto">
-          <li v-for="inicial in iniciales"><a class="letras-links" :rel="inicial">{{ inicial }}</a></li>
+          <li v-for="categoria in categorias"><a class="letras-links" :rel="categoria">{{ categoria }}</a></li>
         </ul>
       </div>
     </div>
     <div class="row mt-5 pt-5">
       <div class="col autores">
-        <div class="row mb-5" v-for="inicial in iniciales">
+        <div class="row mb-5" v-for="categoria in categorias">
           <div class="col">
-            <h2 class="letra"><a :name="inicial" :id="inicial"></a> {{ inicial }}. </h2>
-            <div class="autor-item" v-for="autor in autores[inicial]">
+            <h2 class="letra"><a :name="categoria" :id="categoria"></a> {{ categoria }}. </h2>
+            <div class="autor-item" v-for="obra in obrasPorCategoria[categoria]">
               <div class="eye">
+
                 <router-link
-                  :to="{ name: 'autor' , params: {id: autor.id}}"></router-link>
+                  :to="{ name: 'obra' , params: {id: obra.id}}"></router-link>
+
                 <div class="eye-shape">
                   <div class="content"
-                       :style="'background-image: url(/dist/images/obras/' + autor.imagen + ');'"></div>
+                       :style="'background-image: url(/dist/images/obras/' + obra.captura_chica + ');'"></div>
                 </div>
               </div>
-
               <router-link
-                :to="{ name: 'autor' , params: {id: autor.id}}"><h3 class="autor-nombre">{{ autor.nombre }} {{
-                  autor.apellido
-                }}</h3></router-link>
+                :to="{ name: 'obra' , params: {id: obra.id}}"><h3 class="autor-nombre">{{ obra.titulo }}</h3>
+              </router-link>
+              <router-link
+                :to="{ name: 'autor' , params: {id: obra.autorId}}"><h4 class="autor-nombre">({{ obra.nombre }} {{
+                  obra.apellido
+                }})</h4>
+              </router-link>
 
             </div>
           </div>
@@ -40,11 +45,12 @@
 <script>
 
 export default {
-  name: "Autores.vue",
+  name: "Categorias.vue",
   data() {
     return {
-      autores: this.$obras.autoresPorLetra,
-      iniciales: this.$obras.iniciales
+      obras: this.$obras.lista,
+      obrasPorCategoria: this.$obras.obrasPorCategoria,
+      categorias: this.$obras.categorias
     }
   },
   mounted() {
@@ -61,8 +67,8 @@ export default {
           obj.addEventListener('click', e => {
             e.preventDefault();
 
-            let inicial = e.target.getAttribute('rel');
-            let position = document.getElementById(inicial).getBoundingClientRect().top;
+            let categoria = e.target.getAttribute('rel');
+            let position = document.getElementById(categoria).getBoundingClientRect().top;
 
             setTimeout(() => {
                 window.scrollTo(0, position + window.scrollY - (window.innerHeight / 3))

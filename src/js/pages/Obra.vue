@@ -109,7 +109,7 @@ export default {
       return this.$obras.lista[this.$route.params.id];
     },
     autorId() {
-      return `${this.obra.nombre}_${this.obra.apellido}`.replaceAll(' ', '_')
+      return this.obra.autorId;
     }
   }
 }

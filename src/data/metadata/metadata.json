@@ -27,6 +27,14 @@
     "fecha": {
       "title": "Años",
       "content": "Listado de obras por año"
+    },
+    "paises": {
+      "title": "Países",
+      "content": "Listado de obras por país"
+    },
+    "categorias": {
+      "title": "Categorías",
+      "content": "Listado de obras por categoría"
     }
   }
 }

@@ -35,6 +35,8 @@
             </div>
           </div>
         </div>
+
+        <div class="volver-wrapper mb-5"><a class="volver">⇡ subir</a></div>
       </div>
     </div>
   </div>
@@ -43,7 +45,7 @@
 <script>
 
 export default {
-  name: "Obras.vue",
+  name: "Fecha.vue",
   data() {
     return {
       obras: this.$obras.lista,
@@ -57,6 +59,10 @@ export default {
     });
 
     this.$nextTick(() => {
+        Array.from(document.getElementsByClassName('volver'))[0].addEventListener('click', _ => {
+          window.scrollTo(0, 0);
+        });
+
         Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {
           obj.addEventListener('click', e => {
             e.preventDefault();

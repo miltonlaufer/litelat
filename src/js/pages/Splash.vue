@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="eyes-grid home">
-      <div class="eye"><a href="#"></a>
+      <div class="eye">
+        <router-link
+          :to="{ name: 'categorias'}"></router-link>
         <div class="eye-shape">
           <div class="content" style="background-image: url(dist/images/obras/joseaburto-paranoicoarcoiris-2.png);">
             <h2 class="title">Categorías</h2>
@@ -65,7 +67,9 @@
           </div>
         </div>
       </div>
-      <div class="eye"><a href="#"></a>
+      <div class="eye">
+        <router-link
+          :to="{ name: 'paises'}"></router-link>
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(dist/images/obras/eugeniotisselli-latiraniadecodigo-2.png);">

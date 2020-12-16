@@ -1,3 +1,4 @@
+// Page components
 import splash from './pages/Splash.vue';
 import obras from './pages/Obras.vue';
 import obra from './pages/Obra.vue';
@@ -5,6 +6,9 @@ import acerca from './pages/Acerca.vue';
 import autores from './pages/Autores.vue';
 import autor from './pages/Autor.vue';
 import fecha from './pages/Fecha.vue';
+import paises from './pages/Paises.vue';
+import categorias from './pages/Categorias.vue';
+// Data
 import metadata from '../data/metadata/metadata.json';
 
 const myRoutes = {
@@ -35,6 +39,14 @@ const myRoutes = {
   fecha: {
     server: '/fecha',
     local: 'index.html?l=fecha'
+  },
+  paises: {
+    server: '/paises',
+    local: 'index.html?l=paises'
+  },
+  categorias: {
+    server: '/categorias',
+    local: 'index.html?l=categorias'
   },
 };
 
@@ -77,6 +89,14 @@ let routes = {
     {
       component: fecha,
       name: 'fecha',
+    },
+    {
+      component: paises,
+      name: 'paises',
+    },
+    {
+      component: categorias,
+      name: 'categorias',
     },
     {path: '*', component: splash}
   ]

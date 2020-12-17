@@ -21,7 +21,7 @@
               <router-link
                 active-class="active"
                 class="nav-link"
-                :to="{ name: 'autores'}">Autores
+                :to="{ name: 'autores'}">Autoría
               </router-link>
             </li>
             <li class="nav-item">

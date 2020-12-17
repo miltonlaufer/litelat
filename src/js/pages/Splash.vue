@@ -28,7 +28,7 @@
         <div class="eye-shape">
           <div class="content"
                style="background-image: url(dist/images/obras/marianneteixido-dialogoiterante-2.png);">
-            <h2 class="title">Autores</h2>
+            <h2 class="title">Autoría</h2>
           </div>
         </div>
       </div>

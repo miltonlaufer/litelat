@@ -6,7 +6,7 @@ Literatura Electrónica.
 Es accesible públicamente por motivos ideológicos y educativos.
 
 Pueden funcionar en un server node.js, nginx o Apache. Para éste último es importante usar el archivo .htaccess, al menos
-si se quiere compartir los links de las páginas específicas, dadp que el proyecto usa SPA (Single Page Application) y
+si se quiere compartir los links de las páginas específicas, dado que el proyecto usa SPA (Single Page Application) y
 por tanto sólo se carga una vez, el resto de los links se manejan por Javascript.
 
 Una vez corrido el BUILD que se indica acá abajo, se debe copiar el index.html y la carpeta "dist" creada al servidor.

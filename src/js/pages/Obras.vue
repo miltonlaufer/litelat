@@ -6,7 +6,7 @@
              :style="'background-image: url(../dist/images/obras/' + obra.captura_chica + ');'">
           <router-link
             :to="{ name: 'obra' , params: {id: index}}">
-            <h2 class="title">{{ obra.titulo }}</h2>
+            <h2 class="title" v-html="obra.tituloHTML"></h2>
           </router-link>
         </div>
       </div>

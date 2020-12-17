@@ -1,10 +1,16 @@
 // Obras styles
 
 .obras {
-    main {
-        padding-top: 70px;
-        @include media-breakpoint-down(lg) {
-            padding-top: 170px;
-        }
+  main {
+    padding-top: 70px;
+    @include media-breakpoint-down(lg) {
+      padding-top: 170px;
     }
+
+    @include media-breakpoint-up(md) {
+      h2 {
+        width: 200px;
+      }
+    }
+  }
 }

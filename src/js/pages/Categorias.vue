@@ -27,9 +27,12 @@
                 :to="{ name: 'obra' , params: {id: obra.id}}"><h3 class="autor-nombre">{{ obra.titulo }}</h3>
               </router-link>
               <router-link
-                :to="{ name: 'autor' , params: {id: obra.autorId}}"><h4 class="autor-nombre">({{ obra.nombre }} {{
-                  obra.apellido
-                }})</h4>
+                class="link link-autor"
+                v-for="autor in getAutores(obra)"
+                :key="autor.autorId"
+                :to="{ name: 'autor' , params: {id: autor.autorId}}"><h4 class="autor-nombre">{{ autor.nombre }} {{
+                  autor.apellido
+                }}</h4>
               </router-link>
 
             </div>

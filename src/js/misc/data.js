@@ -23,38 +23,55 @@ let autoresProcesados = [];
 
 for (let index in obras.lista) {
   let obra = obras.lista[index];
-  let horribleID = `${obra.nombre}_${obra.apellido}`.replaceAll(/[\. ]/gi, '_');
-  obra.id = index;
-  obra.autorId = horribleID;
+  let horribleIDs = [];
 
-  if (!autoresProcesados.includes(horribleID)) {
-    autoresProcesados.push(horribleID);
-    let inicial = obra.apellido[0].toUpperCase();
-    obras.iniciales.push(inicial);
-
-    if (!obras.autoresPorLetra.hasOwnProperty(inicial)) {
-      obras.autoresPorLetra[inicial] = [];
-    }
-
-    obras.autoresPorLetra[inicial].push({
-      nombre: obra.nombre,
-      apellido: obra.apellido,
-      imagen: obra.captura_grande,
-      id: horribleID
-    });
-
-    obras.autores[horribleID] = {
-      nombre: obra.nombre,
-      apellido: obra.apellido,
-      biografia: obra.biografia,
-      obras: []
-    }
+  for (let z = 0; z < obra.nombre.length; z++) {
+    obra.nombre[z]= obra.nombre[z].trim();
+    obra.apellido[z]= obra.apellido[z].trim();
+    horribleIDs.push(`${obra.nombre[z]}_${obra.apellido[z]}`.replaceAll(/[. ]/gi, '_'));
   }
 
-  obras.autores[horribleID].obras.push({
-    id: index,
-    titulo: obra.titulo
-  })
+  obra.id = index;
+  obra.autorId = horribleIDs;
+  obra.tituloHTML = obra.titulo;
+  obra.titulo = obra.titulo.replaceAll('<br>', ' ')
+
+  let autorIndex = 0;
+
+  for (let horribleID of horribleIDs) {
+    if (!autoresProcesados.includes(horribleID)) {
+      autoresProcesados.push(horribleID);
+      let inicial = obra.apellido[autorIndex][0].toUpperCase();
+
+      if (!obras.autoresPorLetra.hasOwnProperty(inicial)) {
+        obras.autoresPorLetra[inicial] = [];
+      }
+
+      obras.autoresPorLetra[inicial].push({
+        nombre: obra.nombre[autorIndex],
+        apellido: obra.apellido[autorIndex],
+        imagen: obra.captura_grande,
+        id: horribleID
+      });
+
+      obras.iniciales.push(inicial);
+
+      obras.autores[horribleID] = {
+        nombre: obra.nombre[autorIndex],
+        apellido: obra.apellido[autorIndex],
+        biografia: obra.biografia[autorIndex],
+        obras: []
+      }
+    }
+
+    obras.autores[horribleID].obras.push({
+      id: index,
+      titulo: obra.titulo
+    });
+
+    autorIndex++;
+  }
+  // Fin for
 
   // Años
   let ano = obra.ano.match(/\D/) ? obra.ano.split(/\D/)[0] : obra.ano;

@@ -105,6 +105,7 @@ body {
 
   h2 {
     transition: .4s;
+   // padding: 0 50px;
 
     @include media-breakpoint-down(xs) {
       padding: 0 180px;
@@ -112,11 +113,11 @@ body {
   }
 
   &:hover {
-    transform: scale(2);
+    transform: scale(1.5);
+
 
     h2 {
-      font-size: .5em;
-      padding: 0 45%;
+      font-size: .7em;
     }
 
     opacity: 1;
@@ -146,18 +147,13 @@ body {
     transform: translateX(110%);
 
     &:hover {
-      transform: translateX(110%) scale(2);
-
-      h2 {
-        font-size: .5em;
-        padding: 0 45%;
-      }
+      transform: translateX(110%) scale(1.5);
     }
 
     @include media-breakpoint-down(sm) {
       transform: translateX(80%);
       &:hover {
-        transform: translateX(80%) scale(2);
+        transform: translateX(80%) scale(1.5);
 
         h2 {
           font-size: .5em;
@@ -168,7 +164,7 @@ body {
     @include media-breakpoint-down(xs) {
       transform: translateX(0);
       &:hover {
-        transform: translateX(0) scale(2);
+        transform: translateX(0) scale(1.5);
 
         h2 {
           font-size: .5em;

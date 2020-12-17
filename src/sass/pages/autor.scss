@@ -97,6 +97,23 @@
           text-decoration: underline;
         }
       }
+
+      &.link-autor {
+        &:nth-child(3)::before {
+          content: "(";
+          color: #fff;
+        }
+
+        &:not(:last-child)::after {
+          content: ", ";
+          color: #fff
+        }
+
+        &:last-child::after {
+          content: ")";
+          color: #fff;
+        }
+      }
     }
   }
 
@@ -104,6 +121,7 @@
     display: inline-block;
     color: #fff;
     font-size: 1.5rem;
+
     @include media-breakpoint-down(xs) {
       display: block;
     }

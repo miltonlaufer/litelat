@@ -60,6 +60,8 @@ foreach ($obras as $obra) {
           } else {
             $val = null;
           }
+        } elseif (in_array($col, ['nombre', 'apellido', 'biografia'])) {
+          $val = explode('&&', $val);
         } elseif ($col === 'titulo') {
           if (empty(trim($val))) {
             return null;

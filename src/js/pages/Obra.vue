@@ -36,10 +36,12 @@
       </div>
       <div class="col-md-6 detalle-obra">
         <h2 class="subtitle">Autoría</h2>
-        <p>{{ obra.autor ? obra.autor : obra.nombre + ' ' + obra.apellido }}</p>
+        <p v-html="obra.autor"></p>
         <router-link
           class="link"
-          :to="{ name: 'autor' , params: {id: autorId}}">Ver más sobre {{ obra.nombre }} {{ obra.apellido }}
+          v-for="autor in autores"
+          :key="autor.autorId"
+          :to="{ name: 'autor' , params: {id: autor.autorId}}">Ver más sobre {{ autor.nombre }} {{ autor.apellido }}
         </router-link>
         <h2 class="subtitle">Metadata</h2>
         <p class="mb-0"><strong>Año:</strong> {{ obra.ano }}</p>
@@ -109,8 +111,18 @@ export default {
     obra() {
       return this.$obras.lista[this.$route.params.id];
     },
-    autorId() {
-      return this.obra.autorId;
+    autores() {
+      let autores = [];
+
+      for (let z = 0; z < this.obra.autorId.length; z++) {
+        autores.push({
+          nombre: this.obra.nombre[z],
+          apellido: this.obra.apellido[z],
+          autorId: this.obra.autorId[z]
+        })
+      }
+
+      return autores;
     }
   }
 }

@@ -6,7 +6,7 @@
              :style="'background-image: url(../dist/images/obras/' + obra.captura_chica + ');'">
           <router-link
             :to="{ name: 'obra' , params: {id: index}}">
-            <h2 class="title" v-html="obra.tituloHTML"></h2>
+            <h2 class="title" :style="getFontSize(obra.titulo)">{{ obra.titulo }}</h2>
           </router-link>
         </div>
       </div>
@@ -59,6 +59,10 @@ export default {
         elem.classList.remove('even');
         elem.classList.add(odd ? 'odd' : 'even');
       }
+    },
+    getFontSize(texto) {
+      console.log(texto.length, Math.log2(texto.length));
+      return 'font-size: ' + 2.75 / Math.log2(texto.length) + 'em';
     }
   }
 }

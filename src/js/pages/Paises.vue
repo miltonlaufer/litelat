@@ -14,10 +14,8 @@
             <h2 class="letra"><a :name="pais" :id="pais"></a> {{ pais }}. </h2>
             <div class="autor-item" v-for="obra in obrasPorPais[pais]">
               <div class="eye">
-
                 <router-link
                   :to="{ name: 'obra' , params: {id: obra.id}}"></router-link>
-
                 <div class="eye-shape">
                   <div class="content"
                        :style="'background-image: url(/dist/images/obras/' + obra.captura_chica + ');'"></div>

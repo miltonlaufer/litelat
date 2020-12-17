@@ -11,7 +11,7 @@
       <div class="col autores">
         <div class="row mb-5" v-for="categoria in categorias">
           <div class="col">
-            <h2 class="letra"><a :name="categoria" :id="categoria"></a> {{ categoria }}. </h2>
+            <h2 class="letra"><a :name="categoria" :id="categoria"></a> {{ categoria }} <br><span>{{categoriasDefinicion[categoria]}}</span> </h2>
             <div class="autor-item" v-for="obra in obrasPorCategoria[categoria]">
               <div class="eye">
 
@@ -47,6 +47,7 @@
 
 <script>
 import mixins from "../misc/mixins";
+import categoriasDefinicion from '../../data/categorias.json'
 
 export default {
   name: "Categorias.vue",
@@ -55,7 +56,8 @@ export default {
     return {
       obras: this.$obras.lista,
       obrasPorCategoria: this.$obras.obrasPorCategoria,
-      categorias: this.$obras.categorias
+      categorias: this.$obras.categorias,
+      categoriasDefinicion: categoriasDefinicion['categorias']
     }
   },
   mounted() {

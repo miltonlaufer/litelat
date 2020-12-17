@@ -1,0 +1,26 @@
+{
+  "categorias": {
+    "3D": "Utiliza lenguaje modelado para crear ilusión de tres dimensiones (VRML).",
+    "aleatoriedad": "Contiene elementos que se definen con mecanismos computacionales que simulan el azar.",
+    "animación": "Presenta textos o elementos gráficos que se mueven o cambian con el paso del tiempo.",
+    "apropiacionismo": "Toma prestados textos, elementos gráficos o sonoros de otras fuentes.",
+    "bot": "Actúa independientemente con elementos de personificación.",
+    "generación": "Utiliza algoritmos para generar elementos nuevos.",
+    "hipermedia": "Organiza hipertextualmente elementos multimedia.",
+    "hipertexto": "Consiste de nodos textuales interconectados por hipervínculos.",
+    "interactividad": "Define y require acciones de quien accede la obra mediante dispositivos o interfaces computacionales.",
+    "memes": "Presenta formas breves multimodales replicables para difusión masiva en redes sociales.",
+    "multimedia": "Integra multimodalmente texto, imagen, sonido y/o video.",
+    "narrativa": "Presenta secuencias de eventos que componen relatos.",
+    "obra combinatoria": "Manipula elementos finitos para crear nuevos textos.",
+    "performance": "Implica una presentación en vivo o grabación de la misma (incluye live coding).",
+    "poesía sonora": "Integra experimentación poética enfocada en la materialidad del sonido.",
+    "poesía versificada": "Ofrece textos organizados en versos o disposiciones espaciales parecidas al verso.",
+    "poesía visual": "Integra experimentación poética enfocada en la plasticidad del texto y/o de la imagen.",
+    "pre-Web": "Incluye obras creadas antes de la Web (ca. 1995).",
+    "prosa poética": "Presenta prosa en la frontera de la poesía.",
+    "realidad virtual": "Existe en espacios virtuales inmersivos navegables por quien experimenta la obra.",
+    "videojuego": "Requiere participación en actividades lúdicas.",
+    "videopoesía": "Trabaja la materialidad de lo audiovisual a partir de una estrecha conexión con la palabra."
+  }
+}

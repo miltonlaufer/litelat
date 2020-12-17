@@ -78,8 +78,9 @@
         </div>
       </div>
     </div>
-    <h2 class="home-intro">Recorridos por el arte de la palabra electrónica (1965-2019): 65 obras, 52 autores, 5 idiomas
-      20 categorías y 15 países de América Latina y el Caribe.</h2>
+    <h2 class="home-intro">Recorridos por el arte de la palabra electrónica (1965-2019): 81 obras, 52 autores, 6
+      idiomas, 22 categorías y 10 países de América Latina y el Caribe.
+    </h2>
     <div class="footer">
       <div class="container-fluid">
         <div class="row">

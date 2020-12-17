@@ -16,7 +16,7 @@ export default {
 
     if (mainObj) mainObj.classList.remove(...mainObj.classList);
 
-    if (this.$route.name === 'splash') {
+    if (this.$route.name === 'splash' && mainObj) {
       mainObj.classList.add('home');
     }
   },

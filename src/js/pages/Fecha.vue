@@ -11,7 +11,7 @@
       <div class="col autores">
         <div class="row mb-5" v-for="ano in anos">
           <div class="col">
-            <h2 class="letra"><a :name="ano" :id="ano"></a> {{ ano }}. </h2>
+            <h2 class="letra"><a :name="ano" :id="ano"></a> {{ ano }} </h2>
             <div class="autor-item" v-for="obra in obrasPorAno[ano]">
               <div class="eye">
 

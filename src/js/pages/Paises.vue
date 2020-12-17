@@ -11,7 +11,7 @@
       <div class="col autores">
         <div class="row mb-5" v-for="pais in paises">
           <div class="col">
-            <h2 class="letra"><a :name="pais" :id="pais"></a> {{ pais }}. </h2>
+            <h2 class="letra"><a :name="pais" :id="pais"></a> {{ pais }}</h2>
             <div class="autor-item" v-for="obra in obrasPorPais[pais]">
               <div class="eye">
                 <router-link

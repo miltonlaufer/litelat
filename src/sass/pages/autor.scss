@@ -7,6 +7,11 @@
     }
   }
 
+  .obra-link {
+    max-width: 60%;
+    margin-right: .2em;
+  }
+
   .volver-wrapper {
     position: fixed;
     bottom: 0;
@@ -103,7 +108,7 @@
       }
 
       &.link-autor {
-        &:nth-child(3)::before {
+        &:nth-child(2)::before {
           content: "(";
           color: #fff;
         }

@@ -65,6 +65,7 @@ export default {
 
             let inicial = e.target.getAttribute('rel');
             let position = document.getElementById(inicial).getBoundingClientRect().top;
+            window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${inicial}`);
 
             setTimeout(() => {
                 window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))

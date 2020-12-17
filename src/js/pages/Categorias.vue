@@ -11,7 +11,8 @@
       <div class="col autores">
         <div class="row mb-5" v-for="categoria in categorias">
           <div class="col">
-            <h2 class="letra"><a :name="categoria" :id="categoria"></a> {{ categoria }} <br><span>{{categoriasDefinicion[categoria]}}</span> </h2>
+            <h2 class="letra"><a :name="categoria" :id="categoria"></a> {{ categoria }}
+              <br><span>{{ categoriasDefinicion[categoria] }}</span></h2>
             <div class="autor-item" v-for="obra in obrasPorCategoria[categoria]">
               <div class="eye">
 
@@ -23,18 +24,20 @@
                        :style="'background-image: url(/dist/images/obras/' + obra.captura_chica + ');'"></div>
                 </div>
               </div>
-              <router-link
-                :to="{ name: 'obra' , params: {id: obra.id}}"><h3 class="autor-nombre">{{ obra.titulo }}</h3>
-              </router-link>
-              <router-link
-                class="link link-autor"
-                v-for="autor in getAutores(obra)"
-                :key="autor.autorId"
-                :to="{ name: 'autor' , params: {id: autor.autorId}}"><h4 class="autor-nombre">{{ autor.nombre }} {{
-                  autor.apellido
-                }}</h4>
-              </router-link>
-
+              <div class="d-flex justify-content-start">
+                <router-link
+                  class="obra-link"
+                  :to="{ name: 'obra' , params: {id: obra.id}}"><h3 class="autor-nombre">{{ obra.titulo }}</h3>
+                </router-link>
+                <router-link
+                  class="link link-autor"
+                  v-for="autor in getAutores(obra)"
+                  :key="autor.autorId"
+                  :to="{ name: 'autor' , params: {id: autor.autorId}}"><h4 class="autor-nombre">{{ autor.nombre }} {{
+                    autor.apellido
+                  }}</h4>
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -76,6 +79,8 @@ export default {
 
             let categoria = e.target.getAttribute('rel');
             let position = document.getElementById(categoria).getBoundingClientRect().top;
+
+            window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${categoria}`);
 
             setTimeout(() => {
                 window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))

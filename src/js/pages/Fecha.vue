@@ -23,17 +23,20 @@
                        :style="'background-image: url(/dist/images/obras/' + obra.captura_chica + ');'"></div>
                 </div>
               </div>
-              <router-link
-                :to="{ name: 'obra' , params: {id: obra.id}}"><h3 class="autor-nombre">{{ obra.titulo }}</h3>
-              </router-link>
-              <router-link
-                class="link link-autor"
-                v-for="autor in getAutores(obra)"
-                :key="autor.autorId"
-                :to="{ name: 'autor' , params: {id: autor.autorId}}"><h4 class="autor-nombre">{{ autor.nombre }} {{
-                  autor.apellido
-                }}</h4>
-              </router-link>
+              <div class="d-flex justify-content-start">
+                <router-link
+                  class="obra-link"
+                  :to="{ name: 'obra' , params: {id: obra.id}}"><h3 class="autor-nombre">{{ obra.titulo }}</h3>
+                </router-link>
+                <router-link
+                  class="link link-autor"
+                  v-for="autor in getAutores(obra)"
+                  :key="autor.autorId"
+                  :to="{ name: 'autor' , params: {id: autor.autorId}}"><h4 class="autor-nombre">{{ autor.nombre }} {{
+                    autor.apellido
+                  }}</h4>
+                </router-link>
+              </div>
 
             </div>
           </div>
@@ -74,6 +77,8 @@ export default {
 
             let ano = e.target.getAttribute('rel');
             let position = document.getElementById(ano).getBoundingClientRect().top;
+
+            window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${ano}`);
 
             setTimeout(() => {
                 window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))

@@ -18,7 +18,6 @@
 
                 <router-link
                   :to="{ name: 'obra' , params: {id: obra.id}}"></router-link>
-
                 <div class="eye-shape">
                   <div class="content"
                        :style="'background-image: url(/dist/images/obras/' + obra.captura_chica + ');'"></div>

@@ -88,7 +88,7 @@
     color: #fff;
 
     span {
-      font-size: .5em;
+      font-size: .8em;
     }
   }
 
@@ -115,7 +115,8 @@
 
         &:not(:last-child)::after {
           content: ", ";
-          color: #fff
+          color: #fff;
+          margin-right: .3em;
         }
 
         &:last-child::after {

@@ -61,7 +61,6 @@ export default {
       }
     },
     getFontSize(texto) {
-      console.log(texto.length, Math.log2(texto.length));
       return 'font-size: ' + 3.5 / Math.log2(texto.length) + 'em';
     }
   }

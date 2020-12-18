@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row ficha-autor">
     <div class="col">
       <h1 class="subtitle">Acerca de </h1>
       <p>La <em>Antolog&iacute;a Lit(e)Lat volumen 1</em> se ha propuesto como un espacio de recuperaci&oacute;n y
@@ -62,7 +62,6 @@
         a trav&eacute;s de Latinoam&eacute;rica, el Caribe y el mundo. Esperamos que este primer volumen, motive a la
         comunidad a continuar descubriendo otras piezas de literatura electr&oacute;nica de la regi&oacute;n e inspire
         la creaci&oacute;n de nuevas obras que queden capturadas en vol&uacute;menes subsiguientes.</p>
-
       <h1 class="subtitle">Comité editorial </h1>
       <p>
         Leonardo Flores <br>
@@ -71,10 +70,10 @@
       </p>
 
       <h1 class="subtitle">Desarrollo </h1>
-      <p>
-        <strong>Diseño</strong>: José Aburto<br>
-        <strong>Maquetado HTML</strong>: Inés Sotomayor<br>
-        <strong>Programación</strong>: Milton Läufer
+      <p class="desarrollo">
+        <strong>Diseño</strong>: <a href="http://entalpia.pe/" target="_blank">José Aburto</a><br>
+        <strong>Maquetado HTML</strong>: <a href="http://www.eikondesign.com.ar/" target="_blank">Inés Sotomayor</a><br>
+        <strong>Programación</strong>: <a href="http://www.miltonlaufer.com.ar/" target="_blank">Milton Läufer</a>
       </p>
     </div>
   </div>

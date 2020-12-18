@@ -122,13 +122,15 @@
     }
   }
 
+  .autor-nombre {
+    display: inline;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
   .autor-obra {
     display: inline;
     max-width: 500px;
-    a {
-      width: max-content;
-    }
-
 
     @include media-breakpoint-up(md) {
       display: flex;
@@ -138,12 +140,6 @@
     .obra-link {
       max-width: 60%;
       margin-right: .2em;
-    }
-
-    .autor-nombre {
-      display: inline;
-      color: #fff;
-      font-size: 1.5rem;
     }
   }
 }

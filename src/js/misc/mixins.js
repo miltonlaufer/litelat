@@ -15,9 +15,5 @@ export default {
     let mainObj = document.getElementById('main');
 
     if (mainObj) mainObj.classList.remove(...mainObj.classList);
-
-    if (this.$route.name === 'splash' && mainObj) {
-      mainObj.classList.add('home');
-    }
   }
 }

@@ -99,6 +99,12 @@ export default {
   mounted() {
     this.$nextTick(() => {
       document.body.classList.add("home");
+
+      let mainObj = document.getElementById('main');
+
+      if (mainObj) {
+        mainObj.classList.add('home');
+      }
     });
   },
   computed: {

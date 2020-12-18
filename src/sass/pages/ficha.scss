@@ -16,13 +16,6 @@
     font-size: 1.4rem;
   }
 
-  .image {
-    @include media-breakpoint-down(sm) {
-      margin-bottom: 40px;
-    }
-  }
-
-
   .primera-columna {
     .titulo-obra {
       display: block;

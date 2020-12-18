@@ -38,7 +38,7 @@
         <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
         <p class="mb-0"><strong>Categorías:</strong> <span v-for="categoria in obra.categorias">{{ categoria }}</span>
         </p>
-        <p class="mb-0"><strong>Detalles técnicos:</strong> <span v-for="tecnologia in obra.tecnologias">{{
+        <p class="mb-0"><strong>Tecnologías:</strong> <span v-for="tecnologia in obra.tecnologias">{{
             tecnologia
           }}</span></p>
         <div v-if="obra.descargable">

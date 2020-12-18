@@ -19,20 +19,5 @@ export default {
     if (this.$route.name === 'splash' && mainObj) {
       mainObj.classList.add('home');
     }
-  },
-  methods: {
-    getAutores(obra) {
-      let autores = [];
-
-      for (let z = 0; z < obra.autorId.length; z++) {
-        autores.push({
-          nombre: obra.nombre[z],
-          apellido: obra.apellido[z],
-          autorId: obra.autorId[z]
-        })
-      }
-
-      return autores;
-    }
   }
 }

@@ -6,7 +6,7 @@ Este repositorio incluye la estructura de cómo está hecho el sitio de la Prime
 Literatura Electrónica. Es accesible públicamente por motivos ideológicos y educativos. El proyecto está desarrollado
 usando VUE.JS. **El punto de entrada es "src/js/main.js"**.
 
-Pueden funcionar en casi cualquier tipo de server (node.js, nginx o Apache). Para éste último es importante usar el
+Puede funcionar en casi cualquier tipo de server (node.js, nginx o Apache). Para éste último es importante usar el
 archivo .htaccess, al menos si se quiere compartir los links de las páginas específicas, dado que el proyecto usa SPA
 (Single Page Application) y por tanto sólo se carga una vez, el resto de los links se manejan por Javascript.
 

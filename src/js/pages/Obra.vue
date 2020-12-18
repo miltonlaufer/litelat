@@ -1,48 +1,38 @@
 <template>
   <div>
     <div class="row">
-
-      <div class="col-md-6">
+      <div class="col-md-6 primera-columna">
         <component :is="getFirstLink()?'a':'span'" :href="getFirstLink() || ''" target="_blank"
-                   :title="getFirstLink()?'Ver obra':''">
+                   :title="getFirstLink()?'Ver obra':''"
+                   id="imageObra">
           <div class="obra-imagen">
             <img class="image w-100"
                  :src="'dist/images/obras/' + obra.captura_grande">
           </div>
         </component>
-      </div>
-      <div class="col-md-6">
-        <h1 class="main-title">{{ obra.titulo }}</h1>
-
-        <div>
-          <h2 class="subtitle" v-if="obra.enlace.length">Link{{ obra.enlace.length > 1 ? 's' : '' }} a la obra</h2>
-
-          <template v-for="enlace in obra.enlace"><a :href="enlace.link" target="_blank">{{
-              enlace.text
-            }}</a><br>
-          </template>
-        </div>
-        <!--
-        <p><strong>Descripción:</strong></p>
-        <p>Aliquam bibendum ac massa eget sodales. Vestibulum rhoncus neque quis magna aliquam blandit.</p>
-
-        <p><a class="link" href="#">Ver más</a></p>-->
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
         <h2 class="subtitle">Comentario Editorial</h2>
         <div v-html="addLinks(obra.comentario)"></div>
       </div>
-      <div class="col-md-6 detalle-obra">
-        <h2 class="subtitle">Autoría</h2>
-        <p v-html="obra.autor"></p>
-        <router-link
-          class="link"
-          v-for="autor in autores"
-          :key="autor.autorId"
-          :to="{ name: 'autor' , params: {id: autor.autorId}}">Ver más sobre {{ autor.nombre }} {{ autor.apellido }}
-        </router-link>
+      <div class="col-md-6 segunda-columna">
+        <div id="tituloObra" class="titulo-obra">
+          <h1 class="main-title">{{ obra.titulo }}</h1>
+          <div>
+            <h2 class="subtitle" v-if="obra.enlace.length">Enlace{{ obra.enlace.length > 1 ? 's' : '' }} a la obra</h2>
+
+            <template v-for="enlace in obra.enlace"><a :href="enlace.link" target="_blank">{{
+                enlace.text
+              }}</a><br>
+            </template>
+          </div>
+          <h2 class="subtitle">Autoría</h2>
+          <p v-html="obra.autor"></p>
+          <router-link
+            class="link"
+            v-for="autor in autores"
+            :key="autor.autorId"
+            :to="{ name: 'autor' , params: {id: autor.autorId}}">Ver más sobre {{ autor.nombre }} {{ autor.apellido }}
+          </router-link>
+        </div>
         <h2 class="subtitle">Metadata</h2>
         <p class="mb-0"><strong>Año:</strong> {{ obra.ano }}</p>
         <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
@@ -56,8 +46,6 @@
           <p class="mb-1"><a class="link text-left" :href="'descargables/' + obra.descargable">Obra Descargable</a>
           </p>
         </div>
-        <!-- <p class="mb-0"><strong>Descripción:</strong> Archivos</p>
-         <p class="mb-0"><strong>Requerimientos:</strong> Java</p>-->
       </div>
     </div>
   </div>
@@ -76,6 +64,7 @@ export default {
     this.$nextTick(() => {
       document.body.classList.add("ficha");
       document.getElementById('generalWrapper').classList.add('ficha-wrapper', 'mt-5', 'pt-5');
+      document.getElementById('imageObra').after(document.getElementById('tituloObra').cloneNode(true));
     });
   },
   watch: {

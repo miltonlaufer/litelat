@@ -2,40 +2,66 @@
   <div class="row">
     <div class="col">
       <h1 class="subtitle">Acerca de </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum tincidunt quam, vel fermentum urna cursus
-        ut. Etiam non quam dictum, accumsan arcu non, euismod augue. Nunc aliquam egestas purus sed rhoncus. Etiam
-        turpis eros, euismod sit amet mauris sed, venenatis tincidunt enim. Quisque venenatis bibendum sem nec
-        fringilla. Cras elementum lacus neque, nec laoreet urna varius nec. Sed vitae est a tellus faucibus aliquam in
-        eget sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean dapibus nibh purus, tempus
-        sollicitudin purus placerat id.
-
-        Fusce fringilla nulla sed nibh condimentum bibendum. Morbi a cursus metus, sit amet pharetra odio. Duis nec
-        velit magna. Quisque erat augue, tempus pulvinar augue vel, tincidunt rutrum nunc. Donec feugiat eu quam
-        tincidunt interdum. Nunc tristique, eros et pretium volutpat, leo velit varius nisl, eu laoreet lectus tellus
-        eget nulla. Sed ac pellentesque velit. Nunc rhoncus lacus id ante auctor, eu posuere sapien volutpat. Etiam
-        laoreet finibus magna, a porttitor purus dapibus a. Curabitur at pulvinar velit, id semper ex. Nulla non arcu ac
-        felis gravida viverra vel a libero. Morbi quis ligula sed sapien maximus ultrices. Proin ut posuere neque.
-        Curabitur congue enim enim, id pretium ligula auctor sit amet.
-
-        Aliquam sit amet ex est. Pellentesque lobortis nisi ut nunc egestas tristique. Fusce convallis orci a ante
-        aliquet fringilla. Donec feugiat nunc bibendum, dictum eros non, faucibus nulla. Mauris sit amet mauris ac nibh
-        sollicitudin sollicitudin eget sed erat. Vivamus vestibulum, lectus sit amet hendrerit vehicula, nibh quam
-        tempus nisl, ac pellentesque eros augue quis velit. Mauris vitae metus suscipit, euismod felis vitae, commodo
-        diam. Integer quis dolor neque. Aliquam eros turpis, pellentesque id mauris quis, luctus volutpat dui. Quisque
-        mattis odio sit amet tellus interdum, at pulvinar odio volutpat. Donec vel ligula pellentesque ex sagittis
-        tempor quis nec odio. Cras pretium nisi non lacus facilisis, et sagittis odio mollis. Nunc vitae dictum est.
-        Donec tincidunt tellus sit amet tincidunt lobortis. Phasellus imperdiet, sem euismod placerat cursus, metus erat
-        vestibulum risus, suscipit pretium erat odio nec tortor.
-
-        Vivamus eu justo pretium, ultrices dui ultricies, venenatis sem. Aenean interdum auctor posuere. Praesent ac
-        vulputate diam. Nulla facilisi. Phasellus at fermentum tellus. Curabitur eu porta lorem. Vestibulum nec pharetra
-        justo, in porttitor orci. Morbi tristique tristique metus id tempor. Duis auctor metus eget augue tristique, nec
-        gravida purus placerat. Vivamus porttitor dictum nisl, id rutrum mi lacinia non.
-
-        Mauris at justo at turpis tristique scelerisque. Maecenas et interdum ipsum. Pellentesque ac nibh et orci
-        interdum interdum a non nisi. Nam malesuada sit amet ex venenatis bibendum. Morbi diam urna, blandit eu augue
-        sit amet, sodales scelerisque magna. Maecenas auctor ut nunc iaculis finibus. Morbi consectetur, odio ac maximus
-        rhoncus, felis ante congue risus, id feugiat felis felis id elit.</p>
+      <p>La <em>Antolog&iacute;a Lit(e)Lat volumen 1</em> se ha propuesto como un espacio de recuperaci&oacute;n y
+        visibilizaci&oacute;n de un corpus significativo de piezas de literatura electr&oacute;nica producidas desde (o
+        en relaci&oacute;n con) Latinoam&eacute;rica y el Caribe. Definimos la literatura electr&oacute;nica como obras
+        de arte textual que experimentan con dispositivos electr&oacute;nicos digitales y, en casos hist&oacute;ricos,
+        anal&oacute;gicos. Este tipo de literatura, aunque frecuentemente incorpora imagen fija o en movimiento, video,
+        sonido, programaci&oacute;n, interacci&oacute;n, redes, requiere un alto grado de participaci&oacute;n del
+        lenguaje verbal con funci&oacute;n po&eacute;tica.</p>
+      <p>En cuanto se trata de una antolog&iacute;a latinoamericana y caribe&ntilde;a, un desaf&iacute;o importante ha
+        sido la identificaci&oacute;n de los l&iacute;mites de la regi&oacute;n teniendo en cuenta los frecuentes
+        desplazamientos y migraciones que involucran a quienes han elaborado las piezas. As&iacute; en relaci&oacute;n
+        con el pa&iacute;s con el que se identifica cada obra, tomamos como pauta el lugar de nacimiento de cada
+        artista, incluyendo en casi todos los casos artistas que nacieron en Latinoam&eacute;rica y el Caribe o, en su
+        defecto, cuya vinculaci&oacute;n con Latinoam&eacute;rica resulta fundamental para la pieza que publicamos.
+        Estas vinculaciones nos acercan a producciones que representan a los siguientes pa&iacute;ses: Argentina,
+        Brasil, Chile, Colombia, Cuba, la comunidad latina en Estados Unidos, M&eacute;xico, Per&uacute;, Trinidad y
+        Tobago, Uruguay y Venezuela. Nuestra antolog&iacute;a tambi&eacute;n representa la diversidad ling&uuml;&iacute;stica
+        de la regi&oacute;n y sus hegemon&iacute;as con obras en espa&ntilde;ol, franc&eacute;s, ingl&eacute;s, portugu&eacute;s,
+        quechua y zapoteco.&nbsp;</p>
+      <p>Por otra parte, determinar la autor&iacute;a misma de cada pieza ha sido en ocasiones tambi&eacute;n un desaf&iacute;o,
+        dada la gran problematizaci&oacute;n que al respecto implica la literatura electr&oacute;nica. En los casos en
+        que una obra se presenta a s&iacute; misma en coautor&iacute;a entre quien la ha ideado, escrito o dise&ntilde;ado
+        y quien la ha programado, la consideramos como de autor&iacute;a compartida. Cuando no se presenta de esta
+        manera, consideramos la autor&iacute;a de quien se presenta como tal y en el comentario editorial espec&iacute;fico
+        consignamos los nombres de quienes colaboraron.</p>
+      <p>Al ser &eacute;sta la primera antolog&iacute;a de literatura electr&oacute;nica en la regi&oacute;n, buscamos
+        capturar la historia del campo al incorporar obras pioneras y recientes. Adem&aacute;s quisimos reflejar la
+        trayectoria de artistas con mayor presencia, en cuyos casos hemos incluido m&uacute;ltiples piezas. Las fechas
+        que damos para cada pieza son las de su lanzamiento, duraci&oacute;n, remediaci&oacute;n y/o nuevas versiones.&nbsp;</p>
+      <p>Dado que las fechas de las obras compiladas van de 1965 a 2019, sus formatos var&iacute;an ampliamente,
+        incluyendo tecnolog&iacute;as hoy obsoletas. El caso m&aacute;s reciente de obsolescencia es el formato Flash,
+        que la compa&ntilde;&iacute;a Adobe ha decidido discontinuar a partir del 31 de diciembre de 2020. Hay obras que
+        han migrado de la tecnolog&iacute;a en la que fueron inicialmente realizadas a otras m&aacute;s contempor&aacute;neas,
+        en algunos casos transform&aacute;ndose en nuevas versiones. Para maximizar el acceso a las obras, hemos
+        utilizado varias estrategias, como la inclusi&oacute;n de m&uacute;ltiples versiones, documentaci&oacute;n en
+        video, archivos descargables, enlaces a emulaciones y <em>porting</em> a lenguajes de programaci&oacute;n y
+        formatos actualizados.</p>
+      <p>Las obras est&aacute;n organizadas por autor&iacute;a, a&ntilde;o, pa&iacute;s y categor&iacute;as
+        descriptivas. Estas categor&iacute;as representan tendencias y pr&aacute;cticas del campo de la literatura
+        electr&oacute;nica, por ejemplo: obras aleatorias o generativas, poes&iacute;a animada y/o sonora, hipertexto e
+        hipermedia, memes, videojuegos, etc. El men&uacute; principal de esta antolog&iacute;a ofrece distintos accesos
+        seg&uacute;n a&ntilde;o, autor&iacute;a, pa&iacute;s, t&iacute;tulo y categor&iacute;as. La metadata tambi&eacute;n
+        permite la exploraci&oacute;n de obras con caracter&iacute;sticas y tecnolog&iacute;as en com&uacute;n. Hemos
+        incluido adem&aacute;s un bot&oacute;n llamado Descubrir para acceder a las obras en forma aleatoria.</p>
+      <p>La literatura electr&oacute;nica latinoamericana y caribe&ntilde;a es a la vez localizada y de-localizada. Esta
+        condici&oacute;n habla de un espacio de tensiones globales y nacionales. Por un lado, es una literatura
+        dependiente del desarrollo global inform&aacute;tico. Pero, por otro lado, se trata tambi&eacute;n de una
+        literatura que presenta con bastante frecuencia especificidades locales en cuanto a una fuerte comprensi&oacute;n
+        de relaciones de poder y asimetr&iacute;as, hegemon&iacute;as de sentidos en las culturas digitales, e
+        idiosincrasias y tem&aacute;ticas vinculadas con procesos socio-hist&oacute;ricos, pol&iacute;ticos y econ&oacute;micos
+        de la regi&oacute;n. Todo esto da cuenta de una tendencia hacia la politizaci&oacute;n de esta pr&aacute;ctica
+        no solamente a nivel de los contenidos sino tambi&eacute;n de las pol&iacute;ticas ling&uuml;&iacute;sticas y
+        algor&iacute;tmicas. Asimismo, otra tendencia que recorre en buena medida la literatura electr&oacute;nica
+        latinoamericana y caribe&ntilde;a se vincula con las genealog&iacute;as experimentales de poes&iacute;a visual,
+        sonora, perform&aacute;tica de la regi&oacute;n que se enlazan con la creaci&oacute;n digital.</p>
+      <p>Vemos esta antolog&iacute;a como una instant&aacute;nea que captura y enfoca una parte significativa del estado
+        e historial del campo seg&uacute;n lo hemos podido percibir en este momento. Esto est&aacute; necesariamente
+        limitado al alcance de la comunidad Lit(e)Lat, una red emergente con voces art&iacute;sticas y acad&eacute;micas
+        a trav&eacute;s de Latinoam&eacute;rica, el Caribe y el mundo. Esperamos que este primer volumen, motive a la
+        comunidad a continuar descubriendo otras piezas de literatura electr&oacute;nica de la regi&oacute;n e inspire
+        la creaci&oacute;n de nuevas obras que queden capturadas en vol&uacute;menes subsiguientes.</p>
 
       <h1 class="subtitle">Comité editorial </h1>
       <p>

@@ -22,8 +22,30 @@
     }
   }
 
+
+  .primera-columna {
+    .titulo-obra {
+      display: block;
+      margin-top: 3em;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+  }
+
+  .segunda-columna {
+    .titulo-obra {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+    }
+  }
+
   .main-title {
-    font-size: 1.6rem;
+    font-size: 2.6rem;
     text-transform: uppercase;
   }
 

@@ -23,13 +23,13 @@
                        :style="'background-image: url(/dist/images/obras/' + obra.captura_chica + ');'"></div>
                 </div>
               </div>
-              <div class="d-flex justify-content-start">
+              <div class="autor-obra">
                 <router-link
-                  class="obra-link"
+                  class="obra-link col-sx-12"
                   :to="{ name: 'obra' , params: {id: obra.id}}"><h3 class="autor-nombre">{{ obra.titulo }}</h3>
                 </router-link>
                 <router-link
-                  class="link link-autor"
+                  class="link link-autor  col-sx-12"
                   v-for="autor in getAutores(obra)"
                   :key="autor.autorId"
                   :to="{ name: 'autor' , params: {id: autor.autorId}}"><h4 class="autor-nombre">{{ autor.nombre }} {{

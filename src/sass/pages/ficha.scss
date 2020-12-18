@@ -115,7 +115,7 @@
     }
   }
 
-  .metadata a {
+  .metadata a, .metadata span {
     color: #fff;
 
     &:not(:last-child):after {

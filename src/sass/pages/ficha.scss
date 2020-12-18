@@ -19,7 +19,7 @@
   .primera-columna {
     .titulo-obra {
       display: block;
-      margin-top: 3em;
+      margin-top: 1.5em;
 
       @include media-breakpoint-up(md) {
         display: none;

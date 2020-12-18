@@ -25,22 +25,23 @@
             </template>
           </div>
           <h2 class="subtitle">Autoría</h2>
-          <p v-html="obra.autor"></p>
           <router-link
             class="link"
             v-for="autor in autores"
             :key="autor.autorId"
-            :to="{ name: 'autor' , params: {id: autor.autorId}}">Ver más sobre {{ autor.nombre }} {{ autor.apellido }}
+            :to="{ name: 'autor' , params: {id: autor.autorId}}">{{ autor.nombre }} {{ autor.apellido }}
           </router-link>
         </div>
-        <h2 class="subtitle">Metadata</h2>
-        <p class="mb-0"><strong>Año:</strong> {{ obra.ano }}</p>
-        <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
-        <p class="mb-0"><strong>Categorías:</strong> <span v-for="categoria in obra.categorias">{{ categoria }}</span>
-        </p>
-        <p class="mb-0"><strong>Tecnologías:</strong> <span v-for="tecnologia in obra.tecnologias">{{
-            tecnologia
-          }}</span></p>
+        <div class="metadata">
+          <h2 class="subtitle">Metadata</h2>
+          <p class="mb-0"><strong>Año:</strong> {{ obra.ano }}</p>
+          <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
+          <p class="mb-0"><strong>Categorías:</strong> <span v-for="categoria in obra.categorias">{{ categoria }}</span>
+          </p>
+          <p class="mb-0"><strong>Tecnologías:</strong> <span v-for="tecnologia in obra.tecnologias">{{
+              tecnologia
+            }}</span></p>
+        </div>
         <div v-if="obra.descargable">
           <h2 class="subtitle">Descarga</h2>
           <p class="mb-1"><a class="link text-left" :href="'descargables/' + obra.descargable">Obra Descargable</a>

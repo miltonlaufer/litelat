@@ -250,10 +250,6 @@ body {
   }
 }
 
-.detalle-obra span:not(:last-child):after {
-  content: ", ";
-}
-
 footer a {
   color: white;
 

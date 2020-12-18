@@ -43,14 +43,7 @@ router.beforeEach((to, from, next) => {
       }, 760);
     }
   }
-
-  // Dado que es SPA, hay que llegar el scroll arriba luego de los links
-  if (window.previousPage) {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 500);
-  }
-
+  
   if (from.name) {
     window.previousPage = from.name;
   }

@@ -8,6 +8,8 @@ import autor from './pages/Autor.vue';
 import fecha from './pages/Fecha.vue';
 import paises from './pages/Paises.vue';
 import categorias from './pages/Categorias.vue';
+import tecnologias from './pages/Tecnologias.vue';
+
 // Data
 import metadata from '../data/metadata/metadata.json';
 
@@ -47,6 +49,10 @@ const myRoutes = {
   categorias: {
     server: '/categorias',
     local: 'index.html?l=categorias'
+  },
+  tecnologias: {
+    server: '/tecnologias',
+    local: 'index.html?l=tecnologias'
   },
 };
 
@@ -97,6 +103,10 @@ let routes = {
     {
       component: categorias,
       name: 'categorias',
+    },
+    {
+      component: tecnologias,
+      name: 'tecnologias',
     },
     {path: '*', component: splash}
   ]

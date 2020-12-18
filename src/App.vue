@@ -42,6 +42,13 @@
               <router-link
                 active-class="active"
                 class="nav-link"
+                :to="{ name: 'tecnologias'}">Tecnologías
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                active-class="active"
+                class="nav-link"
                 :to="{ name: 'fecha'}">Año
               </router-link>
             </li>

@@ -12,10 +12,12 @@ const obras = {
   anos: [],
   paises: [],
   categorias: [],
+  tecnologias: [],
   autoresPorLetra: {},
   obrasPorAno: {},
   obrasPorPais: {},
   obrasPorCategoria: {},
+  obrasPorTecnologia: {},
   autores: {}
 }
 
@@ -26,8 +28,8 @@ for (let index in obras.lista) {
   let horribleIDs = [];
 
   for (let z = 0; z < obra.nombre.length; z++) {
-    obra.nombre[z]= obra.nombre[z].trim();
-    obra.apellido[z]= obra.apellido[z].trim();
+    obra.nombre[z] = obra.nombre[z].trim();
+    obra.apellido[z] = obra.apellido[z].trim();
     horribleIDs.push(`${obra.nombre[z]}_${obra.apellido[z]}`.replaceAll(/[. ]/gi, '_'));
   }
 
@@ -93,23 +95,31 @@ for (let index in obras.lista) {
 
   obras.obrasPorPais[pais].push(obra);
 
-  // Categorias
-  for (let categoria of obra.categorias) {
-    categoria = categoria.trim();
-    obras.categorias.push(categoria);
+  // Categorías y tecnologías
+  for (let tipo of ['categorias', 'tecnologias']) {
+    for (let nombre of obra[tipo]) {
+      nombre = nombre.trim();
+      obras[tipo].push(nombre);
 
-    if (!obras.obrasPorCategoria.hasOwnProperty(categoria)) {
-      obras.obrasPorCategoria[categoria] = [];
+      let objColector = obras.obrasPorTecnologia;
+
+      if (tipo === 'categorias') {
+        objColector = obras.obrasPorCategoria;
+      }
+
+      if (!objColector.hasOwnProperty(nombre)) {
+        objColector[nombre] = [];
+      }
+
+      objColector[nombre].push(obra);
     }
-
-    obras.obrasPorCategoria[categoria].push(obra);
   }
 }
-
 // Ordenemos toda la información
 obras.anos = [...new Set(obras.anos)].sort();
 obras.iniciales = [...new Set(obras.iniciales)].sort();
 obras.categorias = [...new Set(obras.categorias)].sort();
+obras.tecnologias = [...new Set(obras.tecnologias)].sort();
 obras.paises = [...new Set(obras.paises)].sort((a, b) => {
   let A = a.toUpperCase();
   let B = b.toUpperCase();
@@ -138,6 +148,10 @@ for (let pais of obras.paises) {
 
 for (let categoria of obras.categorias) {
   obras.obrasPorCategoria[categoria].sort(ordenPorTitulo);
+}
+
+for (let tecnologia of obras.tecnologias) {
+  obras.obrasPorTecnologia[tecnologia].sort(ordenPorTitulo);
 }
 
 // Esto convierte al objeto en un plugin de VUE

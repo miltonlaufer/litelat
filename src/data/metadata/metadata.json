@@ -35,6 +35,10 @@
     "categorias": {
       "title": "Categorías",
       "content": "Listado de obras por categoría"
+    },
+    "tecnologias": {
+      "title": "Tecnologías",
+      "content": "Listado de obras por tecnología"
     }
   }
 }

@@ -61,7 +61,9 @@ export default {
       }
     },
     getFontSize(texto) {
-      return 'font-size: ' + 3.5 / Math.log2(texto.length) + 'em';
+      let size = window.innerWidth < 576 ? 1 : (3.5 / Math.log2(texto.length));
+
+      return 'font-size: ' + size + 'em';
     }
   }
 }

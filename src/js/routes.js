@@ -1,5 +1,5 @@
 // Page components
-import splash from './pages/Splash.vue';
+import splash from './pages/Splash.vue'
 import obras from './pages/Obras.vue';
 import obra from './pages/Obra.vue';
 import acerca from './pages/Acerca.vue';
@@ -13,48 +13,8 @@ import tecnologias from './pages/Tecnologias.vue';
 // Data
 import metadata from '../data/metadata/metadata.json';
 
-const myRoutes = {
-  splash: {
-    server: '/',
-    local: 'index.html'
-  },
-  obras: {
-    server: '/obras',
-    local: 'index.html?l=obras'
-  },
-  obra: {
-    server: '/obra-:id',
-    local: 'index.html?l=obra&id=:id'
-  },
-  acerca: {
-    server: '/acerca',
-    local: 'index.html?l=acerca'
-  },
-  autores: {
-    server: '/autores',
-    local: 'index.html?l=autores'
-  },
-  autor: {
-    server: '/autor-:id',
-    local: 'index.html?l=autor&id=:id'
-  },
-  fecha: {
-    server: '/fecha',
-    local: 'index.html?l=fecha'
-  },
-  paises: {
-    server: '/paises',
-    local: 'index.html?l=paises'
-  },
-  categorias: {
-    server: '/categorias',
-    local: 'index.html?l=categorias'
-  },
-  tecnologias: {
-    server: '/tecnologias',
-    local: 'index.html?l=tecnologias'
-  },
-};
+// Excepciones de url
+const paginasConId = ['obra', 'autor'];
 
 let myProtocol = 'server';
 let filePath = '';
@@ -113,12 +73,23 @@ let routes = {
 }
 
 for (let routeIndex in routes.routes) {
-  if (routes.routes[routeIndex].name) {
-    let name = routes.routes[routeIndex].name;
+  let name = routes.routes[routeIndex].name;
+
+  if (name) {
+    routes.routes[routeIndex].name = name;
     routes.routes[routeIndex].meta = metadata.metadata[name];
-    routes.routes[routeIndex].path = filePath + myRoutes[name][myProtocol];
+    let path = {
+      server: '/',
+      local: 'index.html'
+    }
+
+    if (name !== 'splash') {
+      path.server += name;
+      path.local += `?l=${name}` + paginasConId.hasOwnProperty(name) ? '&id=:id' : '';
+    }
+
+    routes.routes[routeIndex].path = filePath + path[myProtocol];
   }
 }
-
 
 export default routes;

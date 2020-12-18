@@ -118,4 +118,10 @@
   .metadata span:not(:last-child):after {
     content: ", ";
   }
+
+  .ficha-autor {
+    @include media-breakpoint-down(lg) {
+      margin-top: 2em;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row ficha-autor">
     <div class="col">
       <h1 class="subtitle">{{ autor.nombre }} {{ autor.apellido }}</h1>
       <p v-html="bio"></p>

@@ -84,8 +84,8 @@ for (let routeIndex in routes.routes) {
     }
 
     if (name !== 'splash') {
-      path.server += name;
-      path.local += `?l=${name}` + paginasConId.hasOwnProperty(name) ? '&id=:id' : '';
+      path.server += name + (paginasConId.includes(name) ? '-:id' : '');
+      path.local += `?l=${name}` + (paginasConId.includes(name) ? '&id=:id' : '');
     }
 
     routes.routes[routeIndex].path = filePath + path[myProtocol];

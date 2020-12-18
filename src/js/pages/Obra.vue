@@ -34,13 +34,26 @@
         </div>
         <div class="metadata">
           <h2 class="subtitle">Metadata</h2>
-          <p class="mb-0"><strong>Año:</strong> {{ obra.ano }}</p>
-          <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
-          <p class="mb-0"><strong>Categorías:</strong> <span v-for="categoria in obra.categorias">{{ categoria }}</span>
+          <p class="mb-0"><strong>Año:</strong>
+            <router-link :to="{ path: '/fecha', hash: `#${obra.ano.split(/\D/)[0]}`}">{{ obra.ano }}
+            </router-link>
           </p>
-          <p class="mb-0"><strong>Tecnologías:</strong> <span v-for="tecnologia in obra.tecnologias">{{
-              tecnologia
-            }}</span></p>
+          <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
+          <p class="mb-0"><strong>Categorías:</strong>
+            <router-link v-for="categoria in obra.categorias"
+                         :to="{ path: '/categorias', hash: `#${categoria}`}"
+                         :key="categoria"
+            >{{ categoria }}
+            </router-link>
+          </p>
+          <p class="mb-0"><strong>Tecnologías:</strong>
+            <router-link v-for="tecnologia in obra.tecnologias"
+                         :to="{ path: '/tecnologias', hash: `#${tecnologia}`}"
+                         :key="tecnologia">{{
+                tecnologia
+              }}
+            </router-link>
+          </p>
         </div>
         <div v-if="obra.descargable">
           <h2 class="subtitle">Descarga</h2>

@@ -40,7 +40,7 @@
           </div>
         </div>
 
-        <div class="volver-wrapper"><a class="volver">⇡ subir</a></div>
+        <div class="volver-wrapper"><a class="volver">⇡ </a></div>
       </div>
     </div>
   </div>

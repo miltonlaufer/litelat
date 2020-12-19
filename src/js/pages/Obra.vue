@@ -43,16 +43,14 @@
             <router-link v-for="categoria in obra.categorias"
                          :to="{ path: '/categorias', hash: `#${categoria}`}"
                          :key="categoria"
-            >{{ categoria }}
-            </router-link>
+            >{{ categoria }}</router-link>
           </p>
           <p class="mb-0"><strong>Tecnologías:</strong>
             <router-link v-for="tecnologia in obra.tecnologias"
                          :to="{ path: '/tecnologias', hash: `#${tecnologia}`}"
                          :key="tecnologia">{{
                 tecnologia
-              }}
-            </router-link>
+              }}</router-link>
           </p>
         </div>
         <div v-if="obra.descargable">

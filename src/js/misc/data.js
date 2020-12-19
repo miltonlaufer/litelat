@@ -35,8 +35,6 @@ for (let index in obras.lista) {
 
   obra.id = index;
   obra.autorId = horribleIDs;
-  obra.tituloHTML = obra.titulo;
-  obra.titulo = obra.titulo.replaceAll('<br>', ' ')
 
   let autorIndex = 0;
 

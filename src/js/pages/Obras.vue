@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       obras: this.$obras.lista,
+      intervalID: null,
     }
   },
   mounted() {
@@ -32,14 +33,14 @@ export default {
       window.addEventListener('resize', this.eyes);
     });
 
-    // Workaround for when the page is accessed directly
-    if (!window.previousPage) {
-      setTimeout(() => {
-        this.eyes();
-      }, 3000);
-    }
+    // Workaround for certain glitches that appear from time to time
+    this.intervalID = setInterval(() => {
+      this.eyes();
+    }, 3000);
+
   },
   beforeDestroy() {
+    clearInterval(this.intervalID);
     window.removeEventListener('resize', this.eyes);
   },
   methods: {
@@ -50,11 +51,24 @@ export default {
 
       for (let i = 0; i < elems.length; i++) {
         let elem = elems[i];
+        const style = window.getComputedStyle(elem)
+        const matrix = style.transform || style.webkitTransform || style.mozTransform;
+
+        // Workaround: si el elemento está hovered, entonces se agranda y los cálculos se distorsionan
+        if (matrix !== 'none') {
+          // Lo de abajo toma el valor de CSS "transform: scale"
+          if (matrix.substring(7, matrix.length - 1).split(',')[0].trim() !== '1') {
+            continue;
+          }
+        }
+
         let height = elem.getBoundingClientRect().top;
+
         if (lastHeight !== height) {
           lastHeight = height;
           odd = !odd;
         }
+
         elem.classList.remove('odd');
         elem.classList.remove('even');
         elem.classList.add(odd ? 'odd' : 'even');

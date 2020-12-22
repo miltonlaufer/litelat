@@ -43,7 +43,7 @@ foreach ($obras as $obra) {
             },
             explode(',', $val)
           );
-        } elseif ($col === 'enlace') {
+        } elseif (in_array($col, ['enlace', 'descargable'])) {
           if (strlen(trim($val))) {
             $links = explode(';', $val);
             $val = array_map(

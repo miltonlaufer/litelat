@@ -43,19 +43,31 @@
             <router-link v-for="categoria in obra.categorias"
                          :to="{ path: '/categorias', hash: `#${categoria}`}"
                          :key="categoria"
-            >{{ categoria }}</router-link>
+            >{{ categoria }}
+            </router-link>
           </p>
           <p class="mb-0"><strong>Tecnologías:</strong>
             <router-link v-for="tecnologia in obra.tecnologias"
                          :to="{ path: '/tecnologias', hash: `#${tecnologia}`}"
                          :key="tecnologia">{{
                 tecnologia
-              }}</router-link>
+              }}
+            </router-link>
+          </p>
+          <p class="mb-0"><strong>País:</strong>
+            <router-link :to="{ path: '/paises', hash: `#${obra.pais}`}">{{
+                obra.pais
+              }}
+            </router-link>
           </p>
         </div>
         <div v-if="obra.descargable">
           <h2 class="subtitle">Descarga</h2>
-          <p class="mb-1"><a class="link text-left" :href="'descargables/' + obra.descargable">Obra Descargable</a>
+          <p class="mb-1">
+            <template v-for="enlace in obra.descargable"><a :href="'/descargables/' + enlace.link" target="_blank">{{
+                enlace.text
+              }}</a><br>
+            </template>
           </p>
         </div>
       </div>
@@ -76,15 +88,24 @@ export default {
     this.$nextTick(() => {
       document.body.classList.add("ficha");
       document.getElementById('generalWrapper').classList.add('ficha-wrapper', 'mt-5', 'pt-5');
-      document.getElementById('imageObra').after(document.getElementById('tituloObra').cloneNode(true));
+      this.cloneTitle();
     });
   },
   watch: {
     '$route.params.id': function () {
       this.setTitulo();
+      this.cloneTitle();
     }
   },
   methods: {
+    cloneTitle() {
+      this.$nextTick(() => {
+        Array.from(document.querySelectorAll('.clonedClass')).map(el => el.parentNode.removeChild(el));
+        let obj = document.getElementById('tituloObra').cloneNode(true);
+        document.getElementById('imageObra').after(obj);
+        obj.classList.add('clonedClass');
+      });
+    },
     setTitulo() {
       document.title = this.obra.titulo + ' | ' + document.title;
     },

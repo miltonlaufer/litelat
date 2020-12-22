@@ -4,11 +4,12 @@
       <div class="col text-center">
         <ul class="alfabeto">
           <li v-for="inicial in iniciales"><a class="letras-links" :rel="inicial">{{ inicial }}</a></li>
+          <br/><input type="search" v-model="search" placeholder="Buscar"/>
         </ul>
       </div>
     </div>
     <div class="row mt-5 pt-5">
-      <div class="col autores">
+      <div class="col autores" v-if="iniciales.length">
         <div class="row mb-5" v-for="inicial in iniciales">
           <div class="col">
             <h2 class="letra"><a :name="inicial" :id="inicial"></a> {{ inicial }}. </h2>
@@ -33,6 +34,9 @@
 
         <div class="volver-wrapper"><a class="volver">⇡ </a></div>
       </div>
+      <div class="col autores" v-else>
+        <h2 class="letra">No hay resultados para su búsqueda</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -45,8 +49,9 @@ export default {
   mixins: [mixins],
   data() {
     return {
-      autores: this.$obras.autoresPorLetra,
-      iniciales: this.$obras.iniciales
+      autoresComienzo: this.$obras.autoresPorLetra,
+      inicialesComienzo: this.$obras.iniciales,
+      search: '',
     }
   },
   mounted() {
@@ -59,22 +64,58 @@ export default {
           window.scrollTo(0, 0);
         });
 
-        Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {
-          obj.addEventListener('click', e => {
-            e.preventDefault();
-
-            let inicial = e.target.getAttribute('rel');
-            let position = document.getElementById(inicial).getBoundingClientRect().top;
-            window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${inicial}`);
-
-            setTimeout(() => {
-                window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))
-              }, 1
-            );
-          });
-        });
+        this.setEvents();
       }
     );
+  },
+  methods: {
+    setEvents: function () {
+      Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {
+        obj.addEventListener('click', e => {
+          e.preventDefault();
+
+          let inicial = e.target.getAttribute('rel');
+          let position = document.getElementById(inicial).getBoundingClientRect().top;
+          window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${inicial}`);
+
+          setTimeout(() => {
+              window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))
+            }, 1
+          );
+        });
+      });
+    }
+  },
+  watch: {
+    iniciales: function (old, now) {
+      if (old.length !== now.length) {
+        this.$nextTick(() => {
+          this.setEvents();
+        });
+      }
+    }
+  },
+  computed: {
+    iniciales: function () {
+      return Object.keys(this.autores);
+    },
+    autores: function () {
+      let autores = {};
+
+      for (let inicial of this.inicialesComienzo) {
+        let autoresFiltrados = this.autoresComienzo[inicial].filter(autor => !this.search ||
+          `${autor.nombre} ${autor.apellido}`
+            .toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+            .includes(this.search.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""))
+        );
+
+        if (autoresFiltrados.length) {
+          autores[inicial] = autoresFiltrados;
+        }
+      }
+
+      return autores;
+    }
   }
 }
 </script>

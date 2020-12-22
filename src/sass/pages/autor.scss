@@ -7,6 +7,14 @@
     }
   }
 
+  input {
+    font-size: .5em;
+    border-radius: 15px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .volver-wrapper {
     position: fixed;
     bottom: 0;
@@ -85,6 +93,10 @@
     span {
       font-size: .8em;
     }
+  }
+
+  .volver {
+    font-size: 2em;
   }
 
   .autor-item {

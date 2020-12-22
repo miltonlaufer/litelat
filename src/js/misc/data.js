@@ -41,7 +41,7 @@ for (let index in obras.lista) {
   for (let horribleID of horribleIDs) {
     if (!autoresProcesados.includes(horribleID)) {
       autoresProcesados.push(horribleID);
-      let inicial = obra.apellido[autorIndex][0].toUpperCase();
+      let inicial = obra.apellido[autorIndex][0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
       if (!obras.autoresPorLetra.hasOwnProperty(inicial)) {
         obras.autoresPorLetra[inicial] = [];

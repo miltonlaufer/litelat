@@ -117,7 +117,12 @@ for (let index in obras.lista) {
 obras.anos = [...new Set(obras.anos)].sort();
 obras.iniciales = [...new Set(obras.iniciales)].sort();
 obras.categorias = [...new Set(obras.categorias)].sort();
-obras.tecnologias = [...new Set(obras.tecnologias)].sort();
+obras.tecnologias = [...new Set(obras.tecnologias)].sort((a, b) => {
+  let A = a.toUpperCase();
+  let B = b.toUpperCase();
+
+  return (A < B) ? -1 : (A > B) ? 1 : 0;
+});
 obras.paises = [...new Set(obras.paises)].sort((a, b) => {
   let A = a.toUpperCase();
   let B = b.toUpperCase();

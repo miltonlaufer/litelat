@@ -62,6 +62,14 @@
         a trav&eacute;s de Latinoam&eacute;rica, el Caribe y el mundo. Esperamos que este primer volumen, motive a la
         comunidad a continuar descubriendo otras piezas de literatura electr&oacute;nica de la regi&oacute;n e inspire
         la creaci&oacute;n de nuevas obras que queden capturadas en vol&uacute;menes subsiguientes.</p>
+      <h1 class="subtitle">FICHA BIBLIOGRÁFICA</h1>
+      <p>Flores, Leonardo; Kozak, Claudia; Mata, Rodolfo (eds). Antología Lit(e)Lat Volumen 1. Red de Literatura
+        Electrónica Latinoamericana, 2020, http://antologia.litelat.net
+      </p>
+      <h1 class="subtitle">AUSPICIO</h1>
+      <p class="desarrollo">Electronic Literature Organization (ELO) -
+        <a href="http://eliterature.org" target="_blank">http://eliterature.org</a>
+      </p>
       <h1 class="subtitle">Comité editorial </h1>
       <p>
         Leonardo Flores <br>

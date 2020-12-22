@@ -64,7 +64,7 @@
         <div v-if="obra.descargable">
           <h2 class="subtitle">Descarga</h2>
           <p class="mb-1">
-            <template v-for="enlace in obra.descargable"><a :href="'/descargables/' + enlace.link" target="_blank">{{
+            <template v-for="enlace in obra.descargable"><a :href="'/dist/descargables/' + enlace.link" target="_blank">{{
                 enlace.text
               }}</a><br>
             </template>

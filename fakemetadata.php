@@ -58,7 +58,7 @@ function makePage($data)
   $title = $data['meta']['title'] . ' | Antología Litelat #1';
   $interior = $data['internal'];
 
-  if ($interior && !$data['path'] !== 'obras') {
+  if ($interior && $data['path'] !== 'obras') {
     $title = ($data['type'] === 'obra' ? $interior['titulo'] : "{$interior['nombre']} {$interior['apellido']}") .
       ' | ' . $title;
   }

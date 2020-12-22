@@ -62,19 +62,9 @@
         a trav&eacute;s de Latinoam&eacute;rica, el Caribe y el mundo. Esperamos que este primer volumen, motive a la
         comunidad a continuar descubriendo otras piezas de literatura electr&oacute;nica de la regi&oacute;n e inspire
         la creaci&oacute;n de nuevas obras que queden capturadas en vol&uacute;menes subsiguientes.</p>
-      <h1 class="subtitle">FICHA BIBLIOGRÁFICA</h1>
-      <p>Flores, Leonardo; Kozak, Claudia; Mata, Rodolfo (eds). Antología Lit(e)Lat Volumen 1. Red de Literatura
-        Electrónica Latinoamericana, 2020, http://antologia.litelat.net
-      </p>
-      <h1 class="subtitle">AUSPICIO</h1>
-      <p class="desarrollo">Electronic Literature Organization (ELO) -
-        <a href="http://eliterature.org" target="_blank">http://eliterature.org</a>
-      </p>
       <h1 class="subtitle">Comité editorial </h1>
       <p>
-        Leonardo Flores <br>
-        Claudia Kozak <br>
-        Rodolfo Mata
+        Leonardo Flores, Claudia Kozak, Rodolfo Mata
       </p>
 
       <h1 class="subtitle">Desarrollo </h1>
@@ -83,6 +73,21 @@
         <strong>Maquetado HTML</strong>: <a href="http://www.eikondesign.com.ar/" target="_blank">Inés Sotomayor</a><br>
         <strong>Programación</strong>: <a href="http://www.miltonlaufer.com.ar/" target="_blank">Milton Läufer</a>
       </p>
+      <h1 class="subtitle">FICHA BIBLIOGRÁFICA</h1>
+      <p>Flores, Leonardo; Kozak, Claudia; Mata, Rodolfo (eds). Antología Lit(e)Lat Volumen 1. Red de Literatura
+        Electrónica Latinoamericana, 2020, http://antologia.litelat.net
+      </p>
+      <h1 class="subtitle">AUSPICIOS</h1>
+      <p class="desarrollo">
+        <a href="http://eliterature.org" target="_blank">Electronic Literature Organization (ELO) </a>
+      </p>
+      <h1 class="subtitle">Licencia</h1>
+      <p class="desarrollo"><a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank">Creative
+        Commons Atribuci&oacute;n-NoComercial
+        4.0 Internacional (CC BY-NC
+        4.0)</a></p>
+      <h1 class="subtitle">Versión</h1>
+      <p>1.0 - 30 de dicembre de 2020</p>
     </div>
   </div>
 </template>

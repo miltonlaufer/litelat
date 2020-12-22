@@ -93,15 +93,6 @@
         </div>
       </div>
     </main>
-    <footer v-if="showMenu">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col text-center"><a href="http://litelat.net" target="_blank">Red de Literatura Electrónica
-            Latinoamericana</a>
-          </div>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 

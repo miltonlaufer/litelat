@@ -64,7 +64,9 @@
         la creaci&oacute;n de nuevas obras que queden capturadas en vol&uacute;menes subsiguientes.</p>
       <h1 class="subtitle">Comité editorial </h1>
       <p>
-        Leonardo Flores, Claudia Kozak, Rodolfo Mata
+        Leonardo Flores<br>
+        Claudia Kozak<br>
+        Rodolfo Mata
       </p>
 
       <h1 class="subtitle">Desarrollo </h1>

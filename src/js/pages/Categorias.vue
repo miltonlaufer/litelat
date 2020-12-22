@@ -9,7 +9,6 @@ import listadosTexto from "../components/listadosTexto";
 
 export default {
   name: "Categorias.vue",
-  mixins: [mixins],
   components: {
     'listado-texto': listadosTexto
   },

@@ -13,12 +13,12 @@ export default {
     }
   },
   mounted() {
+    // Dado que es SPA, hay que llevar el scroll arriba (particularmente en mobiles)
     window.scrollTo(0, 0);
 
     let mainObj = document.getElementById('main');
 
     if (mainObj) mainObj.classList.remove(...mainObj.classList);
 
-    // Dado que es SPA, hay que llevar el scroll arriba (particularmente en mobiles)
   }
 }

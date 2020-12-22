@@ -81,11 +81,9 @@ export default {
       let anchor = decodeURI(this.$route.hash.substring(1));
 
       if (anchor) {
-        console.log(anchor);
-        let position = document.getElementById(anchor).getBoundingClientRect().top;
-
         setTimeout(() => {
-            window.scrollTo(0, position + window.scrollY - 200)
+          let position = document.getElementById(anchor).getBoundingClientRect().top;
+          window.scrollTo(0, position - 200)
           }, 1000
         );
       }

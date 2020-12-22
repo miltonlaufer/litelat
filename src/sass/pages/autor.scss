@@ -73,6 +73,8 @@
       float: left;
       margin: -35px 50px 0 0;
       width: 100px;
+      height: 100px;
+
       @include media-breakpoint-down(xs) {
         margin-right: 40px;
       }

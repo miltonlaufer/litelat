@@ -20,6 +20,14 @@
     text-decoration: none;
   }
 
+  img {
+    width: 1.2em;
+    margin-right: .1em;
+    fill: red;
+    margin-top: -2px;
+    filter: invert(42%) sepia(10%) saturate(1196%) hue-rotate(0) brightness(132%) contrast(10%);
+  }
+
   // Disabled state lightens text
   &.disabled {
     color: $nav-link-disabled-color;

@@ -56,7 +56,7 @@
               <router-link
                 active-class="active"
                 class="nav-link"
-                :to="{ name: 'obra' , params: {id: obraId}}">Descubrir
+                :to="{ name: 'obra' , params: {id: obraId}}"><img title="Descubrir" src="dist/images/shuffle.svg">Descubrir
               </router-link>
             </li>
             <li class="nav-item">

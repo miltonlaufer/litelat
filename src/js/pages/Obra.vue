@@ -42,23 +42,19 @@
           <p class="mb-0"><strong>Categorías:</strong>
             <router-link v-for="categoria in obra.categorias"
                          :to="{ path: '/categorias', hash: `#${categoria}`}"
-                         :key="categoria"
-            >{{ categoria }}
-            </router-link>
+                         :key="categoria">{{ categoria }}</router-link>
           </p>
           <p class="mb-0"><strong>Tecnologías:</strong>
             <router-link v-for="tecnologia in obra.tecnologias"
                          :to="{ path: '/tecnologias', hash: `#${tecnologia}`}"
                          :key="tecnologia">{{
                 tecnologia
-              }}
-            </router-link>
+              }}</router-link>
           </p>
           <p class="mb-0"><strong>País:</strong>
             <router-link :to="{ path: '/paises', hash: `#${obra.pais}`}">{{
                 obra.pais
-              }}
-            </router-link>
+              }}</router-link>
           </p>
         </div>
         <div v-if="obra.descargable">

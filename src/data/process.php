@@ -31,7 +31,7 @@ $resultTmp = [];
 
 foreach ($obras as $obra) {
   $contador++;
-  $obraArray = explode('---', $obra);
+  $obraArray = explode('----', $obra);
   $resultTmp[$contador] = call_user_func_array(
     'array_merge',
     array_map(

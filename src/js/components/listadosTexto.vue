@@ -3,19 +3,19 @@
     <div class="row mt-5 pt-5">
       <div class="col text-center">
         <ul class="alfabeto">
-          <li v-for="tipo in tiposLista"><a class="letras-links" :rel="tipo">{{ tipo }}</a></li>
+          <li v-for="tipo in tiposListaFiltradas"><a class="letras-links" :rel="tipo">{{ tipo }}</a></li>
+          <br/><input type="search" v-model="search" placeholder="Buscar"/>
         </ul>
       </div>
     </div>
     <div class="row mt-5 pt-5">
       <div class="col autores">
-        <div class="row mb-5" v-for="tipo in tiposLista">
+        <div class="row mb-5" v-for="tipo in tiposListaFiltradas">
           <div class="col">
             <h2 class="letra"><a :name="tipo" :id="tipo"></a> {{ tipo }}
               <span v-if="tieneDefiniciones"><br>{{ definiciones[tipo] }}</span></h2>
-            <div class="autor-item" v-for="obra in obrasPorTipo[tipo]">
+            <div class="autor-item" v-for="obra in obrasPorTipoFiltradas[tipo]">
               <div class="eye">
-
                 <router-link
                   :to="{ name: 'obra' , params: {id: obra.id}}"></router-link>
                 <div class="eye-shape">
@@ -72,6 +72,7 @@ export default {
   data() {
     return {
       obras: this.$obras.lista,
+      search: '',
     }
   },
   mounted() {
@@ -82,8 +83,8 @@ export default {
 
       if (anchor) {
         setTimeout(() => {
-          let position = document.getElementById(anchor).getBoundingClientRect().top;
-          window.scrollTo(0, position - 200)
+            let position = document.getElementById(anchor).getBoundingClientRect().top;
+            window.scrollTo(0, position - 200)
           }, 1000
         );
       }
@@ -115,9 +116,45 @@ export default {
   computed: {
     tieneDefiniciones: function () {
       return Object.keys(this.definiciones).length > 0;
+    },
+    tiposListaFiltradas: function () {
+      return Object.keys(this.obrasPorTipoFiltradas);
+    },
+    obrasPorTipoFiltradas: function () {
+      let resultados = {};
+
+      for (let tipo of this.tiposLista) {
+        let resultadosFiltrados = this.obrasPorTipo[tipo].filter(obra => {
+            if (!this.search) return true;
+
+            let searchNormalized = this.normalizeString(this.search);
+
+            if (
+              this.normalizeString(tipo).includes(searchNormalized)
+              || this.normalizeString(obra.titulo).includes(searchNormalized)
+            ) return true;
+
+            for (let z = 0; z < obra.nombre.length; z++) {
+              if (this.normalizeString(`${obra.nombre[z]} ${obra.apellido[z]}`).includes(searchNormalized)) {
+                return true;
+              }
+            }
+          }
+        );
+
+        if (resultadosFiltrados.length
+        ) {
+          resultados[tipo] = resultadosFiltrados;
+        }
+      }
+
+      return resultados;
     }
   },
   methods: {
+    normalizeString(string) {
+      return string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+    },
     getAutores(obra) {
       let autores = [];
 
@@ -131,7 +168,7 @@ export default {
 
       return autores;
     }
-  },
+  }
 }
 </script>
 

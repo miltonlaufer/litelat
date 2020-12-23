@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="row mt-5 pt-5">
+    <div class="row mt-5 pt-5 mb-5">
       <div class="col text-center">
         <ul class="alfabeto">
           <li v-for="tipo in tiposListaFiltradas"><a class="letras-links" :rel="tipo">{{ tipo }}</a></li>
-          <br/><input type="search" v-model="search" placeholder="Buscar"/>
         </ul>
+        <input type="search" v-model="search" placeholder="Buscar"/>
       </div>
     </div>
     <div class="row pt-5">

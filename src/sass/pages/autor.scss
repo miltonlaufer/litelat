@@ -8,11 +8,12 @@
   }
 
   input {
-    font-size: .5em;
+    font-size: .6em;
+    line-height: 1.2em;
     border-radius: 15px;
     border: none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px;
+    margin-top: 10px;
   }
 
   .volver-wrapper {
@@ -32,7 +33,7 @@
   .alfabeto {
     text-align: center;
     max-width: 95%;
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
     line-height: 2;
     font-size: 2rem;
 
@@ -49,15 +50,17 @@
         background-color: rgba(white, 0.2);
       }
 
-      &:last-child {
-        &::after {
-          display: none;
-        }
+      &:last-child::after {
+        background: none;
       }
     }
 
     a {
       color: #fff;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 

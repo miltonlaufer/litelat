@@ -86,6 +86,10 @@
     .eye-shape {
       height: 100px;
       width: 100px;
+
+      .content::after {
+        opacity: 0;
+      }
     }
   }
 

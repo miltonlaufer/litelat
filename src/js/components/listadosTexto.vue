@@ -95,23 +95,18 @@ export default {
           window.scrollTo(0, 0);
         });
 
-        Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {
-          obj.addEventListener('click', e => {
-            e.preventDefault();
-
-            let clase = e.target.getAttribute('rel');
-            let position = document.getElementById(clase).getBoundingClientRect().top;
-
-            window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${clase}`);
-
-            setTimeout(() => {
-                window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))
-              }, 1
-            );
-          });
-        });
+        this.setEvents();
       }
     );
+  },
+  watch: {
+    tiposListaFiltradas: function (old, now) {
+      if (old.length !== now.length) {
+        this.$nextTick(() => {
+          this.setEvents();
+        });
+      }
+    }
   },
   computed: {
     tieneDefiniciones: function () {

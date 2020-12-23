@@ -55,11 +55,7 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      document.body.classList.add("autor");
-    });
-
-    this.$nextTick(() => {
+      this.$nextTick(() => {
         Array.from(document.getElementsByClassName('volver'))[0].addEventListener('click', _ => {
           window.scrollTo(0, 0);
         });
@@ -67,24 +63,6 @@ export default {
         this.setEvents();
       }
     );
-  },
-  methods: {
-    setEvents: function () {
-      Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {
-        obj.addEventListener('click', e => {
-          e.preventDefault();
-
-          let inicial = e.target.getAttribute('rel');
-          let position = document.getElementById(inicial).getBoundingClientRect().top;
-          window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${inicial}`);
-
-          setTimeout(() => {
-              window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))
-            }, 1
-          );
-        });
-      });
-    }
   },
   watch: {
     iniciales: function (old, now) {

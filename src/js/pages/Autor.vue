@@ -19,6 +19,8 @@ export default {
   name: "Autor.vue",
   mixins: [mixins],
   mounted() {
+    document.title = `${this.autor.nombre} ${this.autor.apellido} | ` + document.title;
+
     this.$nextTick(() => {
       document.body.classList.add("ficha");
       document.getElementById('generalWrapper').classList.add('ficha-wrapper');

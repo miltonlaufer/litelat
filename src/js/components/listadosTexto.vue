@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="row mt-5 pt-5">
-      <div class="col autores">
+      <div class="col autores" v-if="tiposListaFiltradas.length">
         <div class="row mb-5" v-for="tipo in tiposListaFiltradas">
           <div class="col">
             <h2 class="letra"><a :name="tipo" :id="tipo"></a> {{ tipo }}
@@ -41,7 +41,10 @@
           </div>
         </div>
 
-        <div class="volver-wrapper"><a class="volver">⇡ </a></div>
+        <div class="volver-wrapper"><a class="volver">⇡</a></div>
+      </div>
+      <div class="col autores" v-else>
+        <h2 class="letra">No hay resultados para su búsqueda</h2>
       </div>
     </div>
   </div>
@@ -77,24 +80,8 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      document.body.classList.add("autor");
-
-      let anchor = decodeURI(this.$route.hash.substring(1));
-
-      if (anchor) {
-        setTimeout(() => {
-            let position = document.getElementById(anchor).getBoundingClientRect().top;
-            window.scrollTo(0, position - 200)
-          }, 1000
-        );
-      }
-    });
-
-    this.$nextTick(() => {
-        Array.from(document.getElementsByClassName('volver'))[0].addEventListener('click', _ => {
-          window.scrollTo(0, 0);
-        });
-
+        document.body.classList.add("autor");
+        this.checkAnchor();
         this.setEvents();
       }
     );
@@ -147,9 +134,6 @@ export default {
     }
   },
   methods: {
-    normalizeString(string) {
-      return string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-    },
     getAutores(obra) {
       let autores = [];
 

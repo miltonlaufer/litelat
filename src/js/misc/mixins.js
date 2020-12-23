@@ -23,7 +23,12 @@ export default {
   methods: {
     // Este método sólo es usado por algunos componentes (los que tienen listados)
     setEvents: function () {
-      Array.from(document.getElementsByClassName('letras-links')).forEach(obj => {
+      Array.from(document.getElementsByClassName('volver')).forEach(obj => obj.addEventListener('click', _ => {
+        console.log('back listados');
+        window.scrollTo(0, 0);
+      }));
+
+      Array.from(document.getElementsByClassName('letras-links')).forEach(obj =>
         obj.addEventListener('click', e => {
           e.preventDefault();
 
@@ -35,8 +40,22 @@ export default {
               window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))
             }, 1
           );
-        });
-      });
+        })
+      );
+    },
+    normalizeString(string) {
+      return string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+    },
+    checkAnchor() {
+      let anchor = decodeURI(this.$route.hash.substring(1));
+
+      if (anchor) {
+        setTimeout(() => {
+            let position = document.getElementById(anchor).getBoundingClientRect().top;
+            window.scrollTo(0, position - 200)
+          }, 1000
+        );
+      }
     }
   },
 }

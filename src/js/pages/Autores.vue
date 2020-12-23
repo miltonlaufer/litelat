@@ -55,11 +55,9 @@ export default {
     }
   },
   mounted() {
-      this.$nextTick(() => {
-        Array.from(document.getElementsByClassName('volver'))[0].addEventListener('click', _ => {
-          window.scrollTo(0, 0);
-        });
-
+    this.$nextTick(() => {
+        document.body.classList.add("autor");
+        this.checkAnchor();
         this.setEvents();
       }
     );
@@ -82,9 +80,7 @@ export default {
 
       for (let inicial of this.inicialesComienzo) {
         let autoresFiltrados = this.autoresComienzo[inicial].filter(autor => !this.search ||
-          `${autor.nombre} ${autor.apellido}`
-            .toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-            .includes(this.search.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""))
+          this.normalizeString(`${autor.nombre} ${autor.apellido}`).includes(this.normalizeString(this.search))
         );
 
         if (autoresFiltrados.length) {

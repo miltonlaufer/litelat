@@ -8,7 +8,7 @@
         </ul>
       </div>
     </div>
-    <div class="row mt-5 pt-5">
+    <div class="row pt-5">
       <div class="col autores" v-if="iniciales.length">
         <div class="row mb-5" v-for="inicial in iniciales">
           <div class="col">

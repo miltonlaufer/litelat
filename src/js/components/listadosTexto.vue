@@ -8,7 +8,7 @@
         </ul>
       </div>
     </div>
-    <div class="row mt-5 pt-5">
+    <div class="row pt-5">
       <div class="col autores" v-if="tiposListaFiltradas.length">
         <div class="row mb-5" v-for="tipo in tiposListaFiltradas">
           <div class="col">

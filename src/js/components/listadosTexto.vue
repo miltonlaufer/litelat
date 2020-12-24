@@ -114,6 +114,10 @@ export default {
             if (
               this.normalizeString(tipo).includes(searchNormalized)
               || this.normalizeString(obra.titulo).includes(searchNormalized)
+              || (
+                this.tieneDefiniciones && this.definiciones.hasOwnProperty(tipo) &&
+                this.normalizeString(this.definiciones[tipo]).includes(searchNormalized)
+              )
             ) return true;
 
             for (let z = 0; z < obra.nombre.length; z++) {

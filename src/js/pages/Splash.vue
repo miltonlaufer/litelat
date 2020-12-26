@@ -84,7 +84,8 @@
     <div class="footer">
       <div class="container-fluid">
         <div class="row">
-          <div class="col text-right"><img src="dist/images/logo_litelat_footer.png" width="240"></div>
+          <div class="col text-right"><a href="http://www.litelat.net" target="_blank"><img
+            src="dist/images/logo_litelat_footer.png" width="240"></a></div>
         </div>
       </div>
     </div>

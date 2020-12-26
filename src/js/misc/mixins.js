@@ -53,7 +53,7 @@ export default {
 
       if (!elems.length) return false;
 
-      let numeroDeOjos = this.dameUnNumeroAlAzar(Math.pow((elems.length * .05) + 1, 2));
+      let numeroDeOjos = this.dameUnNumeroAlAzar(Math.pow((elems.length * .01) + 1.5, 2));
       let delay = 0;
 
       while (numeroDeOjos) {

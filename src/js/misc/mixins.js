@@ -66,6 +66,8 @@ export default {
         }
 
         setTimeout(() => {
+          if (this.isHovered(elem)) return false;
+
           elem.classList.add('closing');
           setTimeout(() => elem.classList.remove('closing'), 300);
         }, delay += this.dameUnNumeroAlAzar(2000));
@@ -78,7 +80,7 @@ export default {
     },
     // Este método sólo es usado por algunos componentes (los que tienen listados)
     setEvents: function () {
-      Array.from(document.getElementsByClassName('volver')).forEach(obj => obj.addEventListener('click', (s) => {
+      Array.from(document.getElementsByClassName('volver')).forEach(obj => obj.addEventListener('click', () => {
         window.scrollTo(0, 0);
       }));
 

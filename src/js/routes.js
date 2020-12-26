@@ -82,7 +82,7 @@ let routes = {
           let obj = document.getElementById(hash.substr(1));
 
           if (obj) {
-            position.y = obj.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 5);
+            position.y = obj.getBoundingClientRect().top + window.scrollY - window.innerWidth < 1200 ? (window.innerHeight / 5) : 0;
           }
         }
 

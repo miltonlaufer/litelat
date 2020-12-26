@@ -100,7 +100,7 @@ export default {
     goToAnchor(tipo) {
       setTimeout(() => {
         let position = document.getElementById(tipo).getBoundingClientRect().top;
-        window.scrollTo(0, position - (window.innerHeight / 5));
+        window.scrollTo(0, position - window.innerWidth < 1200 ? (window.innerHeight / 5) : 0);
       }, 1);
     }
   }

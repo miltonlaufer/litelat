@@ -38,42 +38,12 @@ export default {
     this.intervalID = setInterval(() => {
       this.eyes();
     }, 3000);
-
-    this.closingEyesId = setInterval(() => {
-      this.closeSomeEyes();
-    }, 3000);
   },
   beforeDestroy() {
     clearInterval(this.intervalID);
-    clearInterval(this.closingEyesId);
     window.removeEventListener('resize', this.eyes);
   },
   methods: {
-    closeSomeEyes() {
-      let numeroDeOjos = this.dameUnNumeroAlAzar(3);
-      let elems = document.getElementsByClassName('eye');
-      let delay = 0;
-
-      while (numeroDeOjos) {
-        let isAvailable = false;
-        let elem = null;
-
-        while (!isAvailable) {
-          elem = elems[this.dameUnNumeroAlAzar(elems.length)];
-          isAvailable = !elem.classList.contains('closing') && !this.isHovered(elem);
-        }
-
-        setTimeout(() => {
-          elem.classList.add('closing');
-          setTimeout(() => elem.classList.remove('closing'), 300);
-        }, delay += this.dameUnNumeroAlAzar(3000));
-
-        numeroDeOjos--;
-      }
-    },
-    dameUnNumeroAlAzar(maximo) {
-      return Math.floor(Math.random() * maximo)
-    },
     eyes() {
       let elems = document.getElementsByClassName('eye');
       let lastHeight = null;
@@ -97,18 +67,6 @@ export default {
         elem.classList.remove('even');
         elem.classList.add(odd ? 'odd' : 'even');
       }
-    },
-    isHovered(elem) {
-      const style = window.getComputedStyle(elem)
-      const matrix = style.transform || style.webkitTransform || style.mozTransform;
-
-      // Workaround: si el elemento está hovered, entonces se agranda y los cálculos se distorsionan
-      if (matrix !== 'none') {
-        // Lo de abajo toma el valor de CSS "transform: scale"
-        return (matrix.substring(7, matrix.length - 1).split(',')[0].trim() !== '1');
-      }
-
-      return false;
     },
     getFontSize(texto) {
       let size = window.innerWidth < 576 ? 1 : (3.5 / Math.log2(texto.length));

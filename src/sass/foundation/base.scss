@@ -103,6 +103,43 @@ body {
   transition: $smooth-slow;
   // opacity: 0.7;
 
+  &:hover {
+    &:before, &:after {
+      background: none;
+    }
+
+    z-index: 1000;
+  }
+
+  &:before, &:after {
+    transition: height .3s;
+    content: '';
+    position: absolute;
+    background-color: #4d4d4d;
+    width: 140%;
+    height: 0;
+    left: -20%;
+  }
+
+  &:before {
+    top: 22px;
+    z-index: 999;
+  }
+
+  &:after {
+    bottom: 22px;
+  }
+
+  &.closing {
+    &:before, &:after {
+      height: 30%;
+
+      @include media-breakpoint-down(xs) {
+        height: 40%;
+      }
+    }
+  }
+
   h2 {
     transition: .4s;
     padding: 0 40px;

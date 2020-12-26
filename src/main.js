@@ -8,6 +8,7 @@ import obras from './js/misc/data.js';
 import creaMetaTags from './js/misc/createMetatags';
 
 window.creaMetaTags = creaMetaTags;
+window.previousPage = null;
 
 Vue.use(obras);
 Vue.use(Router);
@@ -43,7 +44,7 @@ router.beforeEach((to, from, next) => {
       }, 760);
     }
   }
-  
+
   if (from.name) {
     window.previousPage = from.name;
   }
@@ -57,4 +58,3 @@ router.afterEach((to, from) => {
   // Complete the animation of the route progress bar.
   NProgress.done()
 })
-

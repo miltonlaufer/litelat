@@ -80,11 +80,8 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-        document.body.classList.add("autor");
-        this.checkAnchor();
-        this.setEvents();
-      }
-    );
+      document.body.classList.add("autor");
+    });
   },
   watch: {
     tiposListaFiltradas: function (old, now) {
@@ -138,6 +135,9 @@ export default {
     }
   },
   methods: {
+    afterScroll() {
+      this.setEvents();
+    },
     getAutores(obra) {
       let autores = [];
 

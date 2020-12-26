@@ -69,7 +69,28 @@ let routes = {
       name: 'tecnologias',
     },
     {path: '*', component: splash}
-  ]
+  ],
+  scrollBehavior(to) {
+    let position = {x: 0, y: 0};
+    let hash = to.hash;
+
+    // The following is a workaround (scrolling + vue router + transitions)
+    // Check this discussion: https://github.com/quasarframework/quasar/issues/1466
+    return new Promise(resolve => {
+      setTimeout(() => {
+        if (to.hash) {
+          let obj = document.getElementById(hash.substr(1));
+
+          if (obj) {
+            position.y = obj.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 5);
+          }
+        }
+
+        resolve(position)
+        // the transition is 750 ms
+      }, 900)
+    })
+  }
 }
 
 for (let routeIndex in routes.routes) {

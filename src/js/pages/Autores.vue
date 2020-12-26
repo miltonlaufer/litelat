@@ -56,11 +56,8 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-        document.body.classList.add("autor");
-        this.checkAnchor();
-        this.setEvents();
-      }
-    );
+      document.body.classList.add("autor");
+    });
   },
   watch: {
     iniciales: function (old, now) {
@@ -69,6 +66,11 @@ export default {
           this.setEvents();
         });
       }
+    }
+  },
+  methods: {
+    afterScroll() {
+      this.setEvents();
     }
   },
   computed: {

@@ -13,18 +13,20 @@ export default {
     }
   },
   mounted() {
-    // Dado que es SPA, hay que llevar el scroll arriba (particularmente en mobiles)
-    window.scrollTo(0, 0);
+    this.$nextTick(() => {
+      let mainObj = document.getElementById('main');
 
-    let mainObj = document.getElementById('main');
+      if (mainObj) mainObj.classList.remove(...mainObj.classList);
 
-    if (mainObj) mainObj.classList.remove(...mainObj.classList);
+      if (typeof this['afterScroll'] == "function") {
+        setTimeout(this['afterScroll'], 100);
+      }
+    });
   },
   methods: {
     // Este método sólo es usado por algunos componentes (los que tienen listados)
     setEvents: function () {
-      Array.from(document.getElementsByClassName('volver')).forEach(obj => obj.addEventListener('click', _ => {
-        console.log('back listados');
+      Array.from(document.getElementsByClassName('volver')).forEach(obj => obj.addEventListener('click', (s) => {
         window.scrollTo(0, 0);
       }));
 
@@ -32,30 +34,20 @@ export default {
         obj.addEventListener('click', e => {
           e.preventDefault();
 
-          let inicial = e.target.getAttribute('rel');
-          let position = document.getElementById(inicial).getBoundingClientRect().top;
-          window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${inicial}`);
-
-          setTimeout(() => {
-              window.scrollTo(0, position + window.scrollY - (window.innerHeight / 5))
-            }, 1
-          );
+          let tipo = e.target.getAttribute('rel');
+          window.history.pushState(null, document.title, `${window.location.href.split("#")[0]}#${tipo}`);
+          this.goToAnchor(tipo);
         })
       );
     },
     normalizeString(string) {
       return string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
     },
-    checkAnchor() {
-      let anchor = decodeURI(this.$route.hash.substring(1));
-
-      if (anchor) {
-        setTimeout(() => {
-            let position = document.getElementById(anchor).getBoundingClientRect().top;
-            window.scrollTo(0, position - 200)
-          }, 1000
-        );
-      }
+    goToAnchor(tipo) {
+      setTimeout(() => {
+        let position = document.getElementById(tipo).getBoundingClientRect().top;
+        window.scrollTo(0, position - (window.innerHeight / 5));
+      }, 1);
     }
-  },
+  }
 }

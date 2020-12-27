@@ -41,7 +41,7 @@ export default {
       const matrix = style.transform || style.webkitTransform || style.mozTransform;
 
       // Workaround: si el elemento está hovered, entonces se agranda y los cálculos se distorsionan
-      if (matrix !== 'none') {
+      if (matrix !== 'none' && matrix) {
         // Lo de abajo toma el valor de CSS "transform: scale"
         return (matrix.substring(7, matrix.length - 1).split(',')[0].trim() !== '1');
       }

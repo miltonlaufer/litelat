@@ -112,7 +112,7 @@ body {
   }
 
   &:before, &:after {
-    transition: height .4s;
+    transition: height .35s;
     content: '';
     position: absolute;
     background-color: #4d4d4d;

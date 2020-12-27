@@ -70,7 +70,7 @@ export default {
           if (this.isHovered(elem)) return false;
 
           elem.classList.add('closing');
-          setTimeout(() => elem.classList.remove('closing'), 400);
+          setTimeout(() => elem.classList.remove('closing'), 350);
         }, delay += this.dameUnNumeroAlAzar(2000));
 
         numeroDeOjos--;

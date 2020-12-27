@@ -24,12 +24,6 @@
     right: 0;
   }
 
-  .eye {
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-
   .alfabeto {
     text-align: center;
     max-width: 900px;
@@ -80,6 +74,18 @@
 
       @include media-breakpoint-down(xs) {
         margin-right: 40px;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &:before {
+        top: 20px;
+      }
+
+      &:after {
+        bottom: 20px;
       }
     }
 

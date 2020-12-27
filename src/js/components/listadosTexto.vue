@@ -12,7 +12,7 @@
       <div class="col autores" v-if="tiposListaFiltradas.length">
         <div class="row mb-5" v-for="tipo in tiposListaFiltradas">
           <div class="col">
-            <h2 class="letra"><a :name="tipo" :id="tipo"></a> {{ tipo }}
+            <h2 class="letra"><a :name="normalizeString(tipo)" :id="normalizeString(tipo)"></a> {{ tipo }}
               <span v-if="tieneDefiniciones"><br>{{ definiciones[tipo] }}</span></h2>
             <div class="autor-item" v-for="obra in obrasPorTipoFiltradas[tipo]">
               <div class="eye">
@@ -106,19 +106,19 @@ export default {
         let resultadosFiltrados = this.obrasPorTipo[tipo].filter(obra => {
             if (!this.search) return true;
 
-            let searchNormalized = this.normalizeString(this.search);
+            let searchNormalized = window.normalizeString(this.search);
 
             if (
-              this.normalizeString(tipo).includes(searchNormalized)
-              || this.normalizeString(obra.titulo).includes(searchNormalized)
+              window.normalizeString(tipo).includes(searchNormalized)
+              || window.normalizeString(obra.titulo).includes(searchNormalized)
               || (
                 this.tieneDefiniciones && this.definiciones.hasOwnProperty(tipo) &&
-                this.normalizeString(this.definiciones[tipo]).includes(searchNormalized)
+                window.normalizeString(this.definiciones[tipo]).includes(searchNormalized)
               )
             ) return true;
 
             for (let z = 0; z < obra.nombre.length; z++) {
-              if (this.normalizeString(`${obra.nombre[z]} ${obra.apellido[z]}`).includes(searchNormalized)) {
+              if (window.normalizeString(`${obra.nombre[z]} ${obra.apellido[z]}`).includes(searchNormalized)) {
                 return true;
               }
             }
@@ -135,6 +135,9 @@ export default {
     }
   },
   methods: {
+    normalizeString(string) {
+      return window.normalizeString(string);
+    },
     afterScroll() {
       this.setEvents();
     },

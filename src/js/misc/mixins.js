@@ -94,12 +94,9 @@ export default {
         })
       );
     },
-    normalizeString(string) {
-      return string.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-    },
     goToAnchor(tipo) {
       setTimeout(() => {
-        let position = document.getElementById(tipo).getBoundingClientRect().top;
+        let position = document.getElementById(window.normalizeString(tipo)).getBoundingClientRect().top;
         window.scrollTo(0, position - (window.innerWidth < 1200 ? (window.innerHeight / 5) : 0));
       }, 1);
     }

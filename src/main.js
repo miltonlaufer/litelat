@@ -5,9 +5,11 @@ import routes from './js/routes';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import obras from './js/misc/data.js';
-import creaMetaTags from './js/misc/createMetatags';
+import {creaMetaTags, normalizeString} from './js/misc/helpers';
 
 window.creaMetaTags = creaMetaTags;
+window.normalizeString = normalizeString;
+
 window.previousPage = null;
 
 Vue.use(obras);

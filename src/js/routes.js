@@ -12,6 +12,7 @@ import tecnologias from './pages/Tecnologias.vue';
 
 // Data
 import metadata from '../data/metadata/metadata.json';
+import mixins from "./misc/mixins";
 
 // Excepciones de url
 const paginasConId = ['obra', 'autor'];
@@ -79,7 +80,7 @@ let routes = {
     return new Promise(resolve => {
       setTimeout(() => {
         if (to.hash) {
-          let obj = document.getElementById(hash.substr(1));
+          let obj = document.getElementById(window.normalizeString(decodeURIComponent(hash.substr(1))));
 
           if (obj) {
             position.y = obj.getBoundingClientRect().top + window.scrollY - (window.innerWidth < 1200 ? (window.innerHeight / 5) : 0);

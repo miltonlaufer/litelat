@@ -2,7 +2,7 @@
  * Helper para crear los metatags
  * @param to
  */
-export default function (to) {
+export function creaMetaTags(to) {
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
 
   // If a route with a title was found, set the document (page) title to that value.
@@ -27,4 +27,7 @@ export default function (to) {
     // Add the meta tags to the document head.
     .forEach(tag => document.head.appendChild(tag));
 }
-// Fin helper para crear metatags
+
+export function normalizeString(texto) {
+  return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+}

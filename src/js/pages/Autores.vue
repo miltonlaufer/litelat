@@ -82,7 +82,7 @@ export default {
 
       for (let inicial of this.inicialesComienzo) {
         let autoresFiltrados = this.autoresComienzo[inicial].filter(autor => !this.search ||
-          this.normalizeString(`${autor.nombre} ${autor.apellido}`).includes(this.normalizeString(this.search))
+          window.normalizeString(`${autor.nombre} ${autor.apellido}`).includes(window.normalizeString(this.search))
         );
 
         if (autoresFiltrados.length) {

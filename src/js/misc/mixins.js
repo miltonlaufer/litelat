@@ -66,12 +66,15 @@ export default {
           isAvailable = !elem.classList.contains('closing') && !this.isHovered(elem);
         }
 
-        setTimeout(() => {
-          if (this.isHovered(elem)) return false;
+        // Evitamos hacer la animación si no está en pantalla
+        if (this.estaEnPantalla(elem)) {
+          setTimeout(() => {
+            if (this.isHovered(elem)) return false;
 
-          elem.classList.add('closing');
-          setTimeout(() => elem.classList.remove('closing'), 350);
-        }, delay += this.dameUnNumeroAlAzar(2000));
+            elem.classList.add('closing');
+            setTimeout(() => elem.classList.remove('closing'), 350);
+          }, delay += this.dameUnNumeroAlAzar(2000));
+        }
 
         numeroDeOjos--;
       }
@@ -100,6 +103,13 @@ export default {
         let position = document.getElementById(window.normalizeString(tipo)).getBoundingClientRect().top;
         window.scrollTo(0, position - (window.innerWidth < 1200 ? (window.innerHeight / 5) : 0));
       }, 1);
+    },
+    estaEnPantalla(elem) {
+      const rect = elem.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+      );
     }
   }
 }

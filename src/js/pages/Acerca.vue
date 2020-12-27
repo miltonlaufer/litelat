@@ -72,7 +72,7 @@
       <h1 class="subtitle">Desarrollo </h1>
       <p class="desarrollo">
         <strong>Diseño</strong>: <a href="http://entalpia.pe/" target="_blank">José Aburto</a><br>
-        <strong>Maquetado HTML</strong>: <a href="http://www.eikondesign.com.ar/" target="_blank">Inés Sotomayor</a><br>
+        <strong>Base del maquetado HTML</strong>: <a href="http://www.eikondesign.com.ar/" target="_blank">Inés Sotomayor</a><br>
         <strong>Programación</strong>: <a href="http://www.miltonlaufer.com.ar/" target="_blank">Milton Läufer</a>
       </p>
       <h1 class="subtitle">FICHA BIBLIOGRÁFICA</h1>

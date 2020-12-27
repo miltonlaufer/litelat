@@ -50,7 +50,7 @@ export default {
       return false;
     },
     closeSomeEyes() {
-      let elems = document.getElementsByClassName('eye');
+      let elems = Array.from(document.getElementsByClassName('eye')).filter(obj => this.estaEnPantalla(obj));
 
       if (!elems.length) return false;
 
@@ -66,15 +66,12 @@ export default {
           isAvailable = !elem.classList.contains('closing') && !this.isHovered(elem);
         }
 
-        // Evitamos hacer la animación si no está en pantalla
-        if (this.estaEnPantalla(elem)) {
-          setTimeout(() => {
-            if (this.isHovered(elem)) return false;
+        setTimeout(() => {
+          if (this.isHovered(elem)) return false;
 
-            elem.classList.add('closing');
-            setTimeout(() => elem.classList.remove('closing'), 350);
-          }, delay += this.dameUnNumeroAlAzar(2000));
-        }
+          elem.classList.add('closing');
+          setTimeout(() => elem.classList.remove('closing'), 350);
+        }, delay += this.dameUnNumeroAlAzar(2000));
 
         numeroDeOjos--;
       }
@@ -106,9 +103,11 @@ export default {
     },
     estaEnPantalla(elem) {
       const rect = elem.getBoundingClientRect();
+      const height = (window.innerHeight || document.documentElement.clientHeight);
+
       return (
-        rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        (rect.top >= 0 && rect.top <= height) ||
+        (rect.bottom >= 0 && rect.bottom <= height)
       );
     }
   }

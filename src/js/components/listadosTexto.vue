@@ -135,9 +135,6 @@ export default {
     }
   },
   methods: {
-    normalizeString(string) {
-      return window.normalizeString(string);
-    },
     afterScroll() {
       this.setEvents();
     },

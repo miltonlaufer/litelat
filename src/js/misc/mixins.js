@@ -109,6 +109,9 @@ export default {
         (rect.top >= 0 && rect.top <= height) ||
         (rect.bottom >= 0 && rect.bottom <= height)
       );
+    },
+    normalizeString(string) {
+      return window.normalizeString(string);
     }
   }
 }

@@ -12,7 +12,8 @@
       <div class="col autores" v-if="iniciales.length">
         <div class="row mb-5" v-for="inicial in iniciales">
           <div class="col">
-            <h2 class="letra"><a :name="inicial" :id="inicial"></a> {{ inicial }}. </h2>
+            <h2 class="letra"><a :name="normalizeString(inicial)" :id="normalizeString(inicial)"></a> {{ inicial }}.
+            </h2>
             <div class="autor-item" v-for="autor in autores[inicial]">
               <div class="eye">
                 <router-link

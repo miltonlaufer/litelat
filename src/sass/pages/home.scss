@@ -61,6 +61,39 @@
           transform: scale(1.25);
         }
 
+        &:not(.closing) {
+          z-index: 100;
+        }
+
+        &:before {
+          top: 40px;
+          z-index: 10;
+
+          @include media-breakpoint-down(md) {
+            top: 35px;
+          }
+        }
+
+        &:after {
+          bottom: 40px;
+
+          @include media-breakpoint-down(md) {
+            bottom: 35px;
+          }
+        }
+
+        &.closing {
+          z-index: 20;
+
+          &:before, &:after {
+            height: 30%;
+
+            @include media-breakpoint-down(xs) {
+              height: 35%;
+            }
+          }
+        }
+
         @include media-breakpoint-up(sm) {
           position: absolute;
           &:nth-child(1) {

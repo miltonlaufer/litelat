@@ -1,4 +1,4 @@
-# Antología Litelat Número 1
+# Antología litElat Número 1
 
 > Antología de Literatura Latinoamericana y Caribeña
 

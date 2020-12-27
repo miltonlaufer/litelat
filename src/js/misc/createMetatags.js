@@ -6,7 +6,7 @@ export default function (to) {
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
 
   // If a route with a title was found, set the document (page) title to that value.
-  if (nearestWithTitle) document.title = nearestWithTitle.meta.title + ' | Antología Litelat #1';
+  if (nearestWithTitle) document.title = nearestWithTitle.meta.title + ' | Antología litElat #1';
 
   // Remove any stale meta tags from the document using the key attribute we set below.
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));

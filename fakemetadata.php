@@ -55,7 +55,7 @@ makePage($data);
  */
 function makePage($data)
 {
-  $title = $data['meta']['title'] . ' | Antología Litelat #1';
+  $title = $data['meta']['title'] . ' | Antología litElat #1';
   $interior = $data['internal'];
 
   if ($interior && $data['path'] !== 'obras') {
@@ -77,7 +77,7 @@ function makePage($data)
   $html .= '<meta property="og:description" content="' . $content . '" />' . PHP_EOL;
   $html .= '<meta property="og:image" content="http://' . $_SERVER['SERVER_NAME'] . (!empty($interior['captura_grande']) ? '/dist/images/obras/' . $interior['captura_grande'] : '/dist/images/social.png') . '"/>' . PHP_EOL;
   $html .= '<meta property="og:type" content="website" />' . PHP_EOL;
-  $html .= '<meta property="og:site_name" content="Antología Litelat #1" />' . PHP_EOL;
+  $html .= '<meta property="og:site_name" content="Antología litElat #1" />' . PHP_EOL;
   $html .= '</head>' . PHP_EOL;
   $html .= '<body>' . PHP_EOL;
 

@@ -28,6 +28,12 @@ export function creaMetaTags(to) {
     .forEach(tag => document.head.appendChild(tag));
 }
 
+/**
+ * Devuelve las strings sin caracteres especiales
+ *
+ * @param texto
+ * @returns {string}
+ */
 export function normalizeString(texto) {
   return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 }

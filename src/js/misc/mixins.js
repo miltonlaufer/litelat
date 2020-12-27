@@ -27,6 +27,7 @@ export default {
         setTimeout(this['afterScroll'], 100);
       }
 
+      this.closeSomeEyes();
       this.closingEyesId = setInterval(() => {
         this.closeSomeEyes();
       }, 3000);

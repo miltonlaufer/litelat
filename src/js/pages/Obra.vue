@@ -35,24 +35,24 @@
         <div class="metadata">
           <h2 class="subtitle">Metadata</h2>
           <p class="mb-0"><strong>Año:</strong>
-            <router-link :to="{ path: '/fecha', hash: `#${obra.ano.split(/\D/)[0]}`}">{{ obra.ano }}
+            <router-link :to="{ name: 'fecha', hash: `#${obra.ano.split(/\D/)[0]}`}">{{ obra.ano }}
             </router-link>
           </p>
           <p class="mb-0"><strong>Idioma:</strong> <span v-for="idioma in obra.idioma">{{ idioma }}</span></p>
           <p class="mb-0"><strong>Categorías:</strong>
             <router-link v-for="categoria in obra.categorias"
-                         :to="{ path: '/categorias', hash: `#${categoria}`}"
+                         :to="{ name: 'categorias', hash: `#${categoria}`}"
                          :key="categoria">{{ categoria }}</router-link>
           </p>
           <p class="mb-0"><strong>Tecnologías:</strong>
             <router-link v-for="tecnologia in obra.tecnologias"
-                         :to="{ path: '/tecnologias', hash: `#${tecnologia}`}"
+                         :to="{ name: 'tecnologias', hash: `#${tecnologia}`}"
                          :key="tecnologia">{{
                 tecnologia
               }}</router-link>
           </p>
           <p class="mb-0"><strong>País:</strong>
-            <router-link :to="{ path: '/paises', hash: `#${obra.pais}`}">{{
+            <router-link :to="{ name: 'paises', hash: `#${obra.pais}`}">{{
                 obra.pais
               }}</router-link>
           </p>

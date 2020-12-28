@@ -20,7 +20,7 @@
                   :to="{ name: 'autor' , params: {id: autor.id}}"></router-link>
                 <div class="eye-shape">
                   <div class="content"
-                       :style="'background-image: url(/dist/images/obras/' + autor.imagen + ');'"></div>
+                       :style="'background-image: url(dist/images/obras/' + autor.imagen + ');'"></div>
                 </div>
               </div>
 

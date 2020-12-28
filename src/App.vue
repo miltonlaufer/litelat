@@ -4,6 +4,7 @@
       <nav class="navbar navbar-expand-xl" v-if="showMenu">
         <router-link
           class="navbar-brand"
+          style="background-image: url(dist/images/logo_antologia_litelat.png)"
           :to="{ name: 'splash'}"></router-link>
         <button v-on:click="mobileMenuCollapsed=!mobileMenuCollapsed" :class="mobileMenuCollapsed?'':'open'"
                 class="navbar-toggler navbar-toggler-right" type="button" aria-label="Toggle navigation">
@@ -72,7 +73,9 @@
       <nav v-else class="navbar navbar-home">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-start">
-            <div class="col-7 col-lg-6"><a class="navbar-brand"></a></div>
+            <div class="col-7 col-lg-6"><a class="navbar-brand"
+                                           style="background-image: url(dist/images/logo_antologia_litelat.png)"></a>
+            </div>
             <div class="col-5 col-lg-6 text-right">
               <h1>Literatura Electrónica<br>Latinoamericana y Caribeña</h1>
             </div>

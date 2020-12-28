@@ -3,7 +3,7 @@
     <div v-for="(obra, index) in obras" class="eye" :key="index">
       <div class="eye-shape">
         <div class="content"
-             :style="'background-image: url(../dist/images/obras/' + obra.captura_chica + ');'">
+             :style="'background-image: url(dist/images/obras/' + obra.captura_chica + ');'">
           <router-link
             :to="{ name: 'obra' , params: {id: index}}">
             <h2 class="title" :style="getFontSize(obra.titulo)">{{ obra.titulo }}</h2>

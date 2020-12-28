@@ -8,7 +8,7 @@ usando VUE.JS. **El punto de entrada es "src/js/main.js"**.
 
 Para ver el sitio, [Antología litElat](http://antologia.litelat.net)
 
-##Versión web
+## Versión web
 
 Puede funcionar en casi cualquier tipo de server (node.js, nginx o Apacmotivoshe). Para éste último es importante usar el
 archivo .htaccess, al menos si se quiere compartir los links de las páginas específicas, dado que el proyecto usa SPA
@@ -19,20 +19,20 @@ Si se corre bajo un servidor Apache, también los archivos contenidos en src/dat
 carpeta sólo sirve para adecuar los datos, generados por el comité editorial en un excel, al formato JSON. Tal archivo
 no debería estar en el servidor final.
 
-##Versión local (stand alone version)
+## Versión local (stand alone version)
 
 Este desarrollo está pensando para correr también en versiones offline.
 Sólo copie index y la carpeta dist a un pendrive o CD-ROM y el sitio funcionará igual que la versión web.
 
-#Datos técnicos
+# Datos técnicos
 ## Entry point JS
 src/js/main.js
-##Vue Version
+## Vue Version
 2.6.12 (at the time of starting the project vue 3 wasn't officially launched)
-##SPA (_single page application_) using vue router
-##Nota: al correr el build la carpeta src/descargables debe tener al menos un zip
+## SPA (_single page application_) using vue router
+## Nota: al correr el build la carpeta src/descargables debe tener al menos un zip
 
-#Cómo compilar
+# Cómo compilar
 ## Build Setup
 
 ``` bash
@@ -51,7 +51,7 @@ npm run build
 
 This is an example of a VUE.js SPA (Single Page Application) Project. Feel free to use it and modify it.
 
-#Créditos
+# Créditos
 *Diseño*: [José Aburtu](http://entalpia.pe)
 
 *Base del maquetado HTML*: [Inés Sotomayor](http://www.eikondesign.com.ar/)

@@ -23,7 +23,10 @@ let filePath = '';
 if (window.location.protocol === 'file:') {
   myProtocol = 'local';
   let pathName = window.location.pathname;
-  filePath = pathName.substring(0, pathName.lastIndexOf('/') + 1);
+
+  const slash = navigator.platform.indexOf('Win') > -1 ? '\\' : "/";
+
+  filePath = pathName.substring(0, pathName.lastIndexOf(slash) + 1);
 }
 
 let routes = {

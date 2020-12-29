@@ -30,7 +30,7 @@ export default {
       this.closeSomeEyes();
       this.closingEyesId = setInterval(() => {
         this.closeSomeEyes();
-      }, 3000);
+      }, 5000);
     });
   },
   beforeDestroy() {
@@ -71,7 +71,7 @@ export default {
 
           elem.classList.add('closing');
           setTimeout(() => elem.classList.remove('closing'), 350);
-        }, delay += this.dameUnNumeroAlAzar(2000) + 300);
+        }, delay += this.dameUnNumeroAlAzar(2000) + 600);
 
         numeroDeOjos--;
       }

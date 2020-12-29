@@ -71,7 +71,7 @@ export default {
 
           elem.classList.add('closing');
           setTimeout(() => elem.classList.remove('closing'), 350);
-        }, delay += this.dameUnNumeroAlAzar(2000) + 600);
+        }, delay += this.dameUnNumeroAlAzar(1500) + 600);
 
         numeroDeOjos--;
       }

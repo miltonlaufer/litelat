@@ -4,7 +4,7 @@
       <h1 class="subtitle">Acerca de </h1>
       <p>La <em>Antolog&iacute;a Lit(e)Lat volumen 1</em> se ha propuesto como un espacio de recuperaci&oacute;n y
         visibilizaci&oacute;n de un corpus significativo de piezas de literatura electr&oacute;nica producidas desde (o
-        en relaci&oacute;n con) Latinoam&eacute;rica y el Caribe. Definimos la literatura electr&oacute;nica como obras
+        en relaci&oacute;n con) Latinoam&eacute;rica y el Caribe. Consideramos como literatura electr&oacute;nica obras
         de arte textual que experimentan con dispositivos electr&oacute;nicos digitales y, en casos hist&oacute;ricos,
         anal&oacute;gicos. Este tipo de literatura, aunque frecuentemente incorpora imagen fija o en movimiento, video,
         sonido, programaci&oacute;n, interacci&oacute;n, redes, requiere un alto grado de participaci&oacute;n del
@@ -38,13 +38,14 @@
         utilizado varias estrategias, como la inclusi&oacute;n de m&uacute;ltiples versiones, documentaci&oacute;n en
         video, archivos descargables, enlaces a emulaciones y <em>porting</em> a lenguajes de programaci&oacute;n y
         formatos actualizados.</p>
-      <p>Las obras est&aacute;n organizadas por autor&iacute;a, a&ntilde;o, pa&iacute;s y categor&iacute;as
-        descriptivas. Estas categor&iacute;as representan tendencias y pr&aacute;cticas del campo de la literatura
-        electr&oacute;nica, por ejemplo: obras aleatorias o generativas, poes&iacute;a animada y/o sonora, hipertexto e
-        hipermedia, memes, videojuegos, etc. El men&uacute; principal de esta antolog&iacute;a ofrece distintos accesos
-        seg&uacute;n a&ntilde;o, autor&iacute;a, pa&iacute;s, t&iacute;tulo y categor&iacute;as. La metadata tambi&eacute;n
-        permite la exploraci&oacute;n de obras con caracter&iacute;sticas y tecnolog&iacute;as en com&uacute;n. Hemos
-        incluido adem&aacute;s un bot&oacute;n llamado Descubrir para acceder a las obras en forma aleatoria.</p>
+      <p>La antolog&iacute;a est&aacute; organizada por autor&iacute;a, a&ntilde;o, pa&iacute;s, tecnolog&iacute;as y
+        categor&iacute;as descriptivas. Estas categor&iacute;as representan tendencias y pr&aacute;cticas del campo de
+        la literatura electr&oacute;nica, por ejemplo: obras aleatorias o generativas, poes&iacute;a animada y/o sonora,
+        hipertexto e hipermedia, memes, videojuegos, etc. El men&uacute; de inicio incluye, adem&aacute;s de accesos seg&uacute;n
+        a&ntilde;o, autor&iacute;a, pa&iacute;s, obras y categor&iacute;as, un acceso llamado &ldquo;descubrir&rdquo;
+        para llegar a las obras en forma aleatoria. La metadata tambi&eacute;n permite la exploraci&oacute;n de obras
+        con caracter&iacute;sticas y tecnolog&iacute;as en com&uacute;n. Hemos creado adem&aacute;s un bot en Twitter
+        (<a href="https://twitter.com/AntologiaBot">@AntologiaBot</a>) que hace recomendaciones aleatoriamente.</p>
       <p>La literatura electr&oacute;nica latinoamericana y caribe&ntilde;a es a la vez localizada y de-localizada. Esta
         condici&oacute;n habla de un espacio de tensiones globales y nacionales. Por un lado, es una literatura
         dependiente del desarrollo global inform&aacute;tico. Pero, por otro lado, se trata tambi&eacute;n de una
@@ -72,12 +73,14 @@
       <h1 class="subtitle">Desarrollo </h1>
       <p class="desarrollo">
         <strong>Diseño</strong>: <a href="http://entalpia.pe/" target="_blank">José Aburto</a><br>
-        <strong>Base del maquetado HTML</strong>: <a href="http://www.eikondesign.com.ar/" target="_blank">Inés Sotomayor</a><br>
+        <strong>Base del maquetado HTML</strong>:  <!--<a href="http://www.eikondesign.com.ar/" target="_blank">-->Inés
+        Sotomayor<!--</a>--><br>
         <strong>Programación</strong>: <a href="http://www.miltonlaufer.com.ar/" target="_blank">Milton Läufer</a>
       </p>
       <h1 class="subtitle">FICHA BIBLIOGRÁFICA</h1>
-      <p>Flores, Leonardo; Kozak, Claudia; Mata, Rodolfo (eds). Antología Lit(e)Lat Volumen 1. Red de Literatura
-        Electrónica Latinoamericana, 2020, http://antologia.litelat.net
+      <p>
+      <p>Flores, Leonardo; Kozak, Claudia; Mata, Rodolfo (eds). <em>Antolog&iacute;a Lit(e)Lat Volumen 1</em>. Red de
+        Literatura Electr&oacute;nica Latinoamericana, 2020, http://antologia.litelat.net</p>
       </p>
       <h1 class="subtitle">AUSPICIOS</h1>
       <p class="desarrollo">

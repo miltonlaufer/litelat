@@ -91,6 +91,10 @@
         Commons Atribuci&oacute;n-NoComercial
         4.0 Internacional (CC BY-NC
         4.0)</a></p>
+      <h1 class="subtitle">Código fuente</h1>
+      <p class="desarrollo"><a href="https://github.com/miltonlaufer/litelat" target="_blank">Proyecto
+        SPA (Single Page Application) desarrollado sobre el framework Vue.js. El código se distribuye gratuitamente bajo
+        licencia MIT.<br>https://github.com/miltonlaufer/litelat</a></p>
       <h1 class="subtitle">Versión</h1>
       <p>1.0 - 30 de dicembre de 2020</p>
     </div>

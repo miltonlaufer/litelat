@@ -119,7 +119,7 @@ export default {
       if (this.obra.enlace.length) {
         return this.obra.enlace[0].link;
       } else if (this.obra.descargable) {
-        return this.obra.descargable;
+        return this.obra.descargable[0].link;
       }
 
       return '';

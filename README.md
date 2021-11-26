@@ -1,3 +1,5 @@
+**[For auto-translated English version, click here](https://github-com.translate.goog/miltonlaufer/litelat/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=en-GB&_x_tr_pto=nui)**
+
 # Antología litElat Número 1
 
 > Antología de Literatura Latinoamericana y Caribeña
